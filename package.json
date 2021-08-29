@@ -1,24 +1,42 @@
 {
   "name": "fu-kit",
   "version": "0.0.1",
-  "description": "extremelly simple UI-kit for vue",
-  "main": "index.js",
+  "private": true,
+  "description": "Extremely simple UI-kit for vue",
+  "author": {
+    "name": "@vovchisko"
+  },
   "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vovchisko/fu-kit.git"
+  "main": "index.js",
+  "dependencies": {
+    "vue": "^3.0.0",
+    "vue-router": "^4.0.0-0"
   },
+  "devDependencies": {
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.0",
+    "sass": "^1.26.5",
+    "sass-loader": "^8.0.2"
+  },
+  "_id": "fu-kit@0.0.1",
+  "bugs": {
+    "url": "https://github.com/vovchisko/fu-kit/issues"
+  },
+  "homepage": "https://github.com/vovchisko/fu-kit#readme",
   "keywords": [
     "ui",
     "ui-kit",
     "vue"
   ],
-  "author": "@vovchisko",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/vovchisko/fu-kit/issues"
-  },
-  "homepage": "https://github.com/vovchisko/fu-kit#readme"
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vovchisko/fu-kit.git"
+  }
 }
