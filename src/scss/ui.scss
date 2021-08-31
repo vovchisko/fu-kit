@@ -8,13 +8,13 @@
       background-color: transparent;
     }
 
-    background-color: pal($pal-block);
+    background-color: pal(pal-block);
     width: 2px;
     height: 2px;
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: pal($pal-prime);
+    background-color: pal(pal-prime);
   }
 }
 
@@ -31,17 +31,17 @@
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: pal($pal-prime);
+    background-color: pal(pal-prime);
     border: 1px solid transparent;
     border-radius: 0.25em;
   }
 
   &:hover::-webkit-scrollbar {
-    background-color: pal($pal-block);
+    background-color: pal(pal-block);
   }
 
   &:hover::-webkit-scrollbar-thumb {
-    background-color: pal($pal-prime);
+    background-color: pal(pal-prime);
   }
 }
 

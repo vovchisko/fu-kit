@@ -1,8 +1,9 @@
 {
+  "_id": "fu-kit@0.0.1",
   "name": "fu-kit",
   "version": "0.0.1",
   "private": true,
-  "description": "Extremely simple UI-kit for vue",
+  "description": "Extremely simple (not) UI-kit for vue",
   "author": {
     "name": "@vovchisko"
   },
@@ -23,7 +24,6 @@
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2"
   },
-  "_id": "fu-kit@0.0.1",
   "bugs": {
     "url": "https://github.com/vovchisko/fu-kit/issues"
   },

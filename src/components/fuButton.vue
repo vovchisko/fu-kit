@@ -10,14 +10,14 @@
 
 <script>
 export default {
-  name: 'fu-button',
+  name: 'ui-button',
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 :root {
-  --ui-button-bg: #{pal($pal-ui)};
-  --ui-button-bg-disabled: #{pal($pal-ui, .5)};
-  --ui-button-text: #{pal($pal-bg)};
+  --ui-button-bg: #{pal(pal-ui)};
+  --ui-button-bg-disabled: #{pal(pal-ui, .5)};
+  --ui-button-text: #{pal(pal-bg)};
   --ui-button-border-radius: var(--ui-border-radius);
   --ui-button-border-w: var(--ui-border-w);
 }

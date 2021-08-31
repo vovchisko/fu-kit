@@ -7,7 +7,7 @@
   </div>
 </template>
 <script>
-import FuButton from '@/components/fu-button.vue'
+import FuButton from '@/components/fuButton.vue'
 
 export default {
   components: { FuButton },
