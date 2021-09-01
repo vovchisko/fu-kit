@@ -2,10 +2,7 @@
   "name": "fu-kit",
   "version": "0.0.1",
   "description": "extremely simple (not) UI-kit for vue",
-  "main": "src/index.js",
-  "files": [
-    "src/components/**.vue"
-  ],
+  "main": "components.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
