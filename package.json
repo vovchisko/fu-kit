@@ -1,6 +1,6 @@
 {
   "name": "fu-kit",
-  "version": "0.0.1",
+  "version": "0.0.1-beta.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -22,6 +22,5 @@
     "last 2 versions",
     "not dead"
   ],
-  "_id": "fu-kit@0.1.0",
   "readme": "ERROR: No README data found!"
 }
