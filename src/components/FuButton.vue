@@ -2,20 +2,24 @@
   <button
       v-bind="$attrs"
       :type="$attrs.type || 'button'"
-      class="ui-button"
+      class="fu-button"
   >
     <slot />
   </button>
 </template>
 
 <script>
+console.log('fu button: loaded')
 export default {
-  name: 'ui-button',
+  name: 'fu-button',
+  setup(){
+    console.log('fu button: setup!')
+  }
 }
 </script>
 
 <style lang="scss" scoped>
-.ui-button {
+.fu-button {
   background: deeppink;
   color: white;
   border: 0 none;

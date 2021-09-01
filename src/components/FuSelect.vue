@@ -1,5 +1,5 @@
 <template>
-  <label class="ui-select">
+  <label class="fu-select">
     <span v-if="label" class="ui-select_label">{{ label }}</span>
     <select
         v-bind="$attrs"
@@ -13,8 +13,10 @@
 </template>
 
 <script>
+console.log('fu-select: loaded')
+
 export default {
-  name: 'ui-select',
+  name: 'fu-select',
   props: {
     modelValue: {
       type: [ String, Number ],
@@ -25,12 +27,15 @@ export default {
       default: '',
     },
   },
+  setup(){
+    console.log('fu-select: setup!')
+  },
   emits: [ 'update:modelValue' ],
 }
 </script>
 
 <style lang="scss" scoped>
-.ui-select {
+.fu-select {
   display: flex;
   align-items: center;
   flex-direction: column;
