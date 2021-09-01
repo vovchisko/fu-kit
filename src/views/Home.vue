@@ -1,15 +1,20 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-    <p>Nothing special here</p>
-
-    <fu-button>fu button</fu-button>
+  <div class="home">
+    <fu-button>Btn!</fu-button>
+    <fu-text />
   </div>
 </template>
+
 <script>
+// @ is an alias to /src
 import FuButton from '@/components/fuButton.vue'
+import FuText   from '@/components/fuText.vue'
 
 export default {
-  components: { FuButton },
+  name: 'Home',
+  components: {
+    FuText,
+    FuButton,
+  },
 }
 </script>

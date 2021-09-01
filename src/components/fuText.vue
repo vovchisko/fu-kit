@@ -26,13 +26,6 @@ export default {
   emits: [ 'update:modelValue' ],
 }
 </script>
-<style lang="scss">
-:root {
-  --ui-text-bg: black;
-  --ui-text-border-color: #{pal($pal-ui)};
-  --ui-text-border-width: 1px;
-}
-</style>
 <style lang="scss" scoped>
 .ui-text {
   display: flex;

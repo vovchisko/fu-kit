@@ -28,11 +28,7 @@ export default {
   emits: [ 'update:modelValue' ],
 }
 </script>
-<style lang="scss">
-:root {
-  // todo: how to style?
-}
-</style>
+
 <style lang="scss" scoped>
 .ui-select {
   display: flex;
@@ -49,7 +45,6 @@ export default {
     display: block;
     box-sizing: border-box;
     width: 100%;
-    height: var(--ui-height);
   }
 }
 </style>
