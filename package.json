@@ -1,8 +1,8 @@
 {
   "name": "fu-kit",
   "version": "0.0.1",
-  "description": "extremelly simple UI-kit for vue",
-  "main": "index.js",
+  "description": "extremely simple (not) UI-kit for vue",
+  "main": "components.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
