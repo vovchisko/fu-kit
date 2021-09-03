@@ -4,7 +4,8 @@
   "description": "extremely simple (not) UI-kit for vue",
   "main": "components.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "serve": "vue-cli-service serve --mode development",
+    "build": "vue-cli-service build"
   },
   "repository": {
     "type": "git",
@@ -20,5 +21,18 @@
   "bugs": {
     "url": "https://github.com/vovchisko/fu-kit/issues"
   },
-  "homepage": "https://github.com/vovchisko/fu-kit#readme"
+  "homepage": "https://github.com/vovchisko/fu-kit#readme",
+  "dependencies": {
+    "vue": "^3.0.0",
+    "vue-router": "^4.0.0-0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.0",
+    "sass": "^1.26.5",
+    "sass-loader": "^8.0.2"
+  }
 }
+
+

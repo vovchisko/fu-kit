@@ -1,12 +1,13 @@
 <template>
   <div class="home">
     <fu-button>Btn!</fu-button>
-    <fu-text />
+    <fu-text v-model="test" />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
+import { ref }  from 'vue'
+
 import FuButton from '@/components/FuButton.vue'
 import FuText   from '@/components/FuText.vue'
 
@@ -15,6 +16,9 @@ export default {
   components: {
     FuText,
     FuButton,
+  },
+  setup () {
+    const test = ref('')
   },
 }
 </script>

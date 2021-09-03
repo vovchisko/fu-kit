@@ -1,0 +1,23 @@
+$ui-media-breakpoints: (
+    xs: 812px, // everything at this point and below is a mobile. (<= iphoneX)
+    sm: 1200px, // everything equal or below can be considered as a tablet.
+    md: 1440px, // ~15" laptop display and below.
+  // everything else above is a ~17" laptop or a large screen. (default)
+) !default;
+
+@mixin respond-below($breakpoint) {
+  $breakpoint-value: map-get($ui-media-breakpoints, $breakpoint);
+
+  @media (max-width: ($breakpoint-value)) {
+    @content;
+  }
+}
+
+@mixin respond-above($breakpoint) {
+  $breakpoint-value: map-get($ui-media-breakpoints, $breakpoint);
+
+  @media (min-width: ($breakpoint-value + 1)) {
+    @content;
+  }
+}
+
