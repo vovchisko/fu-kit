@@ -32,7 +32,7 @@ export default {
     --fu-button-bg: #{pal(warning)};
   }
   .danger {
-    --fu-button-bg: #{pal(danger)};
+    --fu-button-bg: #{pal(danger)}; // todo: it start seems like simple var() would be better.
   }
 }
 </style>
