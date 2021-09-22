@@ -11,3 +11,8 @@ export default {
   name: 'Home',
 }
 </script>
+<style lang="scss" scoped>
+.home {
+  @include scrollbar-awesome()
+}
+</style>

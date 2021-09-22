@@ -1,23 +1,21 @@
 <template>
   <label class="fu-text">
-    <span v-if="label" class="ui-text_label">{{ label }}</span>
+    <span v-if="label" class="fu-text_label">{{ label }}</span>
     <input
         v-bind="$attrs"
         :value="modelValue"
-        class="ui-text_input"
+        class="fu-text_input"
         @input="$emit('update:modelValue', $event.target.value)"
     />
   </label>
 </template>
 
 <script>
-console.log('fu-text: loaded')
-
 export default {
   name: 'fu-text',
   props: {
     modelValue: {
-      type: [String, Number],
+      type: [ String, Number ],
       default: '',
     },
     label: {
@@ -25,12 +23,16 @@ export default {
       default: '',
     },
   },
-  setup(){
-    console.log('fu-text: setup!')
-  },
   emits: [ 'update:modelValue' ],
 }
 </script>
+<style lang="scss">
+:root {
+  --fu-text-bg: black;
+  --fu-text-border-color: #{pal($pal-primary)};
+  --fu-text-border-width: 1px;
+}
+</style>
 <style lang="scss" scoped>
 .fu-text {
   display: flex;
@@ -47,7 +49,7 @@ export default {
     display: block;
     box-sizing: border-box;
     width: 100%;
-    height: var(--ui-height);
+    height: var(--fu-height);
     border-width: var(--fu-text-border-width);
     border-color: var(--fu-text-border-color);
     border-style: solid;

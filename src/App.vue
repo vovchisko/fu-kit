@@ -2,6 +2,7 @@
   <div class="app">
     <div class="app_nav">
       <router-link to="/" class="app_nav-link">Home</router-link>
+      <router-link to="/fu-button" class="app_nav-link">Buttons</router-link>
     </div>
     <div class="app_content">
       <router-view />
@@ -11,19 +12,19 @@
 
 <style lang="scss" scoped>
 .app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
+  font-family: var(--typo-font-text);
+  color: var(--pal-text);
+  background: var(--pal-bg);
+  gap: spacing(sp300);
   display: flex;
-  gap: spacing(sp200);
-  
+
   &_nav {
     position: sticky;
     left: 0;
     top: 0;
     bottom: 0;
-    background: silver;
+    border-right: var(--lt-ui-border-w) solid color(grey400);
+
     &-link {
       width: 10em;
       display: block;

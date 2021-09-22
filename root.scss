@@ -1,0 +1,98 @@
+:root {
+  // Format color vars: "--color-{code}: R,G,B"
+  --color-white: #{hex2rgb(#FFFFFF)};
+  --color-black: #{hex2rgb(#000000)};
+  --color-light: #{hex2rgb(#FEFEFE)};
+  --color-dark: #{hex2rgb(#151515)};
+
+  --color-grey100: #{hex2rgb(#F4F4F4)};
+  --color-grey200: #{hex2rgb(#DCDCDC)};
+  --color-grey300: #{hex2rgb(#BFBFBF)};
+  --color-grey400: #{hex2rgb(#A5A5A5)};
+  --color-grey500: #{hex2rgb(#878787)};
+  --color-grey600: #{hex2rgb(#6C6C6C)};
+  --color-grey700: #{hex2rgb(#515151)};
+  --color-grey800: #{hex2rgb(#363636)};
+  --color-grey900: #{hex2rgb(#1C1C1C)};
+
+  // basic color palette.
+  // you can extend in in any way.
+  --color-brand: #{hex2rgb(#8347A8)};
+  --color-blue: #{hex2rgb(#2E88F1)};
+  --color-cold-dark: #{hex2rgb(#434F5F)};
+  --color-green: #{hex2rgb(#6DBE2C)};
+  --color-orange: #{hex2rgb(#FFA927)};
+  --color-red: #{hex2rgb(#FF4B4B)};
+
+  // Format palette colors: "--pal-{code}": #RGB
+  --pal-brand: var(--color-brand);
+  --pal-primary: var(--color-blue);
+  --pal-secondary: var(--color-cold-dark);
+  --pal-success: var(--color-green);
+  --pal-warning: var(--color-orange);
+  --pal-danger: var(--color-red);
+  --pal-error: var(--color-red);
+
+  --pal-text: var(--color-dark);
+  --pal-text-dimm: var(--color-grey600);
+  --pal-link: var(--color-blue);
+  --pal-block: var(--color-grey100);
+  --pal-block-border: var(--color-grey200);
+  --pal-bg: var(--color-white);
+  --pal-overlay: var(--color-dark) 0.2;
+
+  --fu-ui-transition: all linear 180ms;
+
+  --typo-font-heading: 'Segoe UI', San Francisco, Roboto, Lucida Sans;
+  --typo-font-text: 'Segoe UI', San Francisco, Roboto, Lucida Sans;
+  --typo-font-mono: monospace;
+
+  // font-size
+  // format font-size vars: "--lt-{code}": 14px;
+  --typo-h100: 12px;
+  --typo-h200: 14px;
+  --typo-h300: 16px;
+  --typo-h400: 18px;
+  --typo-h500: 22px;
+  --typo-h600: 26px;
+  --typo-h700: 28px;
+  --typo-h800: 32px;
+  --typo-h900: 48px;
+
+  // line-height vars (typo usually has the same number part)
+  // format font-size vars: "--typo-{code}": 14px;
+  --typo-lh100: 14px;
+  --typo-lh200: 16px;
+  --typo-lh300: 18px;
+  --typo-lh400: 22px;
+  --typo-lh500: 26px;
+  --typo-lh600: 28px;
+  --typo-lh700: 32px;
+  --typo-lh800: 48px;
+  --typo-lh900: 56px;
+
+  // spacing vars
+  --lt-sp100: 4px;
+  --lt-sp200: 8px;
+  --lt-sp300: 16px;
+  --lt-sp400: 32px;
+  --lt-sp500: 64px;
+  --lt-sp600: 128px;
+  --lt-sp700: 256px;
+  --lt-sp800: 512px;
+
+  --lt-border-radius: 8px;
+  --lt-border-radius-inner: 4px;
+
+  --lt-ui-h: 24px;
+  --lt-ui-border-w: 1px;
+  --lt-ui-border-r: var(--lt-border-radius-inner);
+
+  --lt-z-1: 1;
+  --lt-z-back: -1;
+  --lt-z-nav: 500;
+  --lt-z-modal-backdrop: 1000;
+  --lt-z-modal: 1001;
+
+  --lt-header-height: 64px;
+}
