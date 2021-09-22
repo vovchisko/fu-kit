@@ -1,3 +1,6 @@
+/**
+ * @param {Boolean} transparent
+ */
 @mixin scrollbar-awesome($transparent: false) {
   &::-webkit-scrollbar-track {
     background-color: transparent;
@@ -8,13 +11,13 @@
       background-color: transparent;
     }
 
-    background-color: pal($pal-block);
+    background-color: pal(block);
     width: 2px;
     height: 2px;
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: pal($pal-prime);
+    background-color: pal(prime);
   }
 }
 
@@ -31,19 +34,21 @@
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: pal($pal-prime);
+    background-color: pal(prime);
     border: 1px solid transparent;
     border-radius: 0.25em;
   }
 
   &:hover::-webkit-scrollbar {
-    background-color: pal($pal-block);
+    background-color: pal(block);
   }
 
   &:hover::-webkit-scrollbar-thumb {
-    background-color: pal($pal-prime);
+    background-color: pal(prime);
   }
 }
+
+
 
 @mixin scrollbar-invisible() {
   &::-webkit-scrollbar {

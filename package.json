@@ -4,7 +4,7 @@
   "description": "extremely simple (not) UI-kit for vue",
   "main": "components.js",
   "scripts": {
-    "serve": "vue-cli-service serve --mode development",
+    "serve": "vue-cli-service serve --port 4000 --mode development",
     "build": "vue-cli-service build"
   },
   "repository": {
