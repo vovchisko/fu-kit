@@ -77,8 +77,8 @@ export default {
   white-space: nowrap;
   align-items: center;
   justify-content: center;
-  height: calc(var(--fu-progress-radial-size, 64px));
-  width: calc(var(--fu-progress-radial-size, 64px));
+  height: calc(var(--progress-radial-size, 64px));
+  width: calc(var(--progress-radial-size, 64px));
 
   &__svg-wrap {
     position: absolute;
@@ -93,26 +93,26 @@ export default {
     overflow: visible;
     vertical-align: middle;
     transform: rotate(90deg);
-    height: var(--fu-progress-radial-size, 64px);
-    width: var(--fu-progress-radial-size, 64px);
+    height: var(--progress-radial-size, 64px);
+    width: var(--progress-radial-size, 64px);
   }
 
   &__svg-bg {
-    stroke: var(--fu-progress-radial-bg-stroke, #{pal($pal-primary,0.2)});
-    fill: var(--fu-progress-radial-bg-fill, transparent);
-    stroke-width: var(--fu-progress-radial-stroke-width, 10);
+    stroke: var(--progress-radial-bg-stroke, #{pal($pal-primary,0.2)});
+    fill: var(--progress-radial-bg-fill, transparent);
+    stroke-width: var(--progress-radial-stroke-width, 10);
   }
 
   &__svg-value {
     fill: none;
     stroke-dasharray: 0;
     stroke-dashoffset: 0;
-    transition-duration: var(--fu-progress-radial-t-duration, 500ms);
-    transition-property: var(--fu-progress-radial-t-property, all);
-    transition-timing-function: var(--fu-progress-radial-t-function, linear);
-    stroke: var(--fu-progress-radial-color, #{pal($pal-primary)});
-    stroke-linecap: var(--fu-progress-radial-stroke-linecap, round);
-    stroke-width: var(--fu-progress-radial-stroke-width, 10);
+    transition-duration: var(--progress-radial-t-duration, 500ms);
+    transition-property: var(--progress-radial-t-property, all);
+    transition-timing-function: var(--progress-radial-t-function, linear);
+    stroke: var(--progress-radial-color, #{pal($pal-primary)});
+    stroke-linecap: var(--progress-radial-stroke-linecap, round);
+    stroke-width: var(--progress-radial-stroke-width, 10);
   }
 }
 </style>

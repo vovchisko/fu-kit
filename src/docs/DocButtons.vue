@@ -1,10 +1,16 @@
 <template>
   <div class="buttons">
-    <fu-button class="primary">primary</fu-button>
-    <fu-button class="secondary">secondary</fu-button>
-    <fu-button class="warning">warning</fu-button>
-    <fu-button class="danger">danger</fu-button>
-    <fu-button disabled>disabled</fu-button>
+    <div class="row">
+      <fu-button class="primary">primary</fu-button>
+      <fu-button class="secondary">secondary</fu-button>
+      <fu-button class="success">secondary</fu-button>
+      <fu-button class="warning">warning</fu-button>
+      <fu-button class="danger">danger</fu-button>
+      <fu-button disabled>disabled</fu-button>
+    </div>
+    <div class="row">
+      <fu-button class="primary">primary buttons with a long text inside</fu-button>
+    </div>
   </div>
 </template>
 
@@ -19,20 +25,27 @@ export default {
 
 <style scoped lang="scss">
 .buttons {
-  display: flex;
-  gap: 1em;
+  .row {
+    @include spacing-padding(sp300);
 
+    gap: 1em;
+    max-width: 13em;
+    display: flex;
+  }
   .primary {
     // default
   }
   .secondary {
-    --fu-button-bg: #{pal(secondary)};
+    --button-bg: #{pal(secondary)};
+  }
+  .success {
+    --button-bg: #{pal(success)};
   }
   .warning {
-    --fu-button-bg: #{pal(warning)};
+    --button-bg: #{pal(warning)};
   }
   .danger {
-    --fu-button-bg: #{pal(danger)}; // todo: it start seems like simple var() would be better.
+    --button-bg: #{pal(danger)};
   }
 }
 </style>

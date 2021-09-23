@@ -1,13 +1,8 @@
 <template>
   <fu-button
-      link-like
       class="fu-copy"
       fill="none"
       @click="handleCopyToClipboard"
-      :aria-label="isCopied ? 'Copied!' : label "
-      data-microtip-position="top"
-      data-microtip-size="small"
-      role="tooltip"
       :class="{'_hot': isCopied}"
   >
     <slot />
@@ -24,7 +19,6 @@ export default {
   components: { FuButton },
   props: {
     value: { type: String, required: true },
-    label: { type: String, default: 'Copy value' },
   },
   setup (props) {
     const isCopied = ref(false)
@@ -80,24 +74,23 @@ export default {
 
 <style lang="scss" scoped>
 .fu-copy {
-  @include spacing-padding(0, $sp200);
+  @include spacing-padding(0, sp200);
 
-  white-space: nowrap;
-  background: pal($pal-primary, 0.2);
   text-decoration: none;
-  border: 1px solid pal($pal-primary, 0.6);
+  border: 1px solid transparent;
   transition: all 1000ms ease-out;
-  color: pal($pal-prime, 0.8);
+  color: color(dark);
+  justify-content: flex-start;
+
+  --button-bg: #{color(dark, 0.5)};
 
   &:hover {
-    color: pal($pal-prime);
+    color: color(black);
   }
 
   &._hot {
     transition: none;
-    border-color: pal($pal-success);
-    background-color: pal($pal-success, 0.8);
-    color: white;
+    border-color: pal(success);
   }
 }
 </style>

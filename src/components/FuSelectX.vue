@@ -31,7 +31,7 @@
 <script>
 import { computed, nextTick, ref, watch } from 'vue'
 
-import UiText   from './UiText.vue'
+import UiText   from './FuText.vue'
 import FuButton from './FuButton.vue'
 
 export default {
@@ -189,9 +189,9 @@ export default {
 
 <style lang="scss">
 :root {
-  --fu-select-x-bg: black;
-  --fu-select-x-border-color: #{pal($pal-primary)};
-  --fu-select-x-border-width: 1px;
+  --select-x-bg: black;
+  --select-x-border-color: #{pal($pal-primary)};
+  --select-x-border-width: 1px;
 }
 </style>
 
@@ -212,9 +212,9 @@ export default {
     display: block;
     box-sizing: border-box;
     width: 100%;
-    height: var(--fu-height);
-    border-width: var(--fu-select-x-border-width);
-    border-color: var(--fu-select-x-border-color);
+    height: var(--height);
+    border-width: var(--select-x-border-width);
+    border-color: var(--select-x-border-color);
     border-style: solid;
 
     &:focus {
@@ -235,8 +235,8 @@ export default {
     display: none;
     flex-direction: column;
     justify-content: stretch;
-    border-width: var(--fu-select-x-border-width);
-    border-color: var(--fu-select-x-border-color);
+    border-width: var(--select-x-border-width);
+    border-color: var(--select-x-border-color);
     border-style: solid;
     position: absolute;
     left: 0;

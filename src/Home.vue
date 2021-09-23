@@ -1,18 +1,44 @@
 <template>
   <div class="home">
-    <h1>FU-KIT</h1>
-    <pre>npm i fu-kit</pre>
-    <p>Just the right amount of UI</p>
+    <h1 class="home_hero">FU*KIT</h1>
+    <fu-copy value="npm i fu-kit" class="home_pre">📋 npm i fu-kit</fu-copy>
+    <p class="home_slogan">Just the right amount of UI</p>
   </div>
 </template>
 
 <script>
+import FuCopy from '@/components/FuCopy.vue'
+
 export default {
   name: 'Home',
+  components: { FuCopy },
 }
 </script>
 <style lang="scss" scoped>
 .home {
-  @include scrollbar-awesome()
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 25vh;
+
+  &_hero {
+    @include typo(h900);
+  }
+
+  &_pre {
+    @include typo(h300);
+    @include spacing-padding(sp100, sp400);
+    @include spacing-margin(sp400, 0);
+
+    background: color(grey100);
+    border: 1px solid color(grey200);
+    font-weight: 600;
+    border-radius: 3px;
+  }
+
+  &_slogan {
+    @include typo(h200);
+  }
 }
 </style>

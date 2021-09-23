@@ -28,9 +28,9 @@ export default {
 </script>
 <style lang="scss">
 :root {
-  --fu-text-bg: black;
-  --fu-text-border-color: #{pal($pal-primary)};
-  --fu-text-border-width: 1px;
+  --text-bg: black;
+  --text-border-color: #{pal($pal-primary)};
+  --text-border-width: 1px;
 }
 </style>
 <style lang="scss" scoped>
@@ -49,9 +49,9 @@ export default {
     display: block;
     box-sizing: border-box;
     width: 100%;
-    height: var(--fu-height);
-    border-width: var(--fu-text-border-width);
-    border-color: var(--fu-text-border-color);
+    height: var(--height);
+    border-width: var(--text-border-width);
+    border-color: var(--text-border-color);
     border-style: solid;
 
     &:focus {

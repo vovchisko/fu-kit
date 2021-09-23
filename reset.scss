@@ -1,0 +1,52 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+address, article, aside, blockquote, details, dialog, dd, div, dl, dt, fieldset, figcaption,
+figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, hr, li, main, nav,
+ol, p, pre, section, table, ul {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+input, button, textarea, select {
+  box-sizing: border-box;
+}
+
+label {
+  display: block;
+}
+
+h1 {
+  @include typo(h700);
+}
+
+h2 {
+  @include typo(h600);
+}
+
+h3 {
+  @include typo(h500);
+}
+
+h4 {
+  @include typo(h400);
+}
+
+h5 {
+  @include typo(h300);
+}
+
+p {
+  @include typo(h200);
+}
+
+small {
+  @include typo(h100);
+}
+
+label {
+  @include typo(h100);
+}

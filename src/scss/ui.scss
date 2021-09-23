@@ -1,6 +1,3 @@
-/**
- * @param {Boolean} transparent
- */
 @mixin scrollbar-awesome($transparent: false) {
   &::-webkit-scrollbar-track {
     background-color: transparent;
@@ -48,20 +45,17 @@
   }
 }
 
-
-
 @mixin scrollbar-invisible() {
   &::-webkit-scrollbar {
-    width: 0; // Remove scrollbar space
-    background: transparent; // Optional: just make scrollbar invisible
-    display: none; // Safari and Chrome
+    width: 0;
+    background: transparent;
+    display: none;
   }
 
-  // Optional: show position indicator in red
   &::-webkit-scrollbar-thumb {
     background: transparent;
   }
 
-  -ms-overflow-style: none; // IE 10+
-  scrollbar-width: none; // Firefox
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

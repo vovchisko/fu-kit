@@ -14,14 +14,17 @@ export default {
   props: { linkLike: { type: Boolean, default: false } },
 }
 </script>
+
 <style lang="scss">
 :root {
-  --fu-button-bg: #{pal(primary)};
-  --fu-button-bg-disabled: #{pal(primary, .3)};
-  --fu-button-text: #{color(light)};
-  --fu-button-border-color: var(--fu-button-bg);
+  --button-bg: #{pal(primary)};
+  --button-bg-disabled: #{pal(ui-disabled)};
+  --button-text: #{color(light)};
+  --button-border-color: #{pal(ui-disabled-border)};
+  --button-border-sytyle: var(--pal-ui-disabled-border-style);
 }
 </style>
+
 <style lang="scss" scoped>
 .fu-button-link {
   background: transparent;
@@ -48,13 +51,13 @@ export default {
   cursor: pointer;
   font-family: var(--typo-font-text);
   min-height: var(--lt-ui-h);
-  color: var(--fu-button-text);
+  color: var(--button-text);
   border-width: var(--lt-ui-border-w);
   border-style: solid;
-  border-color: var(--fu-button-bg);
+  border-color: var(--button-bg);
   border-radius: var(--lt-ui-border-r);
-  background: var(--fu-button-bg);
-  transition: var(--fu-ui-transition);
+  background: var(--button-bg);
+  transition: var(--ui-transition);
 
   &:active {
     transform: translateY(2px);
@@ -63,13 +66,15 @@ export default {
 
   &:disabled {
     cursor: not-allowed;
-    background: var(--fu-button-bg-disabled);
-    border-style: dashed;
+    background: var(--button-bg-disabled);
+    border-color: var(--button-border-color);
+    border-style: var(--button-border-sytyle);
+    box-shadow: none;
   }
 
-  &:hover {
+  &:hover:not(:disabled) {
     text-decoration: none;
-    box-shadow: 0 3px 15px -8px var(--fu-button-bg);
+    box-shadow: 0 3px 15px -6px var(--button-bg);
   }
 }
 </style>

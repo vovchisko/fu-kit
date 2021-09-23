@@ -1,0 +1,15 @@
+:root {
+  --lt-header-height: 64px;
+  --lt-footer-height: 64px;
+  --lt-horizontal-padding: 16px;
+}
+
+body {
+  font-family: var(--typo-font-text);
+  color: var(--pal-text);
+  background: var(--pal-bg);
+}
+
+#app {
+  @include scrollbar-awesome();
+}
