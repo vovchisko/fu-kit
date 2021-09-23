@@ -29,7 +29,7 @@ export default {
 <style lang="scss">
 :root {
   --text-bg: black;
-  --text-border-color: #{pal($pal-primary)};
+  --text-border-color: #{pal(primary)};
   --text-border-width: 1px;
 }
 </style>
@@ -49,7 +49,7 @@ export default {
     display: block;
     box-sizing: border-box;
     width: 100%;
-    height: var(--height);
+    height: var(--lt-ui-h);
     border-width: var(--text-border-width);
     border-color: var(--text-border-color);
     border-style: solid;

@@ -16,13 +16,13 @@
       <fu-button
           link-like
           class="fu-select-x_list-item"
-          :class="{'_selected': e.val === model}"
+          :class="{'_selected': e.value === model}"
           tabindex="-1"
           v-for="(e) in filteredItems"
           @click="onSelect($event,e)"
           @blur="onSomeBlur"
       >
-        {{ e.lbl }}
+        {{ e.label }}
       </fu-button>
     </span>
   </label>
@@ -50,9 +50,9 @@ export default {
     const search = ref('')
     const model = ref(props.modelValue)
 
-    watch(() => props.modelValue, (val) => {
-      model.value = val
-      search.value = val
+    watch(() => props.modelValue, (value) => {
+      model.value = value
+      search.value = value
     })
 
     const normalItems = computed(() => {
@@ -60,21 +60,21 @@ export default {
         if (typeof o === 'object' && o !== null && !Array.isArray(o)) {
           return o
         } else {
-          return { val: o, lbl: o }
+          return { value: o, label: o }
         }
       })
     })
 
     const filteredItems = computed(() => {
       if (!search.value || search.value === model.value) return normalItems.value
-      return normalItems.value.filter((i) => String(i.lbl).includes(search.value))
+      return normalItems.value.filter((i) => String(i.label).includes(search.value))
     })
 
-    const selectedItem = computed(() => normalItems.value.find(o => model.value === o.val))
+    const selectedItem = computed(() => normalItems.value.find(o => model.value === o.value))
 
     const onSelect = (event, item) => {
-      search.value = item.val
-      model.value = item.val
+      search.value = item.value
+      model.value = item.value
       emit('update:modelValue', model.value)
       emit('select', model.value)
 
@@ -98,7 +98,7 @@ export default {
         if (nodes[0]) {
           nodes[0].click()
         } else if (props.allowCustom) {
-          onSelect(e, { lbl: search.value, val: search.value })
+          onSelect(e, { label: search.value, value: search.value })
         }
 
         e.preventDefault()
@@ -190,7 +190,7 @@ export default {
 <style lang="scss">
 :root {
   --select-x-bg: black;
-  --select-x-border-color: #{pal($pal-primary)};
+  --select-x-border-color: #{pal(primary)};
   --select-x-border-width: 1px;
 }
 </style>
@@ -212,7 +212,7 @@ export default {
     display: block;
     box-sizing: border-box;
     width: 100%;
-    height: var(--height);
+    height: var(--lt-ui-h);
     border-width: var(--select-x-border-width);
     border-color: var(--select-x-border-color);
     border-style: solid;
@@ -241,32 +241,33 @@ export default {
     position: absolute;
     left: 0;
     top: 100%;
-    margin-top: spacing($sp100);
+    margin-top: spacing(sp100);
     min-width: 100%;
-    background-color: pal($pal-bg);
+    background-color: pal(bg);
 
     &-item {
-      @include spacing-padding(0, $sp100);
-      @include typo($h200, $h100);
+      @include spacing-padding(0, sp100);
+      @include typo(200, 400);
 
       text-decoration: none;
-      font-weight: normal;
       border-radius: 0;
+      justify-content: flex-start;
+      font-weight: inherit;
 
       &:hover {
-        color: pal($pal-prime);
-        background-color: pal($pal-block-light, 0.3);
+        color: pal(prime);
+        background-color: pal(pal-block-light, 0.3);
       }
 
       &:focus {
-        color: pal($pal-prime);
+        color: pal(prime);
         outline: none;
-        background-color: pal($pal-block-light);
+        background-color: pal(block);
       }
 
       &._selected {
-        background-color: pal($pal-primary);
-        color: pal($pal-bg);
+        background-color: pal(primary);
+        color: pal(bg);
       }
     }
   }

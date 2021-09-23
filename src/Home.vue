@@ -23,11 +23,11 @@ export default {
   margin-top: 25vh;
 
   &_hero {
-    @include typo(h900);
+    @include typo(900);
   }
 
   &_pre {
-    @include typo(h300);
+    @include typo(300);
     @include spacing-padding(sp100, sp400);
     @include spacing-margin(sp400, 0);
 
@@ -38,7 +38,7 @@ export default {
   }
 
   &_slogan {
-    @include typo(h200);
+    @include typo(200);
   }
 }
 </style>

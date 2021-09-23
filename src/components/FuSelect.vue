@@ -49,7 +49,7 @@ export default {
     display: block;
     box-sizing: border-box;
     width: 100%;
-    height: var(--height);
+    height: var(--lt-ui-h);
   }
 }
 </style>

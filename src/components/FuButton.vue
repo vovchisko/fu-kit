@@ -41,10 +41,11 @@ export default {
 }
 
 .fu-button {
-  @include typo(h200, 600);
+  @include typo(200);
   @include spacing-padding(sp200, sp400);
 
   display: flex;
+  font-weight: 600;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;

@@ -10,6 +10,7 @@
       <router-link to="/" active-class="_active" class="app_main-nav-link">Home</router-link>
       <router-link to="/typo" active-class="_active" class="app_main-nav-link">Type</router-link>
       <router-link to="/button" active-class="_active" class="app_main-nav-link">Buttons</router-link>
+      <router-link to="/select" active-class="_active" class="app_main-nav-link">Select</router-link>
     </nav>
     <div class="app_main-page">
       <router-view />
@@ -37,7 +38,7 @@
 
     &-logo {
       &-link {
-        @include typo(h400);
+        @include typo(400);
 
         color: color(black);
         text-decoration: none;
@@ -88,7 +89,7 @@
     padding: 0 var(--lt-horizontal-padding);
 
     &-copy {
-      @include typo(h100);
+      @include typo(100);
       color: color(grey400);
     }
   }

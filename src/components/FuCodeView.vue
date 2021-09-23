@@ -49,8 +49,9 @@ export default {
   }
 
   &_title {
-    @include typo($h100, bold);
+    @include typo(100);
 
+    font-weight: bold;
     margin-bottom: spacing($sp200);
   }
 

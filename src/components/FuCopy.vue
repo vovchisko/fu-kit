@@ -62,6 +62,7 @@ export default {
         document.body.removeChild(textArea)
       }
     }
+
     return {
       handleCopyToClipboard,
       isCopied,
