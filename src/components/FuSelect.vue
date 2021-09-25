@@ -1,14 +1,14 @@
 <template>
-  <label class="fu-select">
-    <select
-        v-bind="$attrs"
-        :value="modelValue"
-        class="fu-select_input"
-        @input="$emit('update:modelValue', $event.target.value)"
-    >
-      <slot />
-    </select>
-  </label>
+
+  <select
+      class="fu-select"
+      v-bind="$attrs"
+      :value="modelValue"
+      @input="$emit('update:modelValue', $event.target.value)"
+  >
+    <slot />
+  </select>
+
 </template>
 
 <script>
@@ -25,21 +25,62 @@ export default {
 </script>
 <style lang="scss">
 :root {
-  // todo: how to style?
+  --select-color: #{pal(primary)};
+  --select-color-disabled: #{pal(ui-disabled)};
+  --select-text: #{pal-acc(primary)};
+  --select-border-color: #{pal(ui-disabled-border)};
+  --select-border-sytyle: var(--pal-ui-disabled-border-style);
 }
 </style>
 <style lang="scss" scoped>
 .fu-select {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: left;
+  @include typo(200);
+  @include spacing-padding(200);
 
-  &_input {
-    display: block;
-    box-sizing: border-box;
-    width: 100%;
-    height: var(--lt-ui-h);
+  box-sizing: border-box;
+  cursor: pointer;
+  font-family: var(--typo-font-text);
+  min-height: var(--lt-ui-h);
+  border-width: var(--lt-ui-border-w);
+  border-style: solid;
+  border-color: var(--select-color);
+  border-radius: var(--lt-ui-border-r);
+  transition: var(--ui-transition);
+  color: var(--select-color);
+  line-height: 1;
+  outline: none;
+
+  &:hover:not(:disabled) {
+    text-decoration: none;
+    box-shadow: 0 3px 12px -6px var(--select-color);
+  }
+
+  &:hover:not(:disabled):active {
+    transform: translateY(2px);
+    transition-duration: 30ms;
+    box-shadow: 0 3px 4px -2px var(--select-color);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    background: var(--select-color-disabled);
+    border-color: var(--select-border-color);
+    border-style: var(--select-border-sytyle);
+    box-shadow: none;
+  }
+
+  background: transparent;
+  &:disabled {
+    color: var(--select-color-disabled);
+  }
+
+  &:hover:not(:disabled) {
+    box-shadow: 0 3px 10px -6px var(--select-color);
+    color: var(--select-color);
+  }
+
+  &:hover:not(:disabled):active {
+    box-shadow: 0 2px 4px -2px var(--select-color);
   }
 }
 </style>

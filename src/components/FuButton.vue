@@ -52,10 +52,15 @@ export default {
   background: var(--button-color);
   color: var(--button-text);
   line-height: 1;
+  outline: none;
 
   &:hover:not(:disabled) {
     text-decoration: none;
     box-shadow: 0 3px 12px -6px var(--button-color);
+  }
+
+  &:focus:not(:disabled) {
+    box-shadow: 0 3px 4px -2px var(--button-color);
   }
 
   &:hover:not(:disabled):active {
