@@ -62,6 +62,7 @@
   --pal-link-active: rgb(var(--rgb-brand));
 
   --ui-pal: var(--pal-primary);
+  --ui-pal-bg: var(--pal-bg);
   --ui-pal-acc: var(--pal-acc-primary);
   --ui-pal-lateral: rgb(var(--rgb-grey200));
   --ui-pal-text: rgb(var(--rgb-dark));
@@ -76,6 +77,7 @@
   --ui-lt-border-width: 1px;
   --ui-lt-border-radius: var(--lt-border-radius-inner);
   --ui-lt-disabled-border-style: dashed;
+  --ui-lt-scroll-width: 12px;
 
   --typo-font-heading: 'Segoe UI', San Francisco, Roboto, Lucida Sans;
   --typo-font-text: 'Segoe UI', San Francisco, Roboto, Lucida Sans;

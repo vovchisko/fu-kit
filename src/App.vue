@@ -12,6 +12,7 @@
       <router-link to="/button" active-class="_active" class="app_main-nav-link">Button</router-link>
       <router-link to="/select" active-class="_active" class="app_main-nav-link">Select</router-link>
       <router-link to="/text" active-class="_active" class="app_main-nav-link">Text</router-link>
+      <router-link to="/textarea" active-class="_active" class="app_main-nav-link">Textarea</router-link>
       <hr>
       <router-link to="/sandbox" active-class="_active" class="app_main-nav-link">Sandbox</router-link>
     </nav>

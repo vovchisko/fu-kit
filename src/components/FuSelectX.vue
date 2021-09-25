@@ -220,7 +220,7 @@ export default {
   }
 
   &_list {
-    @include scrollbar-awesome-bold();
+    @include scrollbar-awesome();
 
     overflow: auto;
     max-height: 30vh;

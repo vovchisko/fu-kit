@@ -1,59 +1,42 @@
 @mixin scrollbar-awesome($transparent: false) {
   &::-webkit-scrollbar-track {
-    background-color: transparent;
+    background-color: var(--ui-pal-bg);
   }
 
   &::-webkit-scrollbar {
-    @if ($transparent) {
-      background-color: transparent;
-    }
-
-    background-color: pal(block);
-    width: 2px;
-    height: 2px;
+    width: var(--ui-lt-scroll-width);
+    height: var(--ui-lt-scroll-width);
+    border-radius: var(--ui-lt-scroll-width);
+    background-color: var(--ui-pal-bg);
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: pal(prime);
-  }
-}
-
-@mixin scrollbar-awesome-bold() {
-  &::-webkit-scrollbar-track {
+    border: 1px solid var(--ui-pal-bg);
+    border-radius: var(--ui-lt-scroll-width);
     background-color: transparent;
   }
 
-  &::-webkit-scrollbar {
-    width: 0.5em;
-    height: 0.5em;
-    border-radius: 0.25em;
-    background: transparent;
+  ::-webkit-scrollbar-corner {
+    background-color: transparent !important;
+    border: 0 none !important;
+    box-shadow: none !important;
   }
 
-  &::-webkit-scrollbar-thumb {
-    background-color: pal(prime);
-    border: 1px solid transparent;
-    border-radius: 0.25em;
-  }
-
-  &:hover::-webkit-scrollbar {
-    background-color: pal(block);
-  }
-
-  &:hover::-webkit-scrollbar-thumb {
-    background-color: pal(prime);
+  &:focus::-webkit-scrollbar-thumb,
+  &:hover::-webkit-scrollbar-thumb, {
+    background-color: var(--ui-pal);
   }
 }
 
 @mixin scrollbar-invisible() {
   &::-webkit-scrollbar {
     width: 0;
-    background: transparent;
+    background-color: transparent;
     display: none;
   }
 
   &::-webkit-scrollbar-thumb {
-    background: transparent;
+    background-color: transparent;
   }
 
   -ms-overflow-style: none;
