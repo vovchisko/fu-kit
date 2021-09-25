@@ -1,5 +1,4 @@
 <template>
-
   <select
       class="fu-select"
       v-bind="$attrs"
@@ -8,7 +7,6 @@
   >
     <slot />
   </select>
-
 </template>
 
 <script>
@@ -27,9 +25,8 @@ export default {
 :root {
   --select-color: #{pal(primary)};
   --select-color-disabled: #{pal(ui-disabled)};
-  --select-text: #{pal-acc(primary)};
-  --select-border-color: #{pal(ui-disabled-border)};
-  --select-border-sytyle: var(--ui-lt-disabled-border-style);
+  --select-item-active: #{pal-acc(primary)};
+  --select-item-disabled: #{pal(ui-disabled-border)};
 }
 </style>
 <style lang="scss" scoped>

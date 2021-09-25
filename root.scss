@@ -61,10 +61,21 @@
   --pal-link: rgb(var(--rgb-primary));
   --pal-link-active: rgb(var(--rgb-brand));
 
-  --pal-ui-disabled: rgb(var(--rgb-grey200));
-  --pal-ui-disabled-border: rgb(var(--rgb-grey300));
+  --ui-pal: var(--pal-primary);
+  --ui-pal-acc: var(--pal-acc-primary);
+  --ui-pal-lateral: rgb(var(--rgb-grey200));
+  --ui-pal-text: rgb(var(--rgb-dark));
+  --ui-pal-text-select: rgb(var(--rgb-light));
+  --ui-pal-placeholder: rgb(var(--rgb-grey200));
+  --ui-pal-disabled: rgb(var(--rgb-grey100));
+  --ui-pal-disabled-border: rgb(var(--rgb-grey300));
 
   --ui-transition: all linear 120ms;
+  --ui-lt-h: 36px;
+  --ui-lt-border-style: solid;
+  --ui-lt-border-width: 1px;
+  --ui-lt-border-radius: var(--lt-border-radius-inner);
+  --ui-lt-disabled-border-style: dashed;
 
   --typo-font-heading: 'Segoe UI', San Francisco, Roboto, Lucida Sans;
   --typo-font-text: 'Segoe UI', San Francisco, Roboto, Lucida Sans;
@@ -105,14 +116,8 @@
   --lt-sp800: 256px;
   --lt-sp900: 512px;
 
-  --lt-border-radius: 8px;
-  --lt-border-radius-inner: 4px;
-
-  --ui-lt-h: 36px;
-  --ui-lt-border-style: solid;
-  --ui-lt-border-width: 1px;
-  --ui-lt-border-radius: var(--lt-border-radius-inner);
-  --ui-lt-disabled-border-style: dashed;
+  --lt-border-radius: 9px;
+  --lt-border-radius-inner: 5px;
 
   --lt-z-1: 1;
   --lt-z-back: -1;

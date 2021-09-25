@@ -1,6 +1,6 @@
 <template>
-  <div class="select">
-    <div class="row">
+  <div class="doc-select">
+    <div class="doc-select_row">
       <fu-select v-model="val">
         <option v-for="i in list" :value="i.value">{{ i.label }}</option>
       </fu-select>
@@ -35,9 +35,7 @@ export default {
 .select {
   .row {
     @include spacing-padding(300);
-
     gap: 1em;
-    max-width: 13em;
     display: flex;
   }
   .primary {

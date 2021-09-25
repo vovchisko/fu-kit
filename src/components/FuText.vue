@@ -1,10 +1,18 @@
 <template>
-  <input
-      v-bind="$attrs"
-      :value="modelValue"
-      class="fu-text_input"
-      @input="$emit('update:modelValue', $event.target.value)"
-  />
+  <label
+      class="fu-text"
+      :class="{'_disabled': $attrs.disabled !== undefined || $attrs.readOnly  !== undefined }"
+  >
+    <slot />
+    <slot name="left" />
+    <input
+        v-bind="$attrs"
+        :value="modelValue"
+        class="fu-text_input"
+        @input="$emit('update:modelValue', $event.target.value)"
+    >
+    <slot name="right" />
+  </label>
 </template>
 
 <script>
@@ -19,32 +27,66 @@ export default {
   emits: [ 'update:modelValue' ],
 }
 </script>
-<style lang="scss">
-:root {
-  --text-bg: black;
-  --text-border-color: #{pal(primary)};
-  --text-border-width: 1px;
-}
-</style>
 <style lang="scss" scoped>
 .fu-text {
+  @include typo(200);
+
+  padding: 0;
   display: flex;
+  box-sizing: border-box;
   align-items: center;
-  flex-direction: column;
-  justify-content: left;
+  justify-content: stretch;
+  border-style: var(--ui-lt-border-style);
+  border-width: var(--ui-lt-border-width);
+  border-color: var(--ui-pal-lateral);
+  border-radius: var(--ui-lt-border-radius);
+  transition-duration: 240ms;
+  transition-timing-function: ease-in-out;
+  transition-property: border-color, box-shadow;
+  height: var(--ui-lt-h);
 
   &_input {
-    display: block;
-    box-sizing: border-box;
-    width: 100%;
-    height: var(--ui-lt-h);
-    border-width: var(--text-border-width);
-    border-color: var(--text-border-color);
-    border-style: solid;
+    @include typo(200);
+    @include spacing-padding(100, 300);
 
-    &:focus {
-      outline: none;
+    color: var(--ui-pal-text);
+    caret-color: var(--ui-pal);
+    min-height: min(100%);
+    border: none;
+    outline: none;
+    background: transparent;
+    box-sizing: border-box;
+    flex: 1;
+    display: block;
+    min-width: 0;
+    margin: 0;
+
+    &::selection {
+      background-color: var(--ui-pal);
+      color: var(--ui-pal-text-select);
     }
+
+    &[disabled], &[read-only] {
+      cursor: text;
+      color: var(--ui-pal-disabled-border);
+    }
+  }
+
+  &:hover {
+    outline: none;
+    box-shadow: 0 5px 12px -4px rgb(var(--rgb-dark), 0.2);
+  }
+
+  &:focus-within {
+    outline: none;
+    box-shadow: 0 0 0 0 var(--ui-pal);
+    border-color: var(--ui-pal);
+  }
+
+  &._disabled {
+    border: var(--ui-lt-border-width) var(--ui-lt-disabled-border-style) var(--ui-pal-disabled-border);
+    background: transparent;
+    box-shadow: none;
   }
 }
 </style>

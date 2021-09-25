@@ -1,6 +1,6 @@
 <template>
-  <div class="buttons">
-    <div class="row">
+  <div class="doc-button">
+    <div class="doc-button_row">
       <fu-button>default</fu-button>
       <fu-button class="primary">primary</fu-button>
       <fu-button class="secondary">secondary</fu-button>
@@ -9,7 +9,7 @@
       <fu-button class="negative">negative</fu-button>
       <fu-button disabled>disabled</fu-button>
     </div>
-    <div class="row">
+    <div class="doc-button_row">
       <fu-button hollow>default</fu-button>
       <fu-button hollow class="primary">primary</fu-button>
       <fu-button hollow class="secondary">secondary</fu-button>
@@ -18,8 +18,14 @@
       <fu-button hollow class="negative">negative</fu-button>
       <fu-button hollow disabled>disabled</fu-button>
     </div>
-    <div class="row">
-      <fu-button class="primary">primary buttons with a long text inside</fu-button>
+    <div class="doc-button_row">
+      <fu-button class="primary">
+        primary buttons<br />with a long text inside
+      </fu-button>
+
+      <fu-button class="secondary">
+        <h4>HUGE TEXT</h4>
+      </fu-button>
     </div>
 
     <fu-code-view label="Example">{{ example }}</fu-code-view>
@@ -31,11 +37,18 @@ import FuButton   from '@/components/FuButton.vue'
 import FuCodeView from '@/components/FuCodeView.vue'
 
 const example = `
-nope
+/// vue
+<fu-button hollow>default</fu-button>
+<fu-button hollow class="primary">primary</fu-button>
+
+/// css
+.primary {
+  --button-pal: var(--pal-primary);
+}
 `
 
 export default {
-  name: 'doc-buttons',
+  name: 'doc-button',
   components: { FuCodeView, FuButton },
   setup () {
     return { example }
@@ -44,37 +57,35 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.buttons {
-  .row {
+.doc-button {
+  &_row {
     @include spacing-padding(300);
-
     gap: 1em;
-    max-width: 13em;
     display: flex;
   }
 
   .brand {
-    --button-pal: var(--pal-brand);
+    --ui-pal: var(--pal-brand);
   }
 
   .primary {
-    --button-pal: var(--pal-primary);
+    --ui-pal: var(--pal-primary);
   }
 
   .secondary {
-    --button-pal: var(--pal-secondary);
+    --ui-pal: var(--pal-secondary);
   }
 
   .positive {
-    --button-pal: var(--pal-positive);
+    --ui-pal: var(--pal-positive);
   }
 
   .warning {
-    --button-pal: var(--pal-warning);
+    --ui-pal: var(--pal-warning);
   }
 
   .negative {
-    --button-pal: var(--pal-negative);
+    --ui-pal: var(--pal-negative);
   }
 }
 </style>

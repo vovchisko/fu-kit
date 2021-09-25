@@ -24,24 +24,12 @@ export default {
 }
 </script>
 
-<style lang="scss">
-:root {
-  --button-pal: var(--pal-primary);
-  --button-pal-text: var(--pal-acc-primary);
-  --button-pal-shadow: var(--pal-primary);
-  --button-disabled-pal: var(--pal-ui-disabled);
-  --button-disabled-pal-border: var(--pal-ui-disabled-border);
-  --button-disabled-border-style: var(--ui-lt-disabled-border-style);
-}
-</style>
-
 <style lang="scss" scoped>
 .fu-button {
   @include typo(200);
-  @include spacing-padding(200, 400);
+  @include spacing-padding(300, 400);
 
   display: flex;
-  font-weight: 600;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
@@ -50,11 +38,11 @@ export default {
   min-height: var(--ui-lt-h);
   border-width: var(--ui-lt-border-width);
   border-style: var(--ui-lt-border-style);
-  border-color: var(--button-pal);
+  border-color: var(--ui-pal);
   border-radius: var(--ui-lt-border-radius);
   transition: var(--ui-transition);
-  background: var(--button-pal);
-  color: var(--button-pal-text);
+  background: var(--ui-pal);
+  color: var(--ui-pal-acc);
   line-height: 1;
   will-change: box-shadow, transform;
 
@@ -68,46 +56,47 @@ export default {
 
   &:hover {
     text-decoration: none;
-    box-shadow: var(--button-hover-shadow, 0 3px 10px -4px var(--button-pal));
+    box-shadow: 0 3px 10px -4px var(--ui-pal);
   }
 
   &:focus {
-    box-shadow: var(--button-hover-shadow, 0 3px 10px -4px var(--button-pal));
+    box-shadow: 0 3px 10px -4px var(--ui-pal);
   }
 
   &:active {
     transform: translateY(2px);
     transition-duration: 20ms;
-    box-shadow: var(--button-hover-shadow, 0 2px 4px -2px var(--button-pal));
+    box-shadow: 0 2px 4px -2px var(--ui-pal);
   }
 
   &:disabled {
     cursor: not-allowed;
-    background: var(--button-disabled-pal);
-    border-color: var(--button-disabled-pal-border);
-    border-style: var(--button-disabled-border-style);
+    background: var(--ui-pal-disabled);
+    border-color: var(--ui-pal-disabled-border);
+    border-style: var(--ui-lt-disabled-border-style);
+    color: var(--ui-pal-disabled-border);
     box-shadow: none;
   }
 
   &._hollow {
     background: transparent;
-    color: var(--button-pal);
+    color: var(--ui-pal);
 
     &:hover {
-      box-shadow: 0 3px 10px -6px var(--button-pal);
-      color: var(--button-pal);
+      box-shadow: 0 3px 10px -6px var(--ui-pal);
+      color: var(--ui-pal);
     }
 
     &:focus {
-      box-shadow: var(--button-hover-shadow, 0 3px 10px -6px var(--button-pal));
+      box-shadow: 0 3px 10px -6px var(--ui-pal);
     }
 
     &:active {
-      box-shadow: 0 2px 4px -2px var(--button-pal);
+      box-shadow: 0 2px 4px -2px var(--ui-pal);
     }
 
     &:disabled {
-      color: var(--button-disabled-pal);
+      color: var(--ui-pal-disabled-border);
       box-shadow: none;
     }
   }

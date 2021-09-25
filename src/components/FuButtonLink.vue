@@ -28,7 +28,7 @@ export default {
 :root {
   --button-link-pal: var(--pal-link);
   --button-link-pal-active: var(--pal-link-active);
-  --button-link-disabled-pal: var(--pal-ui-disabled);
+  --button-link-disabled-pal: var(--ui-pal-disabled);
 }
 </style>
 
