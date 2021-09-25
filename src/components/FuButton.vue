@@ -4,7 +4,6 @@
         ...$attrs,
         type: $attrs.type || 'button',
         class: 'fu-button' + (hollow ? ' _hollow' : ''),
-        style: $attrs.style + 'oh my'
       }"
       @mouseup="mUp"
   >
@@ -27,10 +26,10 @@ export default {
 
 <style lang="scss">
 :root {
-  --button-pal: #{pal(primary)};
-  --button-pal-text: #{pal(acc-primary)};
-  --button-pal-shadow: #{pal(acc-primary)};
-  --button-disabled-pal: #{pal(ui-disabled)};
+  --button-pal: var(--pal-primary);
+  --button-pal-text: var(--pal-acc-primary);
+  --button-pal-shadow: var(--pal-primary);
+  --button-disabled-pal: var(--pal-ui-disabled);
   --button-disabled-pal-border: var(--pal-ui-disabled-border);
   --button-disabled-border-style: var(--ui-lt-disabled-border-style);
 }
@@ -98,9 +97,11 @@ export default {
       box-shadow: 0 3px 10px -6px var(--button-pal);
       color: var(--button-pal);
     }
+
     &:focus {
       box-shadow: var(--button-hover-shadow, 0 3px 10px -6px var(--button-pal));
     }
+
     &:active {
       box-shadow: 0 2px 4px -2px var(--button-pal);
     }

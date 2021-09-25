@@ -26,7 +26,7 @@
       <div class="h900">900 Test sample</div>
     </div>
 
-    <fu-code-view label="Example">{{ example }}</fu-code-view>
+    <fu-code-view collapse label="Example">{{ example }}</fu-code-view>
   </div>
 </template>
 

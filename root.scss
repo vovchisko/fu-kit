@@ -1,4 +1,6 @@
 :root {
+
+  // RAW RGB VALUES
   --rgb-white: #{hex2rgb(#FFFFFF)};
   --rgb-light: #{hex2rgb(#FEFEFE)};
   --rgb-grey100: #{hex2rgb(#F4F4F4)};
@@ -10,43 +12,57 @@
   --rgb-grey700: #{hex2rgb(#515151)};
   --rgb-grey800: #{hex2rgb(#363636)};
   --rgb-grey900: #{hex2rgb(#1C1C1C)};
-
   --rgb-dark: #{hex2rgb(#151515)};
   --rgb-black: #{hex2rgb(#000000)};
+
   --rgb-brand: #{hex2rgb(#8347A8)};
-  --rgb-blue: #{hex2rgb(#2E88F1)};
-  --rgb-cold-dark: #{hex2rgb(#434F5F)};
-  --rgb-green: #{hex2rgb(#6DBE2C)};
-  --rgb-orange: #{hex2rgb(#FFA927)};
-  --rgb-red: #{hex2rgb(#FF4B4B)};
+  --rgb-primary: #{hex2rgb(#2E88F1)};
+  --rgb-secondary: #{hex2rgb(#434F5F)};
+  --rgb-positive: #{hex2rgb(#6DBE2C)};
+  --rgb-warning: #{hex2rgb(#FFA927)};
+  --rgb-negative: #{hex2rgb(#FF4B4B)};
 
   // Format palette colors: "--pal-{code}": #RGB
-  --pal-brand: var(--rgb-brand);
-  --pal-primary: var(--rgb-blue);
-  --pal-secondary: var(--rgb-cold-dark);
-  --pal-success: var(--rgb-green);
-  --pal-warning: var(--rgb-orange);
-  --pal-danger: var(--rgb-red);
-  --pal-error: var(--rgb-red);
 
-  --pal-acc-brand: var(--rgb-white);
-  --pal-acc-primary: var(--rgb-white);
-  --pal-acc-secondary: var(--rgb-white);
-  --pal-acc-success: var(--rgb-white);
-  --pal-acc-warning: var(--rgb-white);
-  --pal-acc-danger: var(--rgb-white);
-  --pal-acc-error: var(--rgb-white);
+  --pal-white: rgb(var(--rgb-white));
+  --pal-light: rgb(var(--rgb-light));
+  --pal-grey100: rgb(var(--rgb-grey100));
+  --pal-grey200: rgb(var(--rgb-grey200));
+  --pal-grey300: rgb(var(--rgb-grey300));
+  --pal-grey400: rgb(var(--rgb-grey400));
+  --pal-grey500: rgb(var(--rgb-grey500));
+  --pal-grey600: rgb(var(--rgb-grey600));
+  --pal-grey700: rgb(var(--rgb-grey700));
+  --pal-grey800: rgb(var(--rgb-grey800));
+  --pal-grey900: rgb(var(--rgb-grey900));
+  --pal-dark: rgb(var(--rgb-dark));
+  --pal-black: rgb(var(--rgb-black));
 
-  --pal-text: var(--rgb-dark);
-  --pal-text-dimm: var(--rgb-grey600);
-  --pal-link: var(--rgb-blue);
-  --pal-block: var(--rgb-grey100);
-  --pal-block-border: var(--rgb-grey200);
-  --pal-bg: var(--rgb-white);
-  --pal-overlay: var(--rgb-dark);
+  --pal-brand: rgb(var(--rgb-brand));
+  --pal-primary: rgb(var(--rgb-primary));
+  --pal-secondary: rgb(var(--rgb-secondary));
+  --pal-positive: rgb(var(--rgb-positive));
+  --pal-warning: rgb(var(--rgb-warning));
+  --pal-negative: rgb(var(--rgb-negative));
 
-  --pal-ui-disabled: var(--rgb-grey200);
-  --pal-ui-disabled-border: var(--rgb-grey300);
+  --pal-acc-brand: rgb(var(--rgb-white));
+  --pal-acc-primary: rgb(var(--rgb-white));
+  --pal-acc-secondary: rgb(var(--rgb-white));
+  --pal-acc-positive: rgb(var(--rgb-white));
+  --pal-acc-warning: rgb(var(--rgb-white));
+  --pal-acc-negative: rgb(var(--rgb-white));
+
+  --pal-text: rgb(var(--rgb-dark));
+  --pal-text-dimm: rgb(var(--rgb-grey600));
+  --pal-block: rgb(var(--rgb-grey100));
+  --pal-block-border: rgb(var(--rgb-grey200));
+  --pal-bg: rgb(var(--rgb-white));
+  --pal-overlay: rgba(var(--rgb-dark), 0.2);
+  --pal-link: rgb(var(--rgb-primary));
+  --pal-link-active: rgb(var(--rgb-brand));
+
+  --pal-ui-disabled: rgb(var(--rgb-grey200));
+  --pal-ui-disabled-border: rgb(var(--rgb-grey300));
 
   --ui-transition: all linear 120ms;
 

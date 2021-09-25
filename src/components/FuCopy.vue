@@ -91,7 +91,7 @@ export default {
 
   &._hot {
     transition: none;
-    border-color: pal(success);
+    border-color: pal(positive);
   }
 }
 </style>

@@ -1,19 +1,21 @@
 <template>
   <div class="buttons">
     <div class="row">
+      <fu-button>default</fu-button>
       <fu-button class="primary">primary</fu-button>
       <fu-button class="secondary">secondary</fu-button>
-      <fu-button class="success">secondary</fu-button>
+      <fu-button class="positive">positive</fu-button>
       <fu-button class="warning">warning</fu-button>
-      <fu-button class="danger">danger</fu-button>
+      <fu-button class="negative">negative</fu-button>
       <fu-button disabled>disabled</fu-button>
     </div>
     <div class="row">
+      <fu-button hollow>default</fu-button>
       <fu-button hollow class="primary">primary</fu-button>
       <fu-button hollow class="secondary">secondary</fu-button>
-      <fu-button hollow class="success">secondary</fu-button>
+      <fu-button hollow class="positive">positive</fu-button>
       <fu-button hollow class="warning">warning</fu-button>
-      <fu-button hollow class="danger">danger</fu-button>
+      <fu-button hollow class="negative">negative</fu-button>
       <fu-button hollow disabled>disabled</fu-button>
     </div>
     <div class="row">
@@ -51,24 +53,28 @@ export default {
     display: flex;
   }
 
-  .primary {
+  .brand {
+    --button-pal: var(--pal-brand);
+  }
 
+  .primary {
+    --button-pal: var(--pal-primary);
   }
 
   .secondary {
-    --button-pal: #{pal(secondary)};
+    --button-pal: var(--pal-secondary);
   }
 
-  .success {
-    --button-pal: #{pal(success)};
+  .positive {
+    --button-pal: var(--pal-positive);
   }
 
   .warning {
-    --button-pal: #{pal(warning)};
+    --button-pal: var(--pal-warning);
   }
 
-  .danger {
-    --button-pal: #{pal(danger)};
+  .negative {
+    --button-pal: var(--pal-negative);
   }
 }
 </style>

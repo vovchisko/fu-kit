@@ -46,14 +46,14 @@ export default {
   .secondary {
     --button-pal: #{pal(secondary)};
   }
-  .success {
-    --button-pal: #{pal(success)};
+  .positive {
+    --button-pal: #{pal(positive)};
   }
   .warning {
     --button-pal: #{pal(warning)};
   }
-  .danger {
-    --button-pal: #{pal(danger)};
+  .negative {
+    --button-pal: #{pal(negative)};
   }
 }
 </style>

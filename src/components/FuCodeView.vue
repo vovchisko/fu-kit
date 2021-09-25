@@ -1,12 +1,12 @@
 <template>
   <div class="fu-code-view">
-    <fu-button
+    <fu-button-link
         v-if="collapse"
         class="fu-code-view_toggle"
         @click="isShown = !isShown"
     >
       {{ isShown ? 'Hide' : 'Show' }} {{ label }}
-    </fu-button>
+    </fu-button-link>
     <p class="fu-code-view_title" v-else-if="label">{{ label }}</p>
     <pre v-if="collapse ? isShown : true" class="fu-code-view_pre"><slot /></pre>
   </div>
@@ -15,11 +15,11 @@
 <script>
 import { ref, toRaw } from 'vue'
 
-import FuButton from './FuButton.vue'
+import FuButtonLink from './FuButtonLink.vue'
 
 export default {
   name: 'fu-code-view',
-  components: { FuButton },
+  components: { FuButtonLink },
   props: {
     label: { type: String, default: '' },
     collapse: { type: Boolean, default: null },
@@ -36,17 +36,6 @@ export default {
 <style scoped lang="scss">
 .fu-code-view {
   @include spacing-margin(200, 0);
-
-  &_toggle {
-    padding: 0;
-    background: transparent;
-    color: pal(primary);
-    border: 0 none;
-    border-radius: 0;
-    min-height: auto;
-    font-weight: bold;
-    text-decoration: underline;
-  }
 
   &_title {
     @include typo(100);
