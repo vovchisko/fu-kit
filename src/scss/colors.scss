@@ -16,8 +16,8 @@
 
 @function color($color-code, $opacity:1) {
   @if ($opacity < 1) {
-    @return rgba(var(--color-#{$color-code}), #{$opacity})
+    @return rgba(var(--rgb-#{$color-code}), #{$opacity})
   } @else {
-    @return rgb(var(--color-#{$color-code}))
+    @return rgb(var(--rgb-#{$color-code}))
   }
 }
