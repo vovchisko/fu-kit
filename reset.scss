@@ -11,8 +11,9 @@ ol, p, pre, section, table, ul {
   box-sizing: border-box;
 }
 
-input, button, textarea, select {
+input, button, textarea, select, span, b, small {
   box-sizing: border-box;
+  line-height: 1;
 }
 
 label {

@@ -1,6 +1,5 @@
 <template>
   <label class="fu-text">
-    <span v-if="label" class="fu-text_label">{{ label }}</span>
     <input
         v-bind="$attrs"
         :value="modelValue"
@@ -17,11 +16,7 @@ export default {
     modelValue: {
       type: [ String, Number ],
       default: '',
-    },
-    label: {
-      type: String,
-      default: '',
-    },
+    }
   },
   emits: [ 'update:modelValue' ],
 }
@@ -39,11 +34,6 @@ export default {
   align-items: center;
   flex-direction: column;
   justify-content: left;
-
-  &_label {
-    display: block;
-    width: 100%;
-  }
 
   &_input {
     display: block;

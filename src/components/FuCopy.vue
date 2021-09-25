@@ -75,7 +75,7 @@ export default {
 
 <style lang="scss" scoped>
 .fu-copy {
-  @include spacing-padding(0, sp200);
+  @include spacing-padding(0, 200);
 
   text-decoration: none;
   border: 1px solid transparent;
@@ -83,7 +83,7 @@ export default {
   color: color(dark);
   justify-content: flex-start;
 
-  --button-bg: #{color(dark, 0.5)};
+  --button-color: #{color(dark, 0.5)};
 
   &:hover {
     color: color(black);

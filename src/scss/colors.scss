@@ -1,14 +1,16 @@
-@use 'sass:color';
-
-@function hex2rgb($hex) {
-  @return color.red($hex), color.green($hex), color.blue($hex)
-}
-
 @function pal($color-code, $opacity:1) {
   @if ($opacity < 1) {
     @return rgba(var(--pal-#{$color-code}), #{$opacity})
   } @else {
     @return rgb(var(--pal-#{$color-code}))
+  }
+}
+
+@function pal-acc($color-code, $opacity:1) {
+  @if ($opacity < 1) {
+    @return rgba(var(--pal-acc-#{$color-code}), #{$opacity})
+  } @else {
+    @return rgb(var(--pal-acc-#{$color-code}))
   }
 }
 
@@ -19,16 +21,3 @@
     @return rgb(var(--color-#{$color-code}))
   }
 }
-
-@function hex2hsl($hex) {
-  @return color.hue($hex), color.saturation($hex), color.lightness($hex)
-}
-
-@function pal-hsl($color-code, $opacity:1) {
-  @if ($opacity < 1) {
-    @return hsla(var(--#{$color-code}), #{$opacity})
-  } @else {
-    @return hsl(var(--#{$color-code}))
-  }
-}
-

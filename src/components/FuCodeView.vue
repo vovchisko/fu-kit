@@ -35,12 +35,12 @@ export default {
 
 <style scoped lang="scss">
 .fu-code-view {
-  @include spacing-margin($sp200, 0);
+  @include spacing-margin(200, 0);
 
   &_toggle {
     padding: 0;
     background: transparent;
-    color: pal($pal-primary);
+    color: pal(primary);
     border: 0 none;
     border-radius: 0;
     min-height: auto;
@@ -52,12 +52,12 @@ export default {
     @include typo(100);
 
     font-weight: bold;
-    margin-bottom: spacing($sp200);
+    margin-bottom: spacing(200);
   }
 
   &_pre {
     @include scrollbar-awesome();
-    @include spacing-padding($sp300, $sp200);
+    @include spacing-padding(300, 200);
 
     overflow: auto;
     max-width: 100%;

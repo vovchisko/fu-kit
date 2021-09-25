@@ -29,6 +29,14 @@
   --pal-danger: var(--color-red);
   --pal-error: var(--color-red);
 
+  --pal-acc-brand: var(--color-white);
+  --pal-acc-primary: var(--color-white);
+  --pal-acc-secondary: var(--color-white);
+  --pal-acc-success: var(--color-white);
+  --pal-acc-warning: var(--color-white);
+  --pal-acc-danger: var(--color-white);
+  --pal-acc-error: var(--color-white);
+
   --pal-text: var(--color-dark);
   --pal-text-dimm: var(--color-grey600);
   --pal-link: var(--color-blue);
@@ -85,7 +93,7 @@
   --lt-border-radius: 8px;
   --lt-border-radius-inner: 4px;
 
-  --lt-ui-h: 32px;
+  --lt-ui-h: 36px;
   --lt-ui-border-w: 1px;
   --lt-ui-border-r: var(--lt-border-radius-inner);
 

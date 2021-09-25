@@ -28,8 +28,8 @@ export default {
 
   &_pre {
     @include typo(300);
-    @include spacing-padding(sp100, sp400);
-    @include spacing-margin(sp400, 0);
+    @include spacing-padding(100, 400);
+    @include spacing-margin(400, 0);
 
     background: color(grey100);
     border: 1px solid color(grey200);

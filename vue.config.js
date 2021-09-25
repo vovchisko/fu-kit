@@ -5,10 +5,7 @@ module.exports = {
       sass: {
         sourceMap: true,
         prependData: `
-          @import '@/scss/colors';
-          @import '@/scss/media';
-          @import '@/scss/typo';
-          @import '@/scss/ui';
+          @import './scss';
         `,
       },
     },

@@ -31,7 +31,6 @@
 </template>
 
 <script>
-// todo: setup() composition
 export default {
   name: 'fu-progress-radial',
   props: {
@@ -98,7 +97,7 @@ export default {
   }
 
   &__svg-bg {
-    stroke: var(--progress-radial-bg-stroke, #{pal($pal-primary,0.2)});
+    stroke: var(--progress-radial-bg-stroke, #{pal(primary,0.2)});
     fill: var(--progress-radial-bg-fill, transparent);
     stroke-width: var(--progress-radial-stroke-width, 10);
   }
@@ -110,7 +109,7 @@ export default {
     transition-duration: var(--progress-radial-t-duration, 500ms);
     transition-property: var(--progress-radial-t-property, all);
     transition-timing-function: var(--progress-radial-t-function, linear);
-    stroke: var(--progress-radial-color, #{pal($pal-primary)});
+    stroke: var(--progress-radial-color, #{pal(primary)});
     stroke-linecap: var(--progress-radial-stroke-linecap, round);
     stroke-width: var(--progress-radial-stroke-width, 10);
   }

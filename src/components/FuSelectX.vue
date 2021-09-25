@@ -1,13 +1,12 @@
 <template>
   <label class="fu-select-x" v-bind="$attrs">
-    <span v-if="label" class="fu-select-x_label">{{ label }}</span>
     <input
         tabindex="0"
         class="fu-select-x_input"
         ref="refSearch"
         v-model="search"
-        @keydown="onTextKeydown"
         :placeholder="model"
+        @keydown="onTextKeydown"
         @focus="onTextFocus"
         @blur="onSomeBlur"
         spellcheck="false"
@@ -40,7 +39,6 @@ export default {
   props: {
     modelValue: { type: [ String, Number ], default: '' },
     options: { type: Array, default: [] },
-    label: { type: String, default: '' },
     allowCustom: { type: Boolean, default: false },
   },
   emits: [ 'update:modelValue', 'select' ],
@@ -203,11 +201,6 @@ export default {
   justify-content: left;
   position: relative;
 
-  &_label {
-    display: block;
-    width: 100%;
-  }
-
   &_input {
     display: block;
     box-sizing: border-box;
@@ -241,17 +234,18 @@ export default {
     position: absolute;
     left: 0;
     top: 100%;
-    margin-top: spacing(sp100);
+    margin-top: spacing(100);
     min-width: 100%;
     background-color: pal(bg);
 
     &-item {
-      @include spacing-padding(0, sp100);
+      @include spacing-padding(0, 100);
       @include typo(200, 400);
 
       text-decoration: none;
       border-radius: 0;
-      justify-content: flex-start;
+      justify-content: left;
+      text-align: left;
       font-weight: inherit;
 
       &:hover {

@@ -1,6 +1,5 @@
 <template>
   <label class="fu-select">
-    <span v-if="label" class="fu-select_label">{{ label }}</span>
     <select
         v-bind="$attrs"
         :value="modelValue"
@@ -20,10 +19,6 @@ export default {
       type: [ String, Number ],
       default: '',
     },
-    label: {
-      type: String,
-      default: '',
-    },
   },
   emits: [ 'update:modelValue' ],
 }
@@ -39,11 +34,6 @@ export default {
   align-items: center;
   flex-direction: column;
   justify-content: left;
-
-  &_label {
-    display: block;
-    width: 100%;
-  }
 
   &_input {
     display: block;

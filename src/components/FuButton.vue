@@ -1,8 +1,9 @@
 <template>
-  <button
-      v-bind="$attrs"
-      :type="$attrs.type || 'button'"
-      :class="$props.linkLike ? 'fu-button-link' : 'fu-button'"
+  <button v-bind="{
+        ...$attrs,
+        type: $attrs.type || 'button',
+        class: 'fu-button' + (hollow ? ' _hollow' : ''),
+      }"
   >
     <slot />
   </button>
@@ -11,38 +12,29 @@
 <script>
 export default {
   name: 'fu-button',
-  props: { linkLike: { type: Boolean, default: false } },
+  props: {
+    hollow: { type: Boolean, default: false },
+  },
+  setup (props) {
+    return { hollow: props.hollow }
+  },
 }
 </script>
 
 <style lang="scss">
 :root {
-  --button-bg: #{pal(primary)};
-  --button-bg-disabled: #{pal(ui-disabled)};
-  --button-text: #{color(light)};
+  --button-color: #{pal(primary)};
+  --button-color-disabled: #{pal(ui-disabled)};
+  --button-text: #{pal-acc(primary)};
   --button-border-color: #{pal(ui-disabled-border)};
   --button-border-sytyle: var(--pal-ui-disabled-border-style);
 }
 </style>
 
 <style lang="scss" scoped>
-.fu-button-link {
-  background: transparent;
-  color: pal(primary);
-  border: 0 none;
-  font-weight: bold;
-  text-decoration: underline;
-  cursor: pointer;
-
-  &:hover {
-    text-decoration: none;
-    color: pal(info);
-  }
-}
-
 .fu-button {
   @include typo(200);
-  @include spacing-padding(sp200, sp400);
+  @include spacing-padding(200, 400);
 
   display: flex;
   font-weight: 600;
@@ -52,30 +44,49 @@ export default {
   cursor: pointer;
   font-family: var(--typo-font-text);
   min-height: var(--lt-ui-h);
-  color: var(--button-text);
   border-width: var(--lt-ui-border-w);
   border-style: solid;
-  border-color: var(--button-bg);
+  border-color: var(--button-color);
   border-radius: var(--lt-ui-border-r);
-  background: var(--button-bg);
   transition: var(--ui-transition);
+  background: var(--button-color);
+  color: var(--button-text);
+  line-height: 1;
 
-  &:active {
+  &:hover:not(:disabled) {
+    text-decoration: none;
+    box-shadow: 0 3px 12px -6px var(--button-color);
+  }
+
+  &:hover:not(:disabled):active {
     transform: translateY(2px);
-    transition-duration: 50ms;
+    transition-duration: 30ms;
+    box-shadow: 0 3px 4px -2px var(--button-color);
   }
 
   &:disabled {
     cursor: not-allowed;
-    background: var(--button-bg-disabled);
+    background: var(--button-color-disabled);
     border-color: var(--button-border-color);
     border-style: var(--button-border-sytyle);
     box-shadow: none;
   }
 
-  &:hover:not(:disabled) {
-    text-decoration: none;
-    box-shadow: 0 3px 15px -6px var(--button-bg);
+  &._hollow {
+    background: transparent;
+    color: var(--button-color);
+    &:disabled {
+      color: var(--button-color-disabled);
+    }
+
+    &:hover:not(:disabled) {
+      box-shadow: 0 3px 10px -6px var(--button-color);
+      color: var(--button-color);
+    }
+
+    &:hover:not(:disabled):active {
+      box-shadow: 0 2px 4px -2px var(--button-color);
+    }
   }
 }
 </style>

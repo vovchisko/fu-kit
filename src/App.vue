@@ -22,10 +22,6 @@
   </footer>
 </template>
 
-<style lang="scss">
-
-</style>
-
 <style lang="scss" scoped>
 .app {
   &_header {
@@ -55,7 +51,7 @@
     }
 
     &-nav {
-      @include spacing-padding(sp200);
+      @include spacing-padding(200);
 
       padding: 0 var(--lt-horizontal-padding);
       position: sticky;
@@ -65,7 +61,7 @@
       border-right: var(--lt-ui-border-w) solid color(grey100);
       display: flex;
       flex-direction: column;
-      gap: spacing(sp200);
+      gap: spacing(200);
       min-width: 200px;
 
       &-link {

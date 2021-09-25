@@ -1,12 +1,10 @@
 <template>
-  <div class="buttons">
+  <div class="select">
     <div class="row">
-      <fu-select v-model="val" label="Regular Select">
+      <fu-select v-model="val">
         <option v-for="i in list" :value="i.value">{{ i.label }}</option>
       </fu-select>
-    </div>
-    <div class="row">
-      <fu-select-x v-model="val" :options="list" label="Fancy Select" />
+      <fu-select-x v-model="val" :options="list" />
     </div>
   </div>
 </template>
@@ -22,11 +20,11 @@ export default {
   name: 'doc-buttons',
   components: { FuSelectX, FuSelect, FuButton },
   setup () {
-    const val = ref('Regular select')
+    const val = ref('val1')
     const list = [
-      { value: 'value 1', label: 'label 1' },
-      { value: 'value 2', label: 'label 2' },
-      { value: 'value 3', label: 'label 3' },
+      { value: 'val1', label: 'label 1' },
+      { value: 'val2', label: 'label 2' },
+      { value: 'val3', label: 'label 3' },
     ]
     return { val, list }
   },
@@ -34,9 +32,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.buttons {
+.select {
   .row {
-    @include spacing-padding(sp300);
+    @include spacing-padding(300);
 
     gap: 1em;
     max-width: 13em;
@@ -46,16 +44,16 @@ export default {
     // default
   }
   .secondary {
-    --button-bg: #{pal(secondary)};
+    --button-color: #{pal(secondary)};
   }
   .success {
-    --button-bg: #{pal(success)};
+    --button-color: #{pal(success)};
   }
   .warning {
-    --button-bg: #{pal(warning)};
+    --button-color: #{pal(warning)};
   }
   .danger {
-    --button-bg: #{pal(danger)};
+    --button-color: #{pal(danger)};
   }
 }
 </style>

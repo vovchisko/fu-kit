@@ -1,7 +1,3 @@
-//
-// TYPOGRAPHY
-//
-
 @mixin typo($h, $l:null) {
   font-size: var(--typo-h#{$h});
 
@@ -10,14 +6,9 @@
   }
 }
 
-//
-// LAYOUT SPACING
-//
-
 @function spacing($spacing-code: null) {
   @if (
       $spacing-code == 0 or
-      $spacing-code == 0px or // redundant
       $spacing-code == auto or
       $spacing-code == unset or
       $spacing-code == null
@@ -25,7 +16,7 @@
     @return $spacing-code;
   }
 
-  @return var(--lt-#{$spacing-code});
+  @return var(--lt-sp#{$spacing-code});
 }
 
 @mixin spacing-prop($prop, $t, $r: null, $b: null, $l: null) {
