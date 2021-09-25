@@ -1,5 +1,4 @@
 :root {
-  // Format color vars: "--color-{code}: R,G,B"
   --color-white: #{hex2rgb(#FFFFFF)};
   --color-light: #{hex2rgb(#FEFEFE)};
   --color-grey100: #{hex2rgb(#F4F4F4)};
@@ -11,6 +10,7 @@
   --color-grey700: #{hex2rgb(#515151)};
   --color-grey800: #{hex2rgb(#363636)};
   --color-grey900: #{hex2rgb(#1C1C1C)};
+
   --color-dark: #{hex2rgb(#151515)};
   --color-black: #{hex2rgb(#000000)};
   --color-brand: #{hex2rgb(#8347A8)};
@@ -43,13 +43,12 @@
   --pal-block: var(--color-grey100);
   --pal-block-border: var(--color-grey200);
   --pal-bg: var(--color-white);
-  --pal-overlay: var(--color-dark), 0.2;
+  --pal-overlay: var(--color-dark);
 
   --pal-ui-disabled: var(--color-grey200);
   --pal-ui-disabled-border: var(--color-grey300);
-  --pal-ui-disabled-border-style: dashed;
 
-  --ui-transition: all linear 180ms;
+  --ui-transition: all linear 120ms;
 
   --typo-font-heading: 'Segoe UI', San Francisco, Roboto, Lucida Sans;
   --typo-font-text: 'Segoe UI', San Francisco, Roboto, Lucida Sans;
@@ -63,9 +62,9 @@
   --typo-h400: 18px;
   --typo-h500: 22px;
   --typo-h600: 26px;
-  --typo-h700: 28px;
-  --typo-h800: 32px;
-  --typo-h900: 48px;
+  --typo-h700: 30px;
+  --typo-h800: 36px;
+  --typo-h900: 42px;
 
   // line-height vars (typo usually has the same number part)
   // format font-size vars: "--typo-{code}": 14px;
@@ -74,10 +73,10 @@
   --typo-lh300: 18px;
   --typo-lh400: 22px;
   --typo-lh500: 26px;
-  --typo-lh600: 28px;
-  --typo-lh700: 32px;
+  --typo-lh600: 32px;
+  --typo-lh700: 42px;
   --typo-lh800: 48px;
-  --typo-lh900: 56px;
+  --typo-lh900: 64px;
 
   // spacing vars
   --lt-sp100: 2px;
@@ -93,9 +92,11 @@
   --lt-border-radius: 8px;
   --lt-border-radius-inner: 4px;
 
-  --lt-ui-h: 36px;
-  --lt-ui-border-w: 1px;
-  --lt-ui-border-r: var(--lt-border-radius-inner);
+  --ui-lt-h: 36px;
+  --ui-lt-border-style: solid;
+  --ui-lt-border-width: 1px;
+  --ui-lt-border-radius: var(--lt-border-radius-inner);
+  --ui-lt-disabled-border-style: dashed;
 
   --lt-z-1: 1;
   --lt-z-back: -1;

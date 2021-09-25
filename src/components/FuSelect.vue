@@ -29,7 +29,7 @@ export default {
   --select-color-disabled: #{pal(ui-disabled)};
   --select-text: #{pal-acc(primary)};
   --select-border-color: #{pal(ui-disabled-border)};
-  --select-border-sytyle: var(--pal-ui-disabled-border-style);
+  --select-border-sytyle: var(--ui-lt-disabled-border-style);
 }
 </style>
 <style lang="scss" scoped>
@@ -40,11 +40,11 @@ export default {
   box-sizing: border-box;
   cursor: pointer;
   font-family: var(--typo-font-text);
-  min-height: var(--lt-ui-h);
-  border-width: var(--lt-ui-border-w);
+  min-height: var(--ui-lt-h);
+  border-width: var(--ui-lt-border-width);
   border-style: solid;
   border-color: var(--select-color);
-  border-radius: var(--lt-ui-border-r);
+  border-radius: var(--ui-lt-border-radius);
   transition: var(--ui-transition);
   color: var(--select-color);
   line-height: 1;

@@ -44,16 +44,16 @@ export default {
     // default
   }
   .secondary {
-    --button-color: #{pal(secondary)};
+    --button-pal: #{pal(secondary)};
   }
   .success {
-    --button-color: #{pal(success)};
+    --button-pal: #{pal(success)};
   }
   .warning {
-    --button-color: #{pal(warning)};
+    --button-pal: #{pal(warning)};
   }
   .danger {
-    --button-color: #{pal(danger)};
+    --button-pal: #{pal(danger)};
   }
 }
 </style>

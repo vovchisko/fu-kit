@@ -61,8 +61,8 @@ export default {
 
     overflow: auto;
     max-width: 100%;
-    background: pal($pal-block-light);
-    border: 1px solid pal($pal-block);
+    background: pal(block-light);
+    border: 1px solid pal(block);
     border-radius: var(--lt-border-radius-inner);
   }
 }

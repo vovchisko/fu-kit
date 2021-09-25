@@ -1,9 +1,12 @@
 <template>
-  <button v-bind="{
+  <button
+      v-bind="{
         ...$attrs,
         type: $attrs.type || 'button',
         class: 'fu-button' + (hollow ? ' _hollow' : ''),
+        style: $attrs.style + 'oh my'
       }"
+      @mouseup="mUp"
   >
     <slot />
   </button>
@@ -16,18 +19,20 @@ export default {
     hollow: { type: Boolean, default: false },
   },
   setup (props) {
-    return { hollow: props.hollow }
+    const mUp = (e) => e.target.blur()
+    return { hollow: props.hollow, mUp }
   },
 }
 </script>
 
 <style lang="scss">
 :root {
-  --button-color: #{pal(primary)};
-  --button-color-disabled: #{pal(ui-disabled)};
-  --button-text: #{pal-acc(primary)};
-  --button-border-color: #{pal(ui-disabled-border)};
-  --button-border-sytyle: var(--pal-ui-disabled-border-style);
+  --button-pal: #{pal(primary)};
+  --button-pal-text: #{pal(acc-primary)};
+  --button-pal-shadow: #{pal(acc-primary)};
+  --button-disabled-pal: #{pal(ui-disabled)};
+  --button-disabled-pal-border: var(--pal-ui-disabled-border);
+  --button-disabled-border-style: var(--ui-lt-disabled-border-style);
 }
 </style>
 
@@ -43,54 +48,66 @@ export default {
   box-sizing: border-box;
   cursor: pointer;
   font-family: var(--typo-font-text);
-  min-height: var(--lt-ui-h);
-  border-width: var(--lt-ui-border-w);
-  border-style: solid;
-  border-color: var(--button-color);
-  border-radius: var(--lt-ui-border-r);
+  min-height: var(--ui-lt-h);
+  border-width: var(--ui-lt-border-width);
+  border-style: var(--ui-lt-border-style);
+  border-color: var(--button-pal);
+  border-radius: var(--ui-lt-border-radius);
   transition: var(--ui-transition);
-  background: var(--button-color);
-  color: var(--button-text);
+  background: var(--button-pal);
+  color: var(--button-pal-text);
   line-height: 1;
+  will-change: box-shadow, transform;
+
   outline: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 
-  &:hover:not(:disabled) {
+  & > * {
+    pointer-events: none;
+  }
+
+  &:hover {
     text-decoration: none;
-    box-shadow: 0 3px 12px -6px var(--button-color);
+    box-shadow: var(--button-hover-shadow, 0 3px 10px -4px var(--button-pal));
   }
 
-  &:focus:not(:disabled) {
-    box-shadow: 0 3px 4px -2px var(--button-color);
+  &:focus {
+    box-shadow: var(--button-hover-shadow, 0 3px 10px -4px var(--button-pal));
   }
 
-  &:hover:not(:disabled):active {
+  &:active {
     transform: translateY(2px);
-    transition-duration: 30ms;
-    box-shadow: 0 3px 4px -2px var(--button-color);
+    transition-duration: 20ms;
+    box-shadow: var(--button-hover-shadow, 0 2px 4px -2px var(--button-pal));
   }
 
   &:disabled {
     cursor: not-allowed;
-    background: var(--button-color-disabled);
-    border-color: var(--button-border-color);
-    border-style: var(--button-border-sytyle);
+    background: var(--button-disabled-pal);
+    border-color: var(--button-disabled-pal-border);
+    border-style: var(--button-disabled-border-style);
     box-shadow: none;
   }
 
   &._hollow {
     background: transparent;
-    color: var(--button-color);
+    color: var(--button-pal);
+
+    &:hover {
+      box-shadow: 0 3px 10px -6px var(--button-pal);
+      color: var(--button-pal);
+    }
+    &:focus {
+      box-shadow: var(--button-hover-shadow, 0 3px 10px -6px var(--button-pal));
+    }
+    &:active {
+      box-shadow: 0 2px 4px -2px var(--button-pal);
+    }
+
     &:disabled {
-      color: var(--button-color-disabled);
-    }
-
-    &:hover:not(:disabled) {
-      box-shadow: 0 3px 10px -6px var(--button-color);
-      color: var(--button-color);
-    }
-
-    &:hover:not(:disabled):active {
-      box-shadow: 0 2px 4px -2px var(--button-color);
+      color: var(--button-disabled-pal);
+      box-shadow: none;
     }
   }
 }

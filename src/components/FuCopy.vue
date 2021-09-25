@@ -83,7 +83,7 @@ export default {
   color: color(dark);
   justify-content: flex-start;
 
-  --button-color: #{color(dark, 0.5)};
+  --button-pal: #{color(dark, 0.5)};
 
   &:hover {
     color: color(black);

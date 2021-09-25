@@ -1,12 +1,10 @@
 <template>
-  <label class="fu-text">
-    <input
-        v-bind="$attrs"
-        :value="modelValue"
-        class="fu-text_input"
-        @input="$emit('update:modelValue', $event.target.value)"
-    />
-  </label>
+  <input
+      v-bind="$attrs"
+      :value="modelValue"
+      class="fu-text_input"
+      @input="$emit('update:modelValue', $event.target.value)"
+  />
 </template>
 
 <script>
@@ -16,7 +14,7 @@ export default {
     modelValue: {
       type: [ String, Number ],
       default: '',
-    }
+    },
   },
   emits: [ 'update:modelValue' ],
 }
@@ -39,7 +37,7 @@ export default {
     display: block;
     box-sizing: border-box;
     width: 100%;
-    height: var(--lt-ui-h);
+    height: var(--ui-lt-h);
     border-width: var(--text-border-width);
     border-color: var(--text-border-color);
     border-style: solid;

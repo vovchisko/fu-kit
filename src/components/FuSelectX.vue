@@ -205,7 +205,7 @@ export default {
     display: block;
     box-sizing: border-box;
     width: 100%;
-    height: var(--lt-ui-h);
+    height: var(--ui-lt-h);
     border-width: var(--select-x-border-width);
     border-color: var(--select-x-border-color);
     border-style: solid;

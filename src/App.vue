@@ -8,7 +8,7 @@
   <main class="app_main">
     <nav class="app_main-nav">
       <router-link to="/" active-class="_active" class="app_main-nav-link">Home</router-link>
-      <router-link to="/typo" active-class="_active" class="app_main-nav-link">Type</router-link>
+      <router-link to="/typo" active-class="_active" class="app_main-nav-link">Typography</router-link>
       <router-link to="/button" active-class="_active" class="app_main-nav-link">Buttons</router-link>
       <router-link to="/select" active-class="_active" class="app_main-nav-link">Select</router-link>
     </nav>
@@ -48,6 +48,7 @@
 
     &-page {
       padding: 0 var(--lt-horizontal-padding);
+      flex: 1;
     }
 
     &-nav {
@@ -58,7 +59,7 @@
       left: 0;
       top: 0;
       bottom: 0;
-      border-right: var(--lt-ui-border-w) solid color(grey100);
+      border-right: var(--ui-lt-border-width) solid color(grey100);
       display: flex;
       flex-direction: column;
       gap: spacing(200);

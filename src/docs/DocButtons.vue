@@ -17,25 +17,27 @@
       <fu-button hollow disabled>disabled</fu-button>
     </div>
     <div class="row">
-      <fu-button link-like class="primary">primary</fu-button>
-      <fu-button link-like class="secondary">secondary</fu-button>
-      <fu-button link-like class="success">secondary</fu-button>
-      <fu-button link-like class="warning">warning</fu-button>
-      <fu-button link-like class="danger">danger</fu-button>
-      <fu-button link-like disabled>disabled</fu-button>
-    </div>
-    <div class="row">
       <fu-button class="primary">primary buttons with a long text inside</fu-button>
     </div>
+
+    <fu-code-view label="Example">{{ example }}</fu-code-view>
   </div>
 </template>
 
 <script>
-import FuButton from '@/components/FuButton.vue'
+import FuButton   from '@/components/FuButton.vue'
+import FuCodeView from '@/components/FuCodeView.vue'
+
+const example = `
+nope
+`
 
 export default {
   name: 'doc-buttons',
-  components: { FuButton },
+  components: { FuCodeView, FuButton },
+  setup () {
+    return { example }
+  },
 }
 </script>
 
@@ -54,19 +56,19 @@ export default {
   }
 
   .secondary {
-    --button-color: #{pal(secondary)};
+    --button-pal: #{pal(secondary)};
   }
 
   .success {
-    --button-color: #{pal(success)};
+    --button-pal: #{pal(success)};
   }
 
   .warning {
-    --button-color: #{pal(warning)};
+    --button-pal: #{pal(warning)};
   }
 
   .danger {
-    --button-color: #{pal(danger)};
+    --button-pal: #{pal(danger)};
   }
 }
 </style>
