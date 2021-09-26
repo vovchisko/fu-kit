@@ -277,13 +277,13 @@ export default {
       outline: none;
 
       &:hover {
-        color: var(--ui-pal-acc);
-        background-color: var(--ui-pal);
+        background-color: var(--ui-pal-lateral);
+        color: var(--ui-pal-text);
       }
 
       &._selected {
-        background-color: var(--ui-pal-lateral);
-        color: var(--ui-pal-text);
+        color: var(--ui-pal-acc);
+        background-color: var(--ui-pal);
       }
 
       &:focus {

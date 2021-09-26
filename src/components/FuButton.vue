@@ -56,17 +56,17 @@ export default {
 
   &:hover {
     text-decoration: none;
-    box-shadow: 0 3px 10px -4px var(--ui-pal);
+    box-shadow: 0 4px 12px -4px var(--ui-pal);
   }
 
   &:focus {
-    box-shadow: 0 3px 10px -4px var(--ui-pal);
+    box-shadow: 0 4px 12px -4px var(--ui-pal);
   }
 
   &:active {
     transform: translateY(2px);
     transition-duration: 20ms;
-    box-shadow: 0 2px 4px -2px var(--ui-pal);
+    box-shadow: 0 3px 4px -2px var(--ui-pal);
   }
 
   &:disabled {
@@ -83,16 +83,16 @@ export default {
     color: var(--ui-pal);
 
     &:hover {
-      box-shadow: 0 3px 10px -6px var(--ui-pal);
+      box-shadow: 0 3px 10px -4px var(--ui-pal);
       color: var(--ui-pal);
     }
 
     &:focus {
-      box-shadow: 0 3px 10px -6px var(--ui-pal);
+      box-shadow: 0 3px 10px -4px var(--ui-pal);
     }
 
     &:active {
-      box-shadow: 0 2px 4px -2px var(--ui-pal);
+      box-shadow: 0 1px 4px -2px var(--ui-pal);
     }
 
     &:disabled {
