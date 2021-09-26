@@ -67,7 +67,6 @@ export default {
       &-epic {
         display: block;
         font-size: 120px;
-        line-height: 1;
         color: #c53838;
       }
 
@@ -83,12 +82,12 @@ export default {
         }
       }
     }
+
     &-slogan {
       @include typo(600);
       @include spacing-margin(500, 300);
-
-      line-height: 1;
     }
+
     &-copy {
       @include typo(400);
       @include spacing-padding(100, 400);

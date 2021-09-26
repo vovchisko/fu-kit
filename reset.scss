@@ -9,9 +9,8 @@ ol, p, pre, section, table, ul {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  line-height: 1;
   font-family: var(--typo-font-text);
-
+  line-height: 1.2;
 }
 
 h1, h2, h3, h4, h5, h6, header {
@@ -19,46 +18,43 @@ h1, h2, h3, h4, h5, h6, header {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  line-height: 1;
+  line-height: 1.2;
 }
 
 input, button, textarea, select, span, b, small {
   box-sizing: border-box;
-  line-height: 1;
-}
-
-label {
-  display: block;
+  line-height: 1.2;
 }
 
 h1 {
-  @include typo(700, 800);
+  @include typo(700);
 }
 
 h2 {
-  @include typo(600, 700);
+  @include typo(600);
 }
 
 h3 {
-  @include typo(500, 600);
+  @include typo(500);
 }
 
 h4 {
-  @include typo(400, 500);
+  @include typo(400);
 }
 
 h5 {
-  @include typo(300, 400);
+  @include typo(300);
 }
 
 p {
-  @include typo(200, 300);
+  @include typo(200);
 }
 
 small {
-  @include typo(100, 200);
+  @include typo(100);
 }
 
 label {
-  @include typo(100, 200);
+  @include typo(100);
+  display: block;
 }
