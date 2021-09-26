@@ -1,23 +1,14 @@
-//
-// TYPOGRAPHY
-//
+@mixin typo($h, $l:null) {
+  font-size: var(--typo-h#{$h});
 
-@mixin typo($h, $weight:null) {
-  font-size: var(--typo-#{$h});
-  line-height: var(--typo-l#{$h});
-  @if ($weight) {
-    font-weight: $weight;
+  @if ($l) {
+    line-height: var(--typo-lh#{$l});
   }
 }
-
-//
-// LAYOUT SPACING
-//
 
 @function spacing($spacing-code: null) {
   @if (
       $spacing-code == 0 or
-      $spacing-code == 0px or // redundant
       $spacing-code == auto or
       $spacing-code == unset or
       $spacing-code == null
@@ -25,7 +16,7 @@
     @return $spacing-code;
   }
 
-  @return var(--lt-#{$spacing-code});
+  @return var(--lt-sp#{$spacing-code});
 }
 
 @mixin spacing-prop($prop, $t, $r: null, $b: null, $l: null) {

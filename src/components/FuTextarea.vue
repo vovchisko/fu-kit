@@ -1,22 +1,22 @@
 <template>
   <label
       class="fu-text"
-      :class="{'_disabled': $attrs.disabled !== undefined || $attrs.readOnly  !== undefined }"
       v-bind="{ class: $attrs.class }"
+      :class="{'_disabled': $attrs.disabled !== undefined || $attrs.readOnly  !== undefined }"
   >
-    <slot />
-    <slot name="left" />
-    <input
+    <textarea
+        ref="textarea"
         v-bind="{...$attrs, class: undefined}"
         :value="modelValue"
-        class="fu-text_input"
-        @input="$emit('update:modelValue', $event.target.value)"
-    >
-    <slot name="right" />
+        class="fu-text_textarea"
+        @input="handleInput"
+    />
   </label>
 </template>
 
 <script>
+import { onMounted, ref } from 'vue'
+
 export default {
   name: 'fu-text',
   props: {
@@ -24,10 +24,32 @@ export default {
       type: [ String, Number ],
       default: '',
     },
+    autoResize: { type: Boolean, default: false },
   },
   emits: [ 'update:modelValue' ],
+  setup (props, { emit }) {
+    const textarea = ref(null)
+    const handleInput = async (e) => {
+      emit('update:modelValue', e.target.value)
+      resize(e.target)
+    }
+    const resize = (elm) => {
+      if (!props.autoResize) return
+      elm.style.height = 'auto'
+      elm.style.height = `${ elm.scrollHeight }px`
+    }
+    onMounted(() => resize(textarea.value))
+
+    return { handleInput, textarea }
+  },
 }
 </script>
+<style lang="scss">
+:root {
+  --ui-textarea-resize: vertical;
+}
+</style>
+
 <style lang="scss" scoped>
 .fu-text {
   @include typo(200);
@@ -44,16 +66,16 @@ export default {
   transition-duration: 240ms;
   transition-timing-function: ease-in-out;
   transition-property: border-color, box-shadow;
-  height: var(--ui-lt-h);
-  background: var(--ui-pal-bg);
+  min-height: var(--ui-lt-h);
 
-  &_input {
+  &_textarea {
+    @include scrollbar-awesome();
     @include typo(200);
-    @include spacing-padding(100, 300);
+    @include spacing-padding(200);
+    @include spacing-margin(100);
 
     color: var(--ui-pal-text);
     caret-color: var(--ui-pal);
-    min-height: min(100%);
     border: none;
     outline: none;
     background: transparent;
@@ -61,15 +83,13 @@ export default {
     flex: 1;
     display: block;
     min-width: 0;
-    margin: 0;
+    resize: var(--ui-textarea-resize);
+    min-height: var(--ui-lt-h);
+    height: var(--ui-lt-h);
 
     &::selection {
       background-color: var(--ui-pal);
       color: var(--ui-pal-text-select);
-    }
-
-    &::placeholder {
-      color: var(--ui-pal-placeholder);
     }
 
     &[disabled], &[read-only] {

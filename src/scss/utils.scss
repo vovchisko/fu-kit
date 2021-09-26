@@ -1,0 +1,36 @@
+@use 'sass:color';
+
+@function pow($x, $n) {
+  $ret: 1;
+  @if $n >= 0 {
+    @for $i from 1 through $n {
+      $ret: $ret * $x;
+    }
+  } @else {
+    @for $i from $n to 0 {
+      $ret: $ret / $x;
+    }
+  }
+  @return $ret;
+}
+
+@function to-fixed($float, $digits: 2) {
+  $pow: pow(10, $digits);
+  @return round($float * $pow) / $pow;
+}
+
+@function hex2rgb($hex) {
+  @return color.red($hex), color.green($hex), color.blue($hex)
+}
+
+@function hex2hsl($hex) {
+  @return to-fixed(color.hue($hex)), to-fixed(color.saturation($hex)), to-fixed(color.lightness($hex))
+}
+
+@function pal-hsl($color-code, $opacity:1) {
+  @if ($opacity < 1) {
+    @return hsla(var(--#{$color-code}), #{$opacity})
+  } @else {
+    @return hsl(var(--#{$color-code}))
+  }
+}

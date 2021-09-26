@@ -1,13 +1,23 @@
-@use 'sass:color';
-
-@function color-channels($hex) {
-  @return color.red($hex), color.green($hex), color.blue($hex)
-}
-
 @function pal($color-code, $opacity:1) {
   @if ($opacity < 1) {
-    @return rgba(var(--#{$color-code}), #{$opacity})
+    @return rgba(var(--pal-#{$color-code}), #{$opacity})
   } @else {
-    @return rgb(var(--#{$color-code}))
+    @return rgb(var(--pal-#{$color-code}))
+  }
+}
+
+@function pal-acc($color-code, $opacity:1) {
+  @if ($opacity < 1) {
+    @return rgba(var(--pal-acc-#{$color-code}), #{$opacity})
+  } @else {
+    @return rgb(var(--pal-acc-#{$color-code}))
+  }
+}
+
+@function color($color-code, $opacity:1) {
+  @if ($opacity < 1) {
+    @return rgba(var(--rgb-#{$color-code}), #{$opacity})
+  } @else {
+    @return rgb(var(--rgb-#{$color-code}))
   }
 }

@@ -1,0 +1,60 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+address, article, aside, blockquote, details, dialog, dd, div, dl, dt, fieldset, figcaption,
+figure, footer, form, hgroup, hr, li, main, nav,
+ol, p, pre, section, table, ul {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--typo-font-text);
+  line-height: 1.2;
+}
+
+h1, h2, h3, h4, h5, h6, header {
+  font-family: var(--typo-font-heading);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: 1.2;
+}
+
+input, button, textarea, select, span, b, small {
+  box-sizing: border-box;
+  line-height: 1.2;
+}
+
+h1 {
+  @include typo(700);
+}
+
+h2 {
+  @include typo(600);
+}
+
+h3 {
+  @include typo(500);
+}
+
+h4 {
+  @include typo(400);
+}
+
+h5 {
+  @include typo(300);
+}
+
+p {
+  @include typo(200);
+}
+
+small {
+  @include typo(100);
+}
+
+label {
+  @include typo(100);
+  display: block;
+}
