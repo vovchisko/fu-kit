@@ -67,6 +67,10 @@ export default {
       color: var(--ui-pal-text-select);
     }
 
+    &::placeholder {
+      color: var(--ui-pal-placeholder);
+    }
+
     &[disabled], &[read-only] {
       cursor: text;
       color: var(--ui-pal-disabled-border);

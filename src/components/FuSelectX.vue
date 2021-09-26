@@ -12,8 +12,7 @@
         spellcheck="false"
     />
     <span class="fu-select-x_list" v-show="filteredItems.length" ref="refList" @keydown="onArrows">
-      <fu-button
-          link-like
+      <button
           class="fu-select-x_list-item"
           :class="{'_selected': e.value === model}"
           tabindex="-1"
@@ -22,7 +21,7 @@
           @blur="onSomeBlur"
       >
         {{ e.label }}
-      </fu-button>
+      </button>
     </span>
   </label>
 </template>
@@ -195,20 +194,38 @@ export default {
 
 <style lang="scss" scoped>
 .fu-select-x {
+  @include typo(200);
+
+  padding: 0;
   display: flex;
+  box-sizing: border-box;
   align-items: center;
-  flex-direction: column;
-  justify-content: left;
+  justify-content: stretch;
+  border-style: var(--ui-lt-border-style);
+  border-width: var(--ui-lt-border-width);
+  border-color: var(--ui-pal-lateral);
+  border-radius: var(--ui-lt-border-radius);
+  transition-duration: 240ms;
+  transition-timing-function: ease-in-out;
+  transition-property: border-color, box-shadow;
+  height: var(--ui-lt-h);
   position: relative;
 
   &_input {
-    display: block;
+    @include typo(200);
+    @include spacing-padding(100, 300);
+
+    color: var(--ui-pal-text);
+    caret-color: var(--ui-pal);
+    min-height: min(100%);
+    border: none;
+    outline: none;
+    background: transparent;
     box-sizing: border-box;
-    width: 100%;
-    height: var(--ui-lt-h);
-    border-width: var(--select-x-border-width);
-    border-color: var(--select-x-border-color);
-    border-style: solid;
+    flex: 1;
+    display: block;
+    min-width: 0;
+    margin: 0;
 
     &:focus {
       outline: none;
@@ -228,46 +245,66 @@ export default {
     display: none;
     flex-direction: column;
     justify-content: stretch;
-    border-width: var(--select-x-border-width);
-    border-color: var(--select-x-border-color);
+    border-width: var(--ui-lt-border-width);
+    border-radius: var(--ui-lt-border-radius);
+    border-color: var(--ui-pal);
     border-style: solid;
     position: absolute;
-    left: 0;
+    left: calc(var(var(--ui-lt-border-width)-1));
     top: 100%;
-    margin-top: spacing(100);
-    min-width: 100%;
+    min-width: calc(100% + var(--ui-lt-border-width));
     background-color: pal(bg);
+    margin-top: spacing(200);
 
     &-item {
-      @include spacing-padding(0, 100);
-      @include typo(200, 400);
+      @include spacing-padding(100, 300);
+      @include typo(200, 300);
 
+      border: 0 none;
       text-decoration: none;
       border-radius: 0;
       justify-content: left;
       text-align: left;
       font-weight: inherit;
+      background: transparent;
+      outline: none;
+
+      &._selected {
+        background-color: var(--ui-pal-lateral);
+        color: var(--ui-pal-text);
+      }
 
       &:hover {
-        color: pal(prime);
+        color: var(--ui-pal);
         background-color: pal(pal-block-light, 0.3);
       }
 
       &:focus {
-        color: pal(prime);
-        outline: none;
-        background-color: pal(block);
-      }
-
-      &._selected {
-        background-color: pal(primary);
-        color: pal(bg);
+        color: var(--ui-pal-acc);
+        background-color: var(--ui-pal);
       }
     }
   }
 
   &:focus-within &_list {
     display: flex;
+  }
+
+  &:hover {
+    outline: none;
+    box-shadow: 0 5px 12px -4px rgb(var(--rgb-dark), 0.2);
+  }
+
+  &:focus-within {
+    outline: none;
+    box-shadow: 0 0 0 0 var(--ui-pal);
+    border-color: var(--ui-pal);
+  }
+
+  &._disabled {
+    border: var(--ui-lt-border-width) var(--ui-lt-disabled-border-style) var(--ui-pal-disabled-border);
+    background: transparent;
+    box-shadow: none;
   }
 }
 </style>

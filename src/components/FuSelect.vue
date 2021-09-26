@@ -44,7 +44,7 @@ export default {
 
   &_select {
     @include typo(200);
-    @include spacing-padding(100, 300);
+    @include spacing-padding(100, 200);
 
     color: var(--ui-pal-text);
     caret-color: var(--ui-pal);
@@ -58,13 +58,8 @@ export default {
     min-width: 0;
     margin: 0;
 
-    &::selection {
-      background-color: var(--ui-pal);
-      color: var(--ui-pal-text-select);
-    }
-
-    &[disabled], &[read-only] {
-      cursor: text;
+    &[disabled] {
+      cursor: not-allowed;
       color: var(--ui-pal-disabled-border);
     }
   }
