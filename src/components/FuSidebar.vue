@@ -15,9 +15,24 @@ export default {
   name: 'FuSidebar',
   emits: [ 'close' ],
   components: { FuButton },
-  props: { isOpen: { type: Boolean, default: false } },
+  props: {
+    isOpen: { type: Boolean, default: false },
+    side: { type: String, default: 'left' },
+  },
 }
 </script>
+
+<style lang="scss">
+:root {
+  --ui-sidebar-max-w: 45vw;
+  --ui-sidebar-min-w: 25vw;
+
+  @include respond-below(xs) {
+    --ui-sidebar-max-w: 100vw;
+    --ui-sidebar-min-w: 90vw;
+  }
+}
+</style>
 
 <style scoped lang="scss">
 .fu-sidebar {
@@ -27,16 +42,15 @@ export default {
   right: 0;
   bottom: 0;
   z-index: var(--lt-z-nav);
-  background: var(--pal-overlay);
+  background-color: transparent;
   transition-timing-function: linear;
   transition-duration: 600ms;
-  transition-property: opacity, visibility;
+  transition-property: background-color, visibility;
   pointer-events: none;
-  opacity: 0;
   visibility: hidden;
 
   &._shown {
-    opacity: 1;
+    background: var(--pal-overlay);
     visibility: visible;
     pointer-events: unset;
   }
@@ -45,27 +59,27 @@ export default {
     @include scrollbar-awesome();
 
     overflow: auto;
-    position: fixed;
+    position: absolute;
     left: auto;
     top: 0;
     right: 0;
     bottom: 0;
     background: var(--pal-bg);
-    max-width: 100vw;
-    min-width: 25vw;
+    max-width: var(--ui-sidebar-max-w);
+    min-width: var(--ui-sidebar-min-w);
     transform-origin: 100% 50%;
   }
 }
 
 .bounce-enter-active {
-  animation: bounce-in 200ms;
+  animation: slide-right 200ms;
 }
 
 .bounce-leave-active {
-  animation: bounce-in 200ms reverse;
+  animation: slide-right 200ms reverse;
 }
 
-@keyframes bounce-in {
+@keyframes slide-right {
   0% {
     transform: translateX(100%) scaleX(1);
   }
