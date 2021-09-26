@@ -2,7 +2,12 @@
   <div class="home">
     <h1 class="home_hero">FU*KIT</h1>
     <fu-copy value="npm i fu-kit" class="home_pre">📋 npm i fu-kit</fu-copy>
-    <p class="home_slogan">Just the right amount of UI</p>
+    <p class="home_slogan">Just the right amount of UI for your Vue 3 Application!</p>
+    <p class="home_slogan">Flexible, but not too much.</p>
+    <p class="home_slogan">Customizable, but not power-creep.</p>
+    <p class="home_slogan">Not too bad, not too good.</p>
+    <p class="home_slogan">Just right.</p>
+
   </div>
 </template>
 

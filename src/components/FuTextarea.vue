@@ -1,12 +1,12 @@
 <template>
   <label
       class="fu-text"
-      v-bind="{class:$attrs.class}"
+      v-bind="{ class: $attrs.class }"
       :class="{'_disabled': $attrs.disabled !== undefined || $attrs.readOnly  !== undefined }"
   >
     <textarea
         ref="textarea"
-        v-bind="{...$attrs, class:undefined}"
+        v-bind="{...$attrs, class: undefined}"
         :value="modelValue"
         class="fu-text_textarea"
         @input="handleInput"

@@ -1,13 +1,17 @@
 <template>
   <div class="doc-sandbox">
     <div class="doc-sandbox_row" v-for="c in classes" :class="c">
-      <fu-text class="doc-sandbox_row-text" v-model="val" :placeholder="c + ' placeholder'" />
       <fu-button class="doc-sandbox_row-btn">{{ c }}</fu-button>
+      <fu-select v-model="selectVal">
+        <option v-for="i in list" :value="i.value">{{ i.label }}</option>
+      </fu-select>
+      <fu-select-x v-model="selectVal" :options="list" />
+      <fu-text class="doc-sandbox_row-text" v-model="textVal" :placeholder="c + ' placeholder'" />
     </div>
 
     <div class="doc-sandbox_row">
-      <fu-text disabled v-model="val" placeholder="disabled placeholder" class="doc-sandbox_row-text" />
       <fu-button disabled class="doc-sandbox_row-btn">disabled</fu-button>
+      <fu-text disabled v-model="textVal" placeholder="disabled placeholder" class="doc-sandbox_row-text" />
     </div>
 
     <fu-code-view label="Example">{{ example }}</fu-code-view>
@@ -19,6 +23,8 @@ import FuCodeView from '@/components/FuCodeView.vue'
 import FuText     from '@/components/FuText.vue'
 import { ref }    from 'vue'
 import FuButton   from '@/components/FuButton.vue'
+import FuSelect   from '@/components/FuSelect.vue'
+import FuSelectX  from '@/components/FuSelectX.vue'
 
 const example = `
 tbd
@@ -26,11 +32,18 @@ tbd
 
 export default {
   name: 'doc-sandbox',
-  components: { FuButton, FuText, FuCodeView },
+  components: { FuSelectX, FuSelect, FuButton, FuText, FuCodeView },
   setup () {
     const classes = [ 'default', 'primary', 'brand', 'secondary', 'positive', 'warning', 'negative' ]
-    const val = ref('')
-    return { example, val, classes }
+    const textVal = ref('')
+
+    const selectVal = ref('val1')
+    const list = [
+      { value: 'val1', label: 'label 1' },
+      { value: 'val2', label: 'label 2' },
+      { value: 'val3', label: 'label 3' },
+    ]
+    return { example, textVal, classes, selectVal, list }
   },
 }
 </script>

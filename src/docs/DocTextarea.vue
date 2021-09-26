@@ -21,8 +21,7 @@ export default {
   name: 'doc-textarea',
   components: { FuButton, FuTextarea, FuCodeView },
   setup () {
-    const val = ref(`
-Where does it come from?
+    const val = ref(`Where does it come from?
 
 Contrary to popular belief, Lorem Ipsum is not simply random text.
 It has roots in a piece of classical Latin literature from 45 BC,

@@ -1,9 +1,13 @@
 <template>
   <div class="doc-select">
     <div class="doc-select_row">
+      <label>Boring Select</label>
       <fu-select v-model="val">
         <option v-for="i in list" :value="i.value">{{ i.label }}</option>
       </fu-select>
+    </div>
+    <div class="doc-select_row">
+      <label>Fancy select with search</label>
       <fu-select-x v-model="val" :options="list" />
     </div>
   </div>
@@ -32,14 +36,18 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.select {
-  .row {
-    @include spacing-padding(300);
-    gap: 1em;
-    display: flex;
+.doc-select {
+  display: flex;
+  flex-direction: column;
+  gap: spacing(300);
+
+  &_row {
   }
   .primary {
     // default
+  }
+  .brand {
+    --button-pal: #{pal(secondary)};
   }
   .secondary {
     --button-pal: #{pal(secondary)};

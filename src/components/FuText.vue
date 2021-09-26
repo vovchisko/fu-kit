@@ -2,11 +2,12 @@
   <label
       class="fu-text"
       :class="{'_disabled': $attrs.disabled !== undefined || $attrs.readOnly  !== undefined }"
+      v-bind="{ class: $attrs.class }"
   >
     <slot />
     <slot name="left" />
     <input
-        v-bind="$attrs"
+        v-bind="{...$attrs, class: undefined}"
         :value="modelValue"
         class="fu-text_input"
         @input="$emit('update:modelValue', $event.target.value)"
