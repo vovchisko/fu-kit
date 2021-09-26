@@ -1,9 +1,10 @@
 <template>
-  <div class="fu-sidebar">
-    <div class="fu-sidebar_overlay" :class="{'_shown': isOpen}" @click.self="$emit('close')"></div>
-    <div class="fu-sidebar_content" :class="{'_shown': isOpen}">
-      <slot />
-    </div>
+  <div class="fu-sidebar" :class="{'_shown':isOpen}" @click.self="$emit('close')">
+    <transition name="bounce">
+      <div class="fu-sidebar_content" v-if="isOpen">
+        <slot />
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -20,25 +21,24 @@ export default {
 
 <style scoped lang="scss">
 .fu-sidebar {
-  &_overlay {
-    position: fixed;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    z-index: var(--lt-z-modal-backdrop);
-    background: pal(prime, 0.3);
-    transition-timing-function: linear;
-    transition-duration: 200ms;
-    transition-property: opacity, visibility;
-    will-change: opacity, visibility;
-    visibility: hidden;
-    opacity: 0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: var(--lt-z-nav);
+  background: var(--pal-overlay);
+  transition-timing-function: linear;
+  transition-duration: 600ms;
+  transition-property: opacity, visibility;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
 
-    &._shown {
-      opacity: 1;
-      visibility: visible;
-    }
+  &._shown {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: unset;
   }
 
   &_content {
@@ -50,16 +50,27 @@ export default {
     top: 0;
     right: 0;
     bottom: 0;
-    z-index: var(--lt-z-modal);
-    background: pal(bg);
-    transition: transform ease-out 200ms;
-    transform: translateX(101%);
-    will-change: transform;
+    background: var(--pal-bg);
     max-width: 100vw;
+    min-width: 25vw;
+    transform-origin: 100% 50%;
+  }
+}
 
-    &._shown {
-      transform: translateX(0);
-    }
+.bounce-enter-active {
+  animation: bounce-in 200ms;
+}
+
+.bounce-leave-active {
+  animation: bounce-in 200ms reverse;
+}
+
+@keyframes bounce-in {
+  0% {
+    transform: translateX(100%) scaleX(1);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
 </style>

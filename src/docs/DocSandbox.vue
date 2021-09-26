@@ -27,7 +27,7 @@ import FuSelect   from '@/components/FuSelect.vue'
 import FuSelectX  from '@/components/FuSelectX.vue'
 
 const example = `
-tbd
+TBD
 `
 
 export default {

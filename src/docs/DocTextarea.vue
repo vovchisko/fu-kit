@@ -14,7 +14,7 @@ import { ref }    from 'vue'
 import FuButton   from '@/components/FuButton.vue'
 
 const example = `
-tbd
+TBD
 `
 
 export default {

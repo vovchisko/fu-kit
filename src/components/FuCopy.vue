@@ -1,7 +1,8 @@
 <template>
   <fu-button
+      v-bind="$attrs"
+      hollow
       class="fu-copy"
-      fill="none"
       @click="handleCopyToClipboard"
       :class="{'_hot': isCopied}"
   >
@@ -11,12 +12,12 @@
 
 <script>
 import { onBeforeUnmount, ref } from 'vue'
+import FuButton                 from '@/components/FuButton.vue'
 
-import FuButton from './FuButton.vue'
 
 export default {
   name: 'fu-copy',
-  components: { FuButton },
+  components: { FuButton  },
   props: {
     value: { type: String, required: true },
   },
@@ -77,21 +78,26 @@ export default {
 .fu-copy {
   @include spacing-padding(0, 200);
 
-  text-decoration: none;
-  border: 1px solid transparent;
-  transition: all 1000ms ease-out;
-  color: color(dark);
-  justify-content: flex-start;
+  &._hollow {
+    font-weight: normal;
 
-  --button-pal: #{color(dark, 0.5)};
+    &:active {
+      box-shadow: none;
+    }
 
-  &:hover {
-    color: color(black);
+    &:hover {
+      box-shadow: none;
+    }
+
+    &:focus {
+      box-shadow: none;
+    }
+
+    &._hot {
+      transition: none;
+      border-color: var(--pal-positive);
+    }
   }
 
-  &._hot {
-    transition: none;
-    border-color: pal(positive);
-  }
 }
 </style>
