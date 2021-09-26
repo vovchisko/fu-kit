@@ -60,14 +60,17 @@ body {
   &_header {
     grid-area: header;
     display: flex;
-    align-items: center;
+    align-items: stretch;
     justify-content: space-between;
     height: var(--lt-header-height);
     padding: 0 var(--lt-horizontal-padding);
 
     &-logo {
+      display: flex;
+      align-items: center;
+
       &-link {
-        @include typo(400);
+        @include typo(300);
 
         color: var(--pal-text);
         text-decoration: none;
@@ -92,7 +95,7 @@ body {
       left: 0;
       top: 0;
       bottom: 0;
-      border-right: 1px solid rgba(var(--rgb-grey500), 0.5);
+      border-right: 1px solid rgba(var(--rgb-grey500), 0.1);
       display: flex;
       flex-direction: column;
       gap: spacing(200);
@@ -102,8 +105,14 @@ body {
         width: 10em;
         display: block;
         text-decoration: none;
+        line-height: 2em;
+
+        &:hover {
+          color: var(--pal-link-active);
+        }
 
         &._active {
+          color: var(--pal-link-active);
           text-decoration: underline;
         }
       }

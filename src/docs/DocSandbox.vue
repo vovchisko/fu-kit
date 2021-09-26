@@ -55,7 +55,6 @@ export default {
   gap: 1em;
 
   &_row {
-    @include spacing-padding(300);
     gap: 1em;
     display: flex;
 

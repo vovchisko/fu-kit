@@ -34,7 +34,8 @@ export default {
 [route="HOME"] {
   --pal-text: var(--pal-light);
   --pal-bg: var(--pal-dark);
-  --pal-link-active: var(--pal-light);
+  --pal-link: var(--pal-grey300);
+  --pal-link-active: var(--pal-white);
 
 }
 </style>
@@ -53,6 +54,7 @@ export default {
     --typo-font-text: Georgia, serif;
     --typo-font-heading: Georgia, serif;
 
+    border-radius: 16px;
     color: var(--pal-white);
     aspect-ratio: 1 / 1.1;
     width: 780px;
