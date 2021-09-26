@@ -1,6 +1,6 @@
 {
   "name": "fu-kit",
-  "version": "0.0.1-beta.4",
+  "version": "0.0.1",
   "description": "extremely simple (not) UI-kit for vue",
   "main": "components.js",
   "scripts": {
