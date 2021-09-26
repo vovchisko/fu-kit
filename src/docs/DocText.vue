@@ -3,6 +3,7 @@
     <div class="doc-text_row">
       <fu-text v-model="val" placeholder="placeholder" />
       <fu-text class="secondary" v-model="val" placeholder="placeholder" />
+      <fu-text class="brand" v-model="val" placeholder="placeholder" />
       <fu-text disabled v-model="val" placeholder="placeholder" />
     </div>
     <div class="doc-text_row">
@@ -45,30 +46,6 @@ export default {
     @include spacing-padding(300);
     gap: 1em;
     display: flex;
-  }
-
-  .brand {
-    --text-focus-pal: var(--pal-brand);
-  }
-
-  .primary {
-    --text-focus-pal: var(--pal-primary);
-  }
-
-  .secondary {
-    --text-focus-pal: var(--pal-secondary);
-  }
-
-  .positive {
-    --text-focus-pal: var(--pal-positive);
-  }
-
-  .warning {
-    --text-focus-pal: var(--pal-warning);
-  }
-
-  .negative {
-    --text-focus-pal: var(--pal-negative);
   }
 
   .icon {

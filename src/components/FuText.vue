@@ -45,6 +45,7 @@ export default {
   transition-timing-function: ease-in-out;
   transition-property: border-color, box-shadow;
   height: var(--ui-lt-h);
+  background: var(--ui-pal-bg);
 
   &_input {
     @include typo(200);

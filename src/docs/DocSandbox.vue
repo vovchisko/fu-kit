@@ -67,30 +67,5 @@ export default {
       width: 8em;
     }
   }
-
-  .brand {
-    --ui-pal: var(--pal-brand);
-  }
-
-  .primary {
-    --ui-pal: var(--pal-primary);
-  }
-
-  .secondary {
-    --ui-pal: var(--pal-secondary);
-  }
-
-  .positive {
-    --ui-pal: var(--pal-positive);
-  }
-
-  .warning {
-    --ui-pal: var(--pal-warning);
-  }
-
-  .negative {
-    --ui-pal: var(--pal-negative);
-  }
-
 }
 </style>

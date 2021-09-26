@@ -25,7 +25,31 @@
     <small class="app_footer-copy">This is a char in brackets (a) 2021</small>
   </footer>
 </template>
+<style lang="scss">
+  .brand {
+    --ui-pal: var(--pal-brand);
+  }
 
+  .primary {
+    --ui-pal: var(--pal-primary);
+  }
+
+  .secondary {
+    --ui-pal: var(--pal-secondary);
+  }
+
+  .positive {
+    --ui-pal: var(--pal-positive);
+  }
+
+  .warning {
+    --ui-pal: var(--pal-warning);
+  }
+
+  .negative {
+    --ui-pal: var(--pal-negative);
+  }
+</style>
 <style lang="scss" scoped>
 .app {
   &_header {

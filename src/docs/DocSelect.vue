@@ -6,7 +6,18 @@
         <option v-for="i in list" :value="i.value">{{ i.label }}</option>
       </fu-select>
     </div>
-    <div class="doc-select_row">
+
+    <div class="doc-select_row brand">
+      <label>Fancy select with search</label>
+      <fu-select-x v-model="val" :options="list" />
+    </div>
+
+    <div class="doc-select_row positive">
+      <label>Fancy select with search</label>
+      <fu-select-x v-model="val" :options="list" />
+    </div>
+
+    <div class="doc-select_row negative">
       <label>Fancy select with search</label>
       <fu-select-x v-model="val" :options="list" />
     </div>
@@ -40,26 +51,5 @@ export default {
   display: flex;
   flex-direction: column;
   gap: spacing(300);
-
-  &_row {
-  }
-  .primary {
-    // default
-  }
-  .brand {
-    --button-pal: #{pal(secondary)};
-  }
-  .secondary {
-    --button-pal: #{pal(secondary)};
-  }
-  .positive {
-    --button-pal: #{pal(positive)};
-  }
-  .warning {
-    --button-pal: #{pal(warning)};
-  }
-  .negative {
-    --button-pal: #{pal(negative)};
-  }
 }
 </style>

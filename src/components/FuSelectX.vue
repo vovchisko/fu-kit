@@ -210,6 +210,7 @@ export default {
   transition-property: border-color, box-shadow;
   height: var(--ui-lt-h);
   position: relative;
+  background: var(--ui-pal-bg);
 
   &_input {
     @include typo(200);
@@ -234,6 +235,11 @@ export default {
     &:not(:focus)::placeholder {
       color: pal(prime);
     }
+
+    &::selection {
+      background-color: var(--ui-pal);
+      color: var(--ui-pal-text-select);
+    }
   }
 
   &_list {
@@ -253,8 +259,9 @@ export default {
     left: calc(var(var(--ui-lt-border-width)-1));
     top: 100%;
     min-width: calc(100% + var(--ui-lt-border-width));
-    background-color: pal(bg);
+    background: var(--ui-pal-bg);
     margin-top: spacing(200);
+    z-index: var(--lt-z-pop);
 
     &-item {
       @include spacing-padding(100, 300);
@@ -269,14 +276,14 @@ export default {
       background: transparent;
       outline: none;
 
+      &:hover {
+        color: var(--ui-pal-acc);
+        background-color: var(--ui-pal);
+      }
+
       &._selected {
         background-color: var(--ui-pal-lateral);
         color: var(--ui-pal-text);
-      }
-
-      &:hover {
-        color: var(--ui-pal);
-        background-color: pal(pal-block-light, 0.3);
       }
 
       &:focus {
