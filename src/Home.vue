@@ -14,7 +14,7 @@
 
       <p class="home_text">Just the right amount of UI for your Vue 3 Application!</p>
       <p class="home_text">Flexible, but not too much.</p>
-      <p class="home_text">Customizable, but not a "options-creep".</p>
+      <p class="home_text">Customizable, but not an "options-creep".</p>
       <p class="home_text">Not too bad, not too good.</p>
       <p class="home_text">Just right.</p>
     </div>
@@ -29,6 +29,16 @@ export default {
   components: { FuCopy },
 }
 </script>
+
+<style lang="scss">
+[route="HOME"] {
+  --pal-text: var(--pal-light);
+  --pal-bg: var(--pal-dark);
+  --pal-link-active: var(--pal-light);
+
+}
+</style>
+
 <style lang="scss" scoped>
 .home {
   display: flex;

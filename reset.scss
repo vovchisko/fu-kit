@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  color: var(--pal-text);
 }
 
 address, article, aside, blockquote, details, dialog, dd, div, dl, dt, fieldset, figcaption,
@@ -57,4 +58,12 @@ small {
 label {
   @include typo(100);
   display: block;
+}
+
+a {
+  color: var(--pal-link);
+
+  &:active, &:focus {
+    color: var(--pal-link-active);
+  }
 }

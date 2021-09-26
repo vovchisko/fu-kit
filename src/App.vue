@@ -26,30 +26,35 @@
   </footer>
 </template>
 <style lang="scss">
-  .brand {
-    --ui-pal: var(--pal-brand);
-  }
+body {
+  transition: background-color linear 200ms;
+}
 
-  .primary {
-    --ui-pal: var(--pal-primary);
-  }
+.brand {
+  --ui-pal: var(--pal-brand);
+}
 
-  .secondary {
-    --ui-pal: var(--pal-secondary);
-  }
+.primary {
+  --ui-pal: var(--pal-primary);
+}
 
-  .positive {
-    --ui-pal: var(--pal-positive);
-  }
+.secondary {
+  --ui-pal: var(--pal-secondary);
+}
 
-  .warning {
-    --ui-pal: var(--pal-warning);
-  }
+.positive {
+  --ui-pal: var(--pal-positive);
+}
 
-  .negative {
-    --ui-pal: var(--pal-negative);
-  }
+.warning {
+  --ui-pal: var(--pal-warning);
+}
+
+.negative {
+  --ui-pal: var(--pal-negative);
+}
 </style>
+
 <style lang="scss" scoped>
 .app {
   &_header {
@@ -64,7 +69,7 @@
       &-link {
         @include typo(400);
 
-        color: color(black);
+        color: var(--pal-text);
         text-decoration: none;
       }
     }
@@ -87,7 +92,7 @@
       left: 0;
       top: 0;
       bottom: 0;
-      border-right: var(--ui-lt-border-width) solid color(grey100);
+      border-right: 1px solid rgba(var(--rgb-grey500), 0.5);
       display: flex;
       flex-direction: column;
       gap: spacing(200);
@@ -99,7 +104,6 @@
         text-decoration: none;
 
         &._active {
-          color: black;
           text-decoration: underline;
         }
       }
