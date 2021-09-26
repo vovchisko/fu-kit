@@ -1,11 +1,7 @@
 <template>
   <div class="doc-textarea">
-    <fu-textarea class="brand" v-model="val" placeholder="this is a text area" />
-    <fu-button>Like submit</fu-button>
-    <br>
-    <br>
-    <br>
     <fu-textarea v-model="val" placeholder="this is a text area" auto-resize />
+    <fu-textarea class="brand" v-model="val" placeholder="this is a text area" />
     <fu-button>Like submit</fu-button>
     <fu-code-view label="Example">{{ example }}</fu-code-view>
   </div>
