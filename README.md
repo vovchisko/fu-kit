@@ -4,6 +4,7 @@
 
 Lightweight cozy components library for Vue3.
 
+Demo [fu-kit.vovchisko.dev](https://fu-kit.vovchisko.dev)
 ```
 npm i          # install
 npm run serve  # serve locally
