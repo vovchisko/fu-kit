@@ -19,12 +19,12 @@
 </template>
 
 <script>
-import FuCodeView from '../../src/lib-components/FuCodeView.vue'
-import FuText     from '../../src/lib-components/FuText.vue'
+import FuCodeView from '../../lib-components/FuCodeView.vue'
+import FuText     from '../../lib-components/FuText.vue'
 import { ref }    from 'vue'
-import FuButton   from '../../src/lib-components/FuButton.vue'
-import FuSelect   from '../../src/lib-components/FuSelect.vue'
-import FuSelectX  from '../../src/lib-components/FuSelectX.vue'
+import FuButton   from '../../lib-components/FuButton.vue'
+import FuSelect   from '../../lib-components/FuSelect.vue'
+import FuSelectX  from '../../lib-components/FuSelectX.vue'
 
 const example = `
 TBD
@@ -49,6 +49,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "../../../scss";
+
 .doc-sandbox {
   display: flex;
   flex-direction: column;

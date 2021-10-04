@@ -33,8 +33,8 @@
 </template>
 
 <script>
-import FuButton   from '../../src/lib-components/FuButton.vue'
-import FuCodeView from '../../src/lib-components/FuCodeView.vue'
+import FuButton   from '../../lib-components/FuButton.vue'
+import FuCodeView from '../../lib-components/FuCodeView.vue'
 
 const example = `
 /// vue
@@ -57,6 +57,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "../../../scss";
+
 .doc-button {
   &_row {
     @include spacing-padding(300);

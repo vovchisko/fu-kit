@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import FuCodeView from '../../src/lib-components/FuCodeView.vue'
+import FuCodeView from '../../lib-components/FuCodeView.vue'
 import { ref }    from 'vue'
 const example =
 `
@@ -54,6 +54,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "../../../scss";
+
 .doc-typo {
   &_col {
     @include spacing-padding(400, 0);

@@ -1,5 +1,4 @@
 /* eslint-disable import/prefer-default-export */
-export { default as FuSample }         from './FuSample.vue'
 export { default as FuButton }         from './FuButton.vue'
 export { default as FuButtonLink }     from './FuButtonLink.vue'
 export { default as FuCodeView }       from './FuCodeView.vue'

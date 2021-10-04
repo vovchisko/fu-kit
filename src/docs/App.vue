@@ -30,6 +30,7 @@
 
 
 <style lang="scss">
+@import "../../scss";
 
 :root {
   --lt-header-height: 92px;
@@ -77,7 +78,7 @@ body {
 </style>
 
 <style lang="scss" scoped>
-@import "../scss";
+@import "../../scss";
 
 .app {
   &_header {

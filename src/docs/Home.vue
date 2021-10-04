@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import FuCopy from '../src/lib-components/FuCopy.vue'
+import FuCopy from '../lib-components/FuCopy.vue'
 
 export default {
   name: 'Home',
@@ -40,7 +40,7 @@ export default {
 </style>
 
 <style lang="scss" scoped>
-@import "../scss";
+@import "../../scss";
 .home {
   display: flex;
   flex-direction: column;

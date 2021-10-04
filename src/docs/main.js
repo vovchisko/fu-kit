@@ -2,15 +2,15 @@ import { createApp } from 'vue'
 import App           from './App.vue'
 import router        from './router.js'
 
-import FuKit from '@/entry.esm';
+import FuKit from '@/entry.esm.js'
 
-import '../reset.scss'
-import '../root.scss'
+import '../../reset.scss'
+import '../../root.scss'
 
-createApp(App).use(router).mount('#app')
+const app = createApp(App)
 
 // To register individual components where they are used (serve.vue) instead of using the
 // library as a whole, comment/remove this import and it's corresponding "app.use" call
-const app = createApp(App);
-app.use(FuKit);
-app.mount('#app');
+app.use(router)
+app.use(FuKit)
+app.mount('#app')

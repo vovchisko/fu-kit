@@ -17,10 +17,10 @@
 </template>
 
 <script>
-import FuCodeView from '../../src/lib-components/FuCodeView.vue'
-import FuSidebar  from '../../src/lib-components/FuSidebar.vue'
+import FuCodeView from '../../lib-components/FuCodeView.vue'
+import FuSidebar  from '../../lib-components/FuSidebar.vue'
 import { ref }    from 'vue'
-import FuButton   from '../../src/lib-components/FuButton.vue'
+import FuButton   from '../../lib-components/FuButton.vue'
 
 const example = `
 TBD
@@ -38,6 +38,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "../../../scss";
+
 .doc-sidebar {
   &_content {
     @include spacing-padding(400);

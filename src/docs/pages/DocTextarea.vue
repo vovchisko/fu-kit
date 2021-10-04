@@ -8,10 +8,10 @@
 </template>
 
 <script>
-import FuCodeView from '../../src/lib-components/FuCodeView.vue'
-import FuTextarea from '../../src/lib-components/FuTextarea.vue'
+import FuCodeView from '../../lib-components/FuCodeView.vue'
+import FuTextarea from '../../lib-components/FuTextarea.vue'
 import { ref }    from 'vue'
-import FuButton   from '../../src/lib-components/FuButton.vue'
+import FuButton   from '../../lib-components/FuButton.vue'
 
 const example = `
 TBD
@@ -48,6 +48,8 @@ from the 1914 translation by H. Rackham.
 </script>
 
 <style scoped lang="scss">
+@import "../../../scss";
+
 .doc-textarea {
   @include spacing-padding(300);
 

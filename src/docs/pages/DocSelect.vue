@@ -27,9 +27,9 @@
 <script>
 import { ref } from 'vue'
 
-import FuButton  from '../../src/lib-components/FuButton.vue'
-import FuSelect  from '../../src/lib-components/FuSelect.vue'
-import FuSelectX from '../../src/lib-components/FuSelectX.vue'
+import FuButton  from '../../lib-components/FuButton.vue'
+import FuSelect  from '../../lib-components/FuSelect.vue'
+import FuSelectX from '../../lib-components/FuSelectX.vue'
 
 export default {
   name: 'doc-buttons',
@@ -47,6 +47,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "../../../scss";
+
 .doc-select {
   display: flex;
   flex-direction: column;
