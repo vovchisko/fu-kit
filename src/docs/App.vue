@@ -28,10 +28,7 @@
   </div>
 </template>
 
-
 <style lang="scss">
-@import "../../scss";
-
 :root {
   --lt-header-height: 92px;
   --lt-footer-height: 64px;
@@ -78,7 +75,6 @@ body {
 </style>
 
 <style lang="scss" scoped>
-@import "../../scss";
 
 .app {
   &_header {

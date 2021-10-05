@@ -56,9 +56,7 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
-@import "../../../scss";
-
+<style lang="scss">
 .doc-button {
   &_row {
     @include spacing-padding(300);

@@ -47,8 +47,7 @@ from the 1914 translation by H. Rackham.
 }
 </script>
 
-<style scoped lang="scss">
-@import "../../../scss";
+<style  lang="scss">
 
 .doc-textarea {
   @include spacing-padding(300);

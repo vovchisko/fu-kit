@@ -37,8 +37,7 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
-@import "../../../scss";
+<style lang="scss">
 
 .doc-sidebar {
   &_content {

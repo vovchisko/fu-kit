@@ -4,8 +4,9 @@ import router        from './router.js'
 
 import FuKit from '@/entry.esm.js'
 
-import '../../reset.scss'
-import '../../root.scss'
+require('../../reset.scss')
+require('../../root.scss')
+require('./styles.css')
 
 const app = createApp(App)
 

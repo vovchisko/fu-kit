@@ -30,6 +30,7 @@ export default {
 }
 </script>
 
+
 <style lang="scss">
 [route="HOME"] {
   --pal-text: var(--pal-light);
@@ -37,10 +38,7 @@ export default {
   --pal-link: var(--pal-grey300);
   --pal-link-active: var(--pal-white);
 }
-</style>
 
-<style lang="scss" scoped>
-@import "../../scss";
 .home {
   display: flex;
   flex-direction: column;
