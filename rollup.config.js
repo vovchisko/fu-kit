@@ -1,5 +1,4 @@
 // rollup.config.js
-import fs         from 'fs'
 import path       from 'path'
 import vue        from 'rollup-plugin-vue'
 import alias      from '@rollup/plugin-alias'

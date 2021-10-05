@@ -33,8 +33,6 @@
 </template>
 
 <script>
-import FuButton   from '../../lib-components/FuButton.vue'
-import FuCodeView from '../../lib-components/FuCodeView.vue'
 
 const example = `
 /// vue
@@ -49,7 +47,7 @@ const example = `
 
 export default {
   name: 'doc-button',
-  components: { FuCodeView, FuButton },
+  components: {},
   setup () {
     return { example }
   },

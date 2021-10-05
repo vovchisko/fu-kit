@@ -22,11 +22,9 @@
 </template>
 
 <script>
-import FuCopy from '../lib-components/FuCopy.vue'
-
 export default {
   name: 'Home',
-  components: { FuCopy },
+  components: {},
 }
 </script>
 

@@ -20,7 +20,7 @@ import { onMounted, ref } from 'vue'
 import { defineComponent } from 'vue'
 
 export default /*#__PURE__*/defineComponent({
-  name: 'fu-text',
+  name: 'fu-textarea',
   props: {
     modelValue: {
       type: [ String, Number ],

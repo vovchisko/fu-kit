@@ -17,10 +17,7 @@
 </template>
 
 <script>
-import FuCodeView from '../../lib-components/FuCodeView.vue'
-import FuSidebar  from '../../lib-components/FuSidebar.vue'
-import { ref }    from 'vue'
-import FuButton   from '../../lib-components/FuButton.vue'
+import { ref } from 'vue'
 
 const example = `
 TBD
@@ -29,7 +26,7 @@ TBD
 
 export default {
   name: 'doc-sidebar',
-  components: { FuButton, FuSidebar, FuCodeView },
+  components: {},
   setup () {
     const rightIsOpen = ref(false)
     return { example, rightIsOpen }

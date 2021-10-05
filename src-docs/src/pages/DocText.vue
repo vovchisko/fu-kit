@@ -21,10 +21,7 @@
 </template>
 
 <script>
-import FuCodeView from '../../lib-components/FuCodeView.vue'
-import FuText     from '../../lib-components/FuText.vue'
-import { ref }    from 'vue'
-import FuButton   from '../../lib-components/FuButton.vue'
+import { ref } from 'vue'
 
 const example = `
 TBD
@@ -32,7 +29,7 @@ TBD
 
 export default {
   name: 'doc-text',
-  components: { FuButton, FuText, FuCodeView },
+  components: {},
   setup () {
     const val = ref('')
     return { example, val }

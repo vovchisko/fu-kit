@@ -2,7 +2,7 @@ import { createApp } from 'vue'
 import App           from './App.vue'
 import router        from './router.js'
 
-import FuKit from '@/entry.esm.js'
+import FuKit from 'fu-kit'
 
 require('../../reset.scss')
 require('../../root.scss')

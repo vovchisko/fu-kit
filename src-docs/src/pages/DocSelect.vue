@@ -27,13 +27,10 @@
 <script>
 import { ref } from 'vue'
 
-import FuButton  from '../../lib-components/FuButton.vue'
-import FuSelect  from '../../lib-components/FuSelect.vue'
-import FuSelectX from '../../lib-components/FuSelectX.vue'
 
 export default {
   name: 'doc-buttons',
-  components: { FuSelectX, FuSelect, FuButton },
+  components: {},
   setup () {
     const val = ref('val1')
     const list = [

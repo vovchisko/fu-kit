@@ -27,12 +27,10 @@
 </template>
 
 <script>
-import { computed, nextTick, ref, watch } from 'vue'
+import { computed, defineComponent, nextTick, ref, watch } from 'vue'
 
 import UiText   from './FuText.vue'
 import FuButton from './FuButton.vue'
-
-import { defineComponent } from 'vue'
 
 export default /*#__PURE__*/defineComponent({
   name: 'fu-select-x',
@@ -260,9 +258,9 @@ export default /*#__PURE__*/defineComponent({
     border-color: var(--ui-pal);
     border-style: solid;
     position: absolute;
-    left: calc(var(var(--ui-lt-border-width)-1));
+    left: calc(var(--ui-lt-border-width) * -1);
     top: 100%;
-    min-width: calc(100% + var(--ui-lt-border-width));
+    min-width: calc(100% + var(--ui-lt-border-width) * 2);
     background: var(--ui-pal-bg);
     margin-top: spacing(200);
     z-index: var(--lt-z-pop);

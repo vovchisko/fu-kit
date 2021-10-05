@@ -19,12 +19,7 @@
 </template>
 
 <script>
-import FuCodeView from '../../lib-components/FuCodeView.vue'
-import FuText     from '../../lib-components/FuText.vue'
-import { ref }    from 'vue'
-import FuButton   from '../../lib-components/FuButton.vue'
-import FuSelect   from '../../lib-components/FuSelect.vue'
-import FuSelectX  from '../../lib-components/FuSelectX.vue'
+import { ref } from 'vue'
 
 const example = `
 TBD
@@ -32,7 +27,7 @@ TBD
 
 export default {
   name: 'doc-sandbox',
-  components: { FuSelectX, FuSelect, FuButton, FuText, FuCodeView },
+  components: {},
   setup () {
     const classes = [ 'default', 'primary', 'brand', 'secondary', 'positive', 'warning', 'negative' ]
     const textVal = ref('')

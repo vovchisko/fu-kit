@@ -7,20 +7,20 @@
   "module": "dist/fu-kit.esm.js",
   "unpkg": "dist/fu-kit.min.js",
   "files": [
-    "docs/*",
     "dist/*",
-    "src/**/*.vue",
-    "src/**/*.scss",
+    "src/scss-kit/*",
     "reset.scss",
     "root.scss",
     "scss.scss"
   ],
   "sideEffects": false,
+  "dependencies": {},
   "scripts": {
-    "serve": "vue-cli-service serve src/docs/main.js",
-    "build:docs": "vue-cli-service build src/docs/main.js --dest docs",
-    "prebuild": "rimraf ./dist",
+    "serve": "vue-cli-service serve src/serve/main.js",
+    "prebuild": "rimraf ./dist && rimraf ./docs",
+    "postbuild": "npm run build:docs",
     "build": "cross-env NODE_ENV=production rollup --config rollup.config.js",
+    "build:docs": "node ./scripts/re-link-docs.js",
     "build:ssr": "cross-env NODE_ENV=production rollup --config rollup.config.js --format cjs",
     "build:es": "cross-env NODE_ENV=production rollup --config rollup.config.js --format es",
     "build:unpkg": "cross-env NODE_ENV=production rollup --config rollup.config.js --format iife"
@@ -41,12 +41,10 @@
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-vue": "^6.0.0",
     "sass": "^1.26.5",
-    "sass-loader": "^8.0.2",
-    "vue": "^3.0.5"
+    "sass-loader": "^8.0.2"
   },
   "peerDependencies": {
-    "vue": "^3.0.5",
-    "vue-router": "^4.0.0-0"
+    "vue": "^3.0.5"
   },
   "engines": {
     "node": ">=12"

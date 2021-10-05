@@ -31,10 +31,8 @@
 </template>
 
 <script>
-import FuCodeView from '../../lib-components/FuCodeView.vue'
-import { ref }    from 'vue'
 const example =
-`
+    `
 .h200 {
   @include typo(200);
 }
@@ -46,14 +44,14 @@ h4 {
 `
 export default {
   name: 'doc-typo',
-  components: { FuCodeView },
-  setup(){
+  components: {  },
+  setup () {
     return { example }
-  }
+  },
 }
 </script>
 
-<style  lang="scss">
+<style lang="scss">
 
 .doc-typo {
   &_col {
