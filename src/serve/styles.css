@@ -1,0 +1,43 @@
+:root {
+  --lt-header-height: 92px;
+  --lt-footer-height: 64px;
+  --lt-horizontal-padding: 32px;
+}
+
+body {
+  font-family: var(--typo-font-text);
+  color: var(--pal-text);
+  background: var(--pal-bg);
+}
+
+#app {
+  @include scrollbar-awesome();
+}
+
+body {
+  transition: background-color linear 200ms;
+}
+
+.brand {
+  --ui-pal: var(--pal-brand);
+}
+
+.primary {
+  --ui-pal: var(--pal-primary);
+}
+
+.secondary {
+  --ui-pal: var(--pal-secondary);
+}
+
+.positive {
+  --ui-pal: var(--pal-positive);
+}
+
+.warning {
+  --ui-pal: var(--pal-warning);
+}
+
+.negative {
+  --ui-pal: var(--pal-negative);
+}

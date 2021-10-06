@@ -1,0 +1,68 @@
+@use 'sass:color';
+
+//
+//  MATH HELPERS
+//
+
+@function pow($x, $n) {
+  $ret: 1;
+  @if $n >= 0 {
+    @for $i from 1 through $n {
+      $ret: $ret * $x;
+    }
+  } @else {
+    @for $i from $n to 0 {
+      $ret: $ret / $x;
+    }
+  }
+  @return $ret;
+}
+
+@function to-fixed($float, $digits: 2) {
+  $pow: pow(10, $digits);
+  @return round($float * $pow) / $pow;
+}
+
+//
+//  COLOR HELPERS
+//
+
+@function pal($color-code, $opacity:1) {
+  @if ($opacity < 1) {
+    @return rgba(var(--pal-#{$color-code}), #{$opacity})
+  } @else {
+    @return rgb(var(--pal-#{$color-code}))
+  }
+}
+
+@function pal-acc($color-code, $opacity:1) {
+  @if ($opacity < 1) {
+    @return rgba(var(--pal-acc-#{$color-code}), #{$opacity})
+  } @else {
+    @return rgb(var(--pal-acc-#{$color-code}))
+  }
+}
+
+@function color($color-code, $opacity:1) {
+  @if ($opacity < 1) {
+    @return rgba(var(--rgb-#{$color-code}), #{$opacity})
+  } @else {
+    @return rgb(var(--rgb-#{$color-code}))
+  }
+}
+
+@function hex2rgb($hex) {
+  @return color.red($hex), color.green($hex), color.blue($hex)
+}
+
+@function hex2hsl($hex) {
+  @return to-fixed(color.hue($hex)), to-fixed(color.saturation($hex)), to-fixed(color.lightness($hex))
+}
+
+@function pal-hsl($color-code, $opacity:1) {
+  @if ($opacity < 1) {
+    @return hsla(var(--#{$color-code}), #{$opacity})
+  } @else {
+    @return hsl(var(--#{$color-code}))
+  }
+}
