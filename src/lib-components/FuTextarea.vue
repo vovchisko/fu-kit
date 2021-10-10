@@ -46,12 +46,6 @@ export default /*#__PURE__*/defineComponent({
   },
 })
 </script>
-<style lang="scss">
-:root {
-  --ui-textarea-resize: vertical;
-}
-</style>
-
 <style lang="scss" scoped>
 @import "../../scss";
 
@@ -87,7 +81,7 @@ export default /*#__PURE__*/defineComponent({
     flex: 1;
     display: block;
     min-width: 0;
-    resize: var(--ui-textarea-resize);
+    resize: var(--ui-textarea-resize, vertical);
     min-height: var(--ui-lt-h);
     height: var(--ui-lt-h);
 

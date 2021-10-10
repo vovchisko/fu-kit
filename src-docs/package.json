@@ -1,6 +1,5 @@
 {
   "name": "docs",
-  "version": "0.1.0",
   "private": true,
   "scripts": {
     "preserve": "cd .. && npm run build",
@@ -8,7 +7,7 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
-    "fu-kit": "file:../fu-kit-0.4.0.tgz",
+    "fu-kit": "file:../fu-kit-0.4.1.tgz",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-0"
   },

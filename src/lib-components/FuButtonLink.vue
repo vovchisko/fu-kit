@@ -26,14 +26,6 @@ export default /*#__PURE__*/defineComponent({
 })
 </script>
 
-<style lang="scss">
-:root {
-  --button-link-pal: var(--pal-link);
-  --button-link-pal-active: var(--pal-link-active);
-  --button-link-disabled-pal: var(--ui-pal-disabled);
-}
-</style>
-
 <style lang="scss" scoped>
 @import "../../scss";
 
@@ -49,7 +41,7 @@ export default /*#__PURE__*/defineComponent({
   border: 0 none;
   transition: var(--ui-transition);
   background: transparent;
-  color: var(--button-link-pal);
+  color: var(--pal-link);
   line-height: 1;
   will-change: box-shadow, transform;
   outline: none;
@@ -66,18 +58,18 @@ export default /*#__PURE__*/defineComponent({
   }
 
   &:focus {
-    color: var(--button-link-pal-active);
+    color: var(--pal-link-active);
     text-decoration: underline dashed;
   }
 
   &:active {
-    color: var(--button-link-pal-active);
+    color: var(--pal-link-active);
     text-decoration: underline dashed;
   }
 
   &:disabled {
     cursor: not-allowed;
-    color: var(--pal-link-active);
+    color: var(--ui-pal-disabled);
   }
 }
 </style>

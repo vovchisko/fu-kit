@@ -4,6 +4,8 @@
       <fu-check v-model="isChecked">Check</fu-check>
       <fu-check switch-like v-model="isSwitched">Switcher</fu-check>
       <fu-button class="doc-sandbox_row-btn">{{ c }}</fu-button>
+      <fu-button hollow class="doc-sandbox_row-btn">{{ c }}</fu-button>
+      <fu-button-link class="doc-sandbox_row-btn">{{ c }}</fu-button-link>
       <fu-select v-model="selectVal">
         <option v-for="i in list" :value="i.value">{{ i.label }}</option>
       </fu-select>
@@ -27,16 +29,17 @@
 <script>
 import { ref } from 'vue'
 
-import FuButton   from '@/lib-components/FuButton.vue'
-import FuSelect   from '@/lib-components/FuSelect.vue'
-import FuSelectX  from '@/lib-components/FuSelectX.vue'
-import FuText     from '@/lib-components/FuText.vue'
-import FuCodeView from '@/lib-components/FuCodeView.vue'
-import FuCheck    from '@/lib-components/FuCheck.vue'
+import FuButton     from '@/lib-components/FuButton.vue'
+import FuSelect     from '@/lib-components/FuSelect.vue'
+import FuSelectX    from '@/lib-components/FuSelectX.vue'
+import FuText       from '@/lib-components/FuText.vue'
+import FuCodeView   from '@/lib-components/FuCodeView.vue'
+import FuCheck      from '@/lib-components/FuCheck.vue'
+import FuButtonLink from '@/lib-components/FuButtonLink.vue'
 
 export default {
   name: 'app',
-  components: { FuCheck, FuCodeView, FuText, FuSelectX, FuSelect, FuButton },
+  components: { FuButtonLink, FuCheck, FuCodeView, FuText, FuSelectX, FuSelect, FuButton },
   setup () {
     const classes = [ 'default', 'primary', 'brand', 'secondary', 'positive', 'warning', 'negative' ]
     const textVal = ref('')

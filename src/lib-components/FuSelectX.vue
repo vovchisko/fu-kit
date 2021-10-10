@@ -184,14 +184,6 @@ export default /*#__PURE__*/defineComponent({
 })
 </script>
 
-<style lang="scss">
-:root {
-  --select-x-bg: black;
-  --select-x-border-color: #{pal(primary)};
-  --select-x-border-width: 1px;
-}
-</style>
-
 <style lang="scss" scoped>
 @import "../../scss";
 
