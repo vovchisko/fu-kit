@@ -1,6 +1,6 @@
 {
   "name": "fu-kit",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "",
   "main": "dist/fu-kit.ssr.js",
   "browser": "dist/fu-kit.esm.js",
