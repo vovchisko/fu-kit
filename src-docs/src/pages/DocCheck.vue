@@ -12,15 +12,15 @@
       <fu-check disabled v-model="val">Disabled</fu-check>
     </div>
     <div class="doc-text_col">
-      <h4>fu-switch</h4>
-      <fu-switch v-model="val">Default</fu-switch>
-      <fu-switch class="primary" v-model="val">Switch primary</fu-switch>
-      <fu-switch class="secondary" v-model="val">Switch secondary</fu-switch>
-      <fu-switch class="brand" v-model="val">Switch brand</fu-switch>
-      <fu-switch class="positive" v-model="val">Switch positive</fu-switch>
-      <fu-switch class="negative" v-model="val">Switch negative</fu-switch>
-      <fu-switch class="warning" v-model="val">Switch warning</fu-switch>
-      <fu-switch disabled v-model="val">Disabled</fu-switch>
+      <h4>with switch-like</h4>
+      <fu-check switch-like v-model="val">Default</fu-check>
+      <fu-check switch-like class="primary" v-model="val">Switch primary</fu-check>
+      <fu-check switch-like class="secondary" v-model="val">Switch secondary</fu-check>
+      <fu-check switch-like class="brand" v-model="val">Switch brand</fu-check>
+      <fu-check switch-like class="positive" v-model="val">Switch positive</fu-check>
+      <fu-check switch-like class="negative" v-model="val">Switch negative</fu-check>
+      <fu-check switch-like class="warning" v-model="val">Switch warning</fu-check>
+      <fu-check switch-like disabled v-model="val">Disabled</fu-check>
     </div>
   </div>
   <fu-code-view label="Example">{{ example }}</fu-code-view>
