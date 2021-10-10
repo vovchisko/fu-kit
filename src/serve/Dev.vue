@@ -1,7 +1,8 @@
 <template>
   <div class="doc-sandbox">
     <div class="doc-sandbox_row" v-for="c in classes" :class="c">
-
+      <fu-check v-model="isChecked">Check</fu-check>
+      <fu-switch v-model="isSwitched">Switcher</fu-switch>
       <fu-button class="doc-sandbox_row-btn">{{ c }}</fu-button>
       <fu-select v-model="selectVal">
         <option v-for="i in list" :value="i.value">{{ i.label }}</option>
@@ -16,24 +17,34 @@
       <fu-text disabled v-model="textVal" placeholder="disabled placeholder" class="doc-sandbox_row-text" />
     </div>
 
+    <div class="doc-sandbox_row">
+      <fu-check disabled v-model="isChecked">Check</fu-check>
+      <fu-switch disabled v-model="isSwitched">Switcher</fu-switch>
+    </div>
+
   </div>
 </template>
 
 <script>
-import { ref }    from 'vue'
+import { ref } from 'vue'
+
 import FuButton   from '@/lib-components/FuButton.vue'
 import FuSelect   from '@/lib-components/FuSelect.vue'
 import FuSelectX  from '@/lib-components/FuSelectX.vue'
 import FuText     from '@/lib-components/FuTextarea.vue'
 import FuCodeView from '@/lib-components/FuCodeView.vue'
+import FuCheck    from '@/lib-components/FuCheck.vue'
+import FuSwitch   from '@/lib-components/FuSwitch.vue'
 
 
 export default {
   name: 'app',
-  components: { FuCodeView, FuText, FuSelectX, FuSelect, FuButton },
+  components: { FuSwitch, FuCheck, FuCodeView, FuText, FuSelectX, FuSelect, FuButton },
   setup () {
     const classes = [ 'default', 'primary', 'brand', 'secondary', 'positive', 'warning', 'negative' ]
     const textVal = ref('')
+    const isChecked = ref(false)
+    const isSwitched = ref(false)
 
     const selectVal = ref('val1')
     const list = [
@@ -41,7 +52,7 @@ export default {
       { value: 'val2', label: 'label 2' },
       { value: 'val3', label: 'label 3' },
     ]
-    return { textVal, classes, selectVal, list }
+    return { textVal, classes, selectVal, list, isChecked, isSwitched }
   },
 }
 </script>

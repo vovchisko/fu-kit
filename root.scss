@@ -74,8 +74,9 @@
   --ui-pal-disabled: rgb(var(--rgb-grey100));
   --ui-pal-disabled-border: rgb(var(--rgb-grey300));
 
-  --ui-transition: all linear 120ms;
+  --ui-transition: linear 120ms;
   --ui-lt-h: 36px;
+  --ui-lt-h-sub: 20px;
   --ui-lt-border-style: solid;
   --ui-lt-border-width: 1px;
   --ui-lt-border-radius: var(--lt-border-radius-inner);

@@ -1,5 +1,5 @@
 <template>
-  <label
+  <div
       class="fu-text"
       v-bind="{ class: $attrs.class }"
       :class="{'_disabled': $attrs.disabled !== undefined || $attrs.readOnly  !== undefined }"
@@ -11,7 +11,7 @@
         class="fu-text_textarea"
         @input="handleInput"
     />
-  </label>
+  </div>
 </template>
 
 <script>

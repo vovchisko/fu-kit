@@ -1,5 +1,5 @@
 <template>
-  <label
+  <div
       class="fu-text"
       :class="{'_disabled': $attrs.disabled !== undefined || $attrs.readOnly  !== undefined }"
       v-bind="{ class: $attrs.class }"
@@ -13,7 +13,7 @@
         @input="$emit('update:modelValue', $event.target.value)"
     >
     <slot name="right" />
-  </label>
+  </div>
 </template>
 
 <script>

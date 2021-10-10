@@ -46,7 +46,7 @@ export default /*#__PURE__*/defineComponent({
   border-style: var(--ui-lt-border-style);
   border-color: var(--ui-pal);
   border-radius: var(--ui-lt-border-radius);
-  transition: var(--ui-transition);
+  transition: all var(--ui-transition);
   background: var(--ui-pal);
   color: var(--ui-pal-acc);
   line-height: 1;
