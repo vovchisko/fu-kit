@@ -30,7 +30,11 @@
 import { ref } from 'vue'
 
 const example = `
-TBD
+// simple check
+<fu-check v-model="val">Check</fu-check>
+
+// switch-like
+<fu-check switch-like v-model="val">Switch-like</fu-check>
 `
 
 export default {
