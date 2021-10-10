@@ -7,12 +7,10 @@ import DocTypo     from './pages/DocTypo.vue'
 import DocSelect   from './pages/DocSelect.vue'
 import DocText     from './pages/DocText.vue'
 import DocTextarea from './pages/DocTextarea.vue'
-import DocSandbox  from './pages/DocSandbox.vue'
 import DocSidebar  from './pages/DocSidebar.vue'
 
 const ROUTE_NAMES = Object.freeze({
   HOME: 'HOME',
-  DOC_SANDBOX: 'DOC_SANDBOX',
   DOC_TYPO: 'DOC_TYPO',
   DOC_BUTTON: 'DOC_BUTTON',
   DOC_SELECT: 'DOC_SELECT',
@@ -26,7 +24,6 @@ const ROUTE_NAMES = Object.freeze({
 
 const routes = [
   { path: '/', name: ROUTE_NAMES.HOME, component: Home },
-  { path: '/sandbox', name: ROUTE_NAMES.DOC_SANDBOX, component: DocSandbox },
   { path: '/typo', name: ROUTE_NAMES.DOC_TYPO, component: DocTypo },
   { path: '/button', name: ROUTE_NAMES.DOC_BUTTON, component: DocButton },
   { path: '/select', name: ROUTE_NAMES.DOC_SELECT, component: DocSelect },

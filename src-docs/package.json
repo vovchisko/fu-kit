@@ -7,7 +7,7 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
-    "fu-kit": "file:../fu-kit-0.2.0.tgz",
+    "fu-kit": "file:../fu-kit-0.3.0.tgz",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-0"
   },
