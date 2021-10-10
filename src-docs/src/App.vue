@@ -9,13 +9,13 @@
     <main class="app_main">
       <nav class="app_main-nav">
         <router-link to="/" active-class="_active" class="app_main-nav-link">Home</router-link>
-        <router-link to="/sandbox" active-class="_active" class="app_main-nav-link">Sandbox</router-link>
         <router-link to="/typo" active-class="_active" class="app_main-nav-link">Typography</router-link>
         <router-link to="/button" active-class="_active" class="app_main-nav-link">Button</router-link>
         <router-link to="/select" active-class="_active" class="app_main-nav-link">Select</router-link>
         <router-link to="/text" active-class="_active" class="app_main-nav-link">Text</router-link>
         <router-link to="/textarea" active-class="_active" class="app_main-nav-link">Textarea</router-link>
         <router-link to="/sidebar" active-class="_active" class="app_main-nav-link">Sidebar</router-link>
+        <router-link to="/check" active-class="_active" class="app_main-nav-link">Check</router-link>
       </nav>
       <div class="app_main-page">
         <router-view />

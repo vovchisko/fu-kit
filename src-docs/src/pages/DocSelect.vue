@@ -49,5 +49,10 @@ export default {
   display: flex;
   flex-direction: column;
   gap: spacing(300);
+
+  & label {
+    @include typo(200);
+    @include spacing-margin(200, 0);
+  }
 }
 </style>

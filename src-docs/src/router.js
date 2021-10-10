@@ -8,6 +8,7 @@ import DocSelect   from './pages/DocSelect.vue'
 import DocText     from './pages/DocText.vue'
 import DocTextarea from './pages/DocTextarea.vue'
 import DocSidebar  from './pages/DocSidebar.vue'
+import DocCheck    from '@/pages/DocCheck.vue'
 
 const ROUTE_NAMES = Object.freeze({
   HOME: 'HOME',
@@ -30,6 +31,7 @@ const routes = [
   { path: '/text', name: ROUTE_NAMES.DOC_TEXT, component: DocText },
   { path: '/textarea', name: ROUTE_NAMES.DOC_TEXTAREA, component: DocTextarea },
   { path: '/sidebar', name: ROUTE_NAMES.DOC_SIDEBAR, component: DocSidebar },
+  { path: '/check', name: ROUTE_NAMES.DOC_CHECK, component: DocCheck },
 ]
 
 const router = createRouter({
