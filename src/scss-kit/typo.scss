@@ -1,8 +1,16 @@
+@function typo-h($h) {
+  @return var(--typo-h#{$h});
+}
+
+@function typo-lh($l) {
+  @return var(--typo-lh#{$l});
+}
+
 @mixin typo($h, $l:null) {
-  font-size: var(--typo-h#{$h});
+  font-size: typo-h($h);
 
   @if ($l) {
-    line-height: var(--typo-lh#{$l});
+    line-height: typo-lh($l);
   }
 }
 

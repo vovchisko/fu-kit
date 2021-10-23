@@ -18,12 +18,13 @@
   --rgb-dark: #{hex2rgb(#151515)};
   --rgb-black: #{hex2rgb(#000000)};
 
-  --rgb-brand: #{hex2rgb(#8347A8)};
-  --rgb-primary: #{hex2rgb(#2E88F1)};
+  --rgb-brand: #{hex2rgb(#7F9CBB)};
+  --rgb-primary: #{hex2rgb(#2196F3)};
   --rgb-secondary: #{hex2rgb(#434F5F)};
-  --rgb-positive: #{hex2rgb(#6DBE2C)};
-  --rgb-warning: #{hex2rgb(#FFA927)};
-  --rgb-negative: #{hex2rgb(#FF4B4B)};
+  --rgb-positive: #{hex2rgb(#13964B)};
+  --rgb-warning: #{hex2rgb(#FF9900)};
+  --rgb-negative: #{hex2rgb(#FF331F)};
+  --rgb-link: #{hex2rgb(#0077B6)};
 
   // Format palette colors: "--pal-{code}": #RGB
 
@@ -61,8 +62,8 @@
   --pal-block-border: rgb(var(--rgb-grey200));
   --pal-bg: rgb(var(--rgb-white));
   --pal-overlay: rgba(var(--rgb-dark), 0.2);
-  --pal-link: rgb(var(--rgb-primary));
-  --pal-link-active: rgb(var(--rgb-dark));
+  --pal-link: rgb(var(--rgb-link));
+  --pal-link-active: rgb(var(--rgb-brand));
 
   --ui-pal: var(--pal-primary);
   --ui-pal-bg: var(--pal-bg);
@@ -81,10 +82,13 @@
   --ui-lt-border-width: 1px;
   --ui-lt-border-radius: var(--lt-border-radius-inner);
   --ui-lt-disabled-border-style: dashed;
-  --ui-lt-scroll-width: 12px;
 
-  --typo-font-heading: Helvetica, 'Segoe UI', San Francisco, Roboto, Lucida Sans;
+  --ui-scroll-bg: inherit;
+  --ui-scroll-width: 11px;
+
   --typo-font-text: Helvetica, 'Segoe UI', San Francisco, Roboto, Lucida Sans;
+  --typo-font-heading: var(--typo-font-text);
+  --typo-font-ui: var(--typo-font-text);
   --typo-font-mono: monospace;
 
   // font-size
