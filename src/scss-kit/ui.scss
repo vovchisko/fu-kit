@@ -1,19 +1,23 @@
-@mixin scrollbar-awesome($transparent: false) {
+@mixin scrollbar-awesome($hide: false) {
   &::-webkit-scrollbar-track {
-    background-color: var(--ui-pal-bg);
+    background-color: var(--ui-scroll-bg, inherit);
   }
 
   &::-webkit-scrollbar {
-    width: var(--ui-lt-scroll-width);
-    height: var(--ui-lt-scroll-width);
-    border-radius: var(--ui-lt-scroll-width);
-    background-color: var(--ui-pal-bg);
+    width: var(--ui-scroll-width);
+    height: var(--ui-scroll-width);
+    border-radius: var(--ui-scroll-width);
+    background-color: var(--ui-scroll-bg, inherit);
   }
 
   &::-webkit-scrollbar-thumb {
-    border: 1px solid var(--ui-pal-bg);
-    border-radius: var(--ui-lt-scroll-width);
-    background-color: transparent;
+    border: 2px solid var(--ui-scroll-bg);
+    border-radius: var(--ui-scroll-width);
+    @if ($hide) {
+      background-color: inherit;
+    } @else {
+      background-color: var(--ui-pal);
+    }
   }
 
   ::-webkit-scrollbar-corner {
@@ -21,10 +25,11 @@
     border: 0 none !important;
     box-shadow: none !important;
   }
-
-  &:focus::-webkit-scrollbar-thumb,
-  &:hover::-webkit-scrollbar-thumb, {
-    background-color: var(--ui-pal);
+  @if ($hide) {
+    &:focus::-webkit-scrollbar-thumb,
+    &:hover::-webkit-scrollbar-thumb, {
+      background-color: var(--ui-pal);
+    }
   }
 }
 

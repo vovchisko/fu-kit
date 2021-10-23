@@ -1,13 +1,15 @@
-// iife/cjs usage extends esm default export - so import it all
-import plugin, * as components from '@/entry.esm';
-
-// Attach named exports directly to plugin. IIFE/CJS will
-// only expose one global var, with component exports exposed as properties of
-// that global var (eg. plugin.component)
-Object.entries(components).forEach(([componentName, component]) => {
-  if (componentName !== 'default') {
-    plugin[componentName] = component;
-  }
-});
-
-export default plugin;
+/* eslint-disable import/prefer-default-export */
+export { default as FuButton }         from './components/FuButton.vue'
+export { default as FuButtonLink }     from './components/FuButtonLink.vue'
+export { default as FuCodeView }       from './components/FuCodeView.vue'
+export { default as FuCopy }           from './components/FuCopy.vue'
+export { default as FuProgressRadial } from './components/FuProgressRadial.vue'
+export { default as FuSelect }         from './components/FuSelect.vue'
+export { default as FuSelectX }        from './components/FuSelectX.vue'
+export { default as FuSidebar }        from './components/FuSidebar.vue'
+export { default as FuModal }          from './components/FuModal.vue'
+export { default as FuText }           from './components/FuText.vue'
+export { default as FuTextarea }       from './components/FuTextarea.vue'
+export { default as FuCheck }          from './components/FuCheck.vue'
+export { default as FuDropdown }       from './components/FuDropdown.vue'
+export { default as FuDropdownItem }   from './components/FuDropdownItem.vue'
