@@ -1,22 +1,17 @@
 <template>
   <div class="home">
     <div class="home_splash">
-      <div class="home_splash-hero">
-        <div class="home_splash-hero-epic">Fu</div>
-        <div class="home_splash-hero-sub">
-          <p>fu-kit</p>
-          <p>v{{ version }}</p>
-        </div>
-      </div>
+      <div class="home_splash-hero">FU*KIT UI</div>
+      <div class="home_splash-version">v{{ version }}</div>
+
       <h2 class="home_splash-slogan">Unreasonable UI<br>for unreasonable man.</h2>
 
       <fu-copy value="npm i fu-kit" class="home_splash-copy">📋 npm i fu-kit</fu-copy>
 
-      <p class="home_text">Just the right amount of UI for your Vue 3 Application!</p>
-      <p class="home_text">Flexible, but not too much.</p>
-      <p class="home_text">Customizable, but not an "options-creep".</p>
-      <p class="home_text">Not too bad, not too good.</p>
-      <p class="home_text">Just right.</p>
+      <p class="home_text">* Flexible, but not too much.</p>
+      <p class="home_text">* Customizable, but not an "options-creep".</p>
+      <p class="home_text">* Not too bad, not too good.</p>
+      <p class="home_text">* Just right.</p>
     </div>
   </div>
 </template>
@@ -52,9 +47,6 @@ export default {
   &_splash {
     @include spacing-padding(600, 500);
 
-    --typo-font-text: Georgia, serif;
-    --typo-font-heading: Georgia, serif;
-
     border-radius: 16px;
     color: var(--pal-white);
     aspect-ratio: 1 / 1.1;
@@ -66,48 +58,35 @@ export default {
     background-position: 50%;
 
     &-hero {
-      @include spacing-padding(200);
+      font-size: 90px;
 
-      letter-spacing: 1px;
-      font-weight: normal;
-      height: 200px;
-      width: 200px;
-      border: 1px solid var(--pal-grey400);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      --typo-font-text: Impact, Avenir, Helvetica, Arial, sans-serif;
+    }
 
-      &-epic {
-        display: block;
-        font-size: 120px;
-        color: #c53838;
-      }
+    &-version {
+      @include typo(700);
+      @include spacing-padding(200, 400);
 
-      &-sub {
-        @include typo(500);
-        @include spacing-padding(300);
-
-        display: flex;
-        justify-content: space-between;
-
-        & p {
-          @include typo(500);
-        }
-      }
+      background: var(--pal-negative);
+      display: inline-flex;
+      color: var(--pal-acc-negative);
     }
 
     &-slogan {
-      @include typo(600);
-      @include spacing-margin(500, 300);
+      @include typo(500);
+      @include spacing-margin(500, 0);
+
+      text-transform: uppercase;
+      font-weight: 100;
     }
 
     &-copy {
       @include typo(400);
-      @include spacing-padding(300, 400);
       @include spacing-margin(500, 300);
 
       --ui-pal: var(--pal-light);
 
+      padding: spacing(300) spacing(400) !important;
       border: 1px solid rgba(var(--rgb-light), 0.2);
       font-weight: 600;
       border-radius: 3px;
@@ -116,7 +95,7 @@ export default {
 
   &_text {
     @include typo(200);
-    @include spacing-margin(100, 300);
+    @include spacing-margin(300, 300);
 
     text-shadow: 0 1px 1px black;
     color: var(--pal-light);
