@@ -1,6 +1,6 @@
 <template>
   <div class="doc-sidebar">
-    <fu-modal side="right" :is-open="rightIsOpen" @close="rightIsOpen = false">
+    <fu-modal side="right" :is-open="isModalOpen" @close="isModalOpen = false">
       <div class="doc-sidebar_content">
         <h4>What is Lorem Ipsum?</h4>
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
@@ -9,10 +9,10 @@
           essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
           passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem
           Ipsum.</p>
-        <fu-button @click="rightIsOpen = false">Open Right One</fu-button>
+        <fu-button @click="isModalOpen = false">Close</fu-button>
       </div>
     </fu-modal>
-    <fu-button @click="rightIsOpen = true">Open Right One</fu-button>
+    <fu-button @click="isModalOpen = true">Open Modal</fu-button>
   </div>
 </template>
 
@@ -29,8 +29,8 @@ export default {
   name: 'doc-sidebar',
   components: { FuButton, FuModal },
   setup () {
-    const rightIsOpen = ref(false)
-    return { example, rightIsOpen }
+    const isModalOpen = ref(false)
+    return { example, isModalOpen }
   },
 }
 </script>
