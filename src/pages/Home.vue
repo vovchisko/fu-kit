@@ -5,7 +5,7 @@
         <div class="home_splash-hero-epic">Fu</div>
         <div class="home_splash-hero-sub">
           <p>fu-kit</p>
-          <p>v0.0.1</p>
+          <p>v{{ version }}</p>
         </div>
       </div>
       <h2 class="home_splash-slogan">Unreasonable UI<br>for unreasonable man.</h2>
@@ -27,6 +27,9 @@ import { FuCopy } from '../entry.js'
 export default {
   name: 'Home',
   components: { FuCopy },
+  setup () {
+    return { version: __APP_VERSION__ }
+  },
 }
 </script>
 
@@ -100,7 +103,7 @@ export default {
 
     &-copy {
       @include typo(400);
-      @include spacing-padding(100, 400);
+      @include spacing-padding(300, 400);
       @include spacing-margin(500, 300);
 
       --ui-pal: var(--pal-light);
