@@ -25,7 +25,7 @@
     </main>
 
     <footer class="app_footer">
-      <small class="app_footer-copy">Simple Things Inc. (C) 2021</small>
+      <small class="app_footer-copy">MIT License 2021 @vovchisko</small>
     </footer>
   </div>
 </template>
