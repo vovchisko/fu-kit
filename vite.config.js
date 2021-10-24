@@ -1,10 +1,14 @@
 import { defineConfig } from 'vite'
-import vue              from '@vitejs/plugin-vue'
+import pluginVue        from '@vitejs/plugin-vue'
+
 
 // https://vitejs.dev/config/
 export default defineConfig({
   build: { outDir: 'docs' },
-  plugins: [ vue() ],
+  plugins: [ pluginVue() ],
+  server: {
+    port: 4000,
+  },
   css: {
     preprocessorOptions: {
       scss: {
@@ -14,5 +18,5 @@ export default defineConfig({
   },
   define: {
     '__APP_VERSION__': JSON.stringify(process.env.npm_package_version),
-  }
+  },
 })

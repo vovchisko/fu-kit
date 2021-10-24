@@ -9,9 +9,7 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue'
-
-export default defineComponent({
+export default {
   name: 'fu-sidebar',
   emits: [ 'close' ],
   props: {
@@ -19,7 +17,7 @@ export default defineComponent({
     // todo: right side as well
     side: { type: String, default: 'right' },
   },
-})
+}
 </script>
 
 <style lang="scss">

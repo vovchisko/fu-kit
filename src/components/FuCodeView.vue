@@ -13,11 +13,11 @@
 </template>
 
 <script>
-import { defineComponent, ref, toRaw } from 'vue'
+import { ref, toRaw } from 'vue'
 
 import FuButtonLink from './FuButtonLink.vue'
 
-export default defineComponent({
+export default {
   name: 'fu-code-view',
   components: { FuButtonLink },
   props: {
@@ -30,7 +30,7 @@ export default defineComponent({
     const label = props.label
     return { isShown, label, collapse }
   },
-})
+}
 </script>
 
 <style scoped lang="scss">

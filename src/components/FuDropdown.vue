@@ -19,9 +19,7 @@
 
 import { directive as clickAway } from 'vue3-click-away'
 
-import { defineComponent } from 'vue'
-
-export default defineComponent({
+export default {
   name: 'fu-dropdown',
   directives: { clickAway },
   props: {
@@ -59,7 +57,7 @@ export default defineComponent({
       this.isOpen = false
     },
   },
-})
+}
 </script>
 
 <style lang="scss" scoped>

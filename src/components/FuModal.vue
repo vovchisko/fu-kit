@@ -9,16 +9,14 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue'
-
-export default defineComponent({
+export default {
   name: 'fu-modal',
   emits: [ 'close' ],
   props: {
     isOpen: { type: Boolean, default: false },
   },
   // todo: lock global scroll when opened
-})
+}
 </script>
 
 <style scoped lang="scss">

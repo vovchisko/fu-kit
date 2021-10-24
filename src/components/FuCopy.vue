@@ -11,10 +11,10 @@
 </template>
 
 <script>
-import { defineComponent, onBeforeUnmount, ref } from 'vue'
-import FuButton                                  from './FuButton.vue'
+import { onBeforeUnmount, ref } from 'vue'
+import FuButton                 from './FuButton.vue'
 
-export default defineComponent({
+export default {
   name: 'fu-copy',
   components: { FuButton },
   props: {
@@ -68,7 +68,7 @@ export default defineComponent({
       isCopied,
     }
   },
-})
+}
 </script>
 
 <style lang="scss" scoped>

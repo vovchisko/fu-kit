@@ -12,9 +12,7 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue'
-
-export default defineComponent({
+export default {
   name: 'fu-dropdown-item',
   props: {
     autoClose: { type: Boolean, default: false },
@@ -29,7 +27,7 @@ export default defineComponent({
       }
     },
   },
-})
+}
 </script>
 
 <style lang="scss" scoped>

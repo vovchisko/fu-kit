@@ -12,9 +12,7 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue'
-
-export default defineComponent({
+export default {
   name: 'fu-button-link',
   props: {
     hollow: { type: Boolean, default: false },
@@ -23,7 +21,7 @@ export default defineComponent({
     const mUp = (e) => e.target.blur()
     return { hollow: props.hollow, mUp }
   },
-})
+}
 </script>
 
 <style lang="scss" scoped>

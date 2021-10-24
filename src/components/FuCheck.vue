@@ -16,16 +16,14 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue'
-
-export default defineComponent({
+export default {
   name: 'fu-check',
   props: {
     modelValue: { type: [ Boolean ], default: false },
     switchLike: { type: Boolean, default: false },
   },
   emits: [ 'update:modelValue' ],
-})
+}
 </script>
 <style lang="scss" scoped>
 @import "../../scss";

@@ -12,9 +12,7 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue'
-
-export default defineComponent({
+export default {
   name: 'fu-select',
   props: {
     modelValue: {
@@ -23,7 +21,7 @@ export default defineComponent({
     },
   },
   emits: [ 'update:modelValue' ],
-})
+}
 </script>
 
 <style lang="scss" scoped>

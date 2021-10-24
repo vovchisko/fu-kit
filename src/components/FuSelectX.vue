@@ -27,12 +27,12 @@
 </template>
 
 <script>
-import { computed, defineComponent, nextTick, ref, watch } from 'vue'
+import { computed, nextTick, ref, watch } from 'vue'
 
 import FuText   from './FuText.vue'
 import FuButton from './FuButton.vue'
 
-export default defineComponent({
+export default {
   name: 'fu-select-x',
   components: { FuButton, FuText },
   props: {
@@ -181,7 +181,7 @@ export default defineComponent({
       onSomeBlur,
     }
   },
-})
+}
 </script>
 
 <style lang="scss" scoped>

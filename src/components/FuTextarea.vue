@@ -15,9 +15,9 @@
 </template>
 
 <script>
-import { defineComponent, onMounted, ref } from 'vue'
+import { onMounted, ref } from 'vue'
 
-export default defineComponent({
+export default {
   name: 'fu-textarea',
   props: {
     modelValue: {
@@ -42,8 +42,9 @@ export default defineComponent({
 
     return { handleInput, textarea }
   },
-})
+}
 </script>
+
 <style lang="scss" scoped>
 @import "../../scss";
 
