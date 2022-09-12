@@ -26,12 +26,12 @@
       <div class="h900">900 Test sample</div>
     </div>
 
-    <fu-code-view collapse label="Example">{{ example }}</fu-code-view>
+    <ui-code-view collapse label="Example">{{ example }}</ui-code-view>
   </div>
 </template>
 
 <script>
-import { FuCodeView } from '../entry.js'
+import { UiCodeView } from '../entry.js'
 
 const example =
     `
@@ -46,7 +46,7 @@ h4 {
 `
 export default {
   name: 'doc-typo',
-  components: { FuCodeView },
+  components: { UiCodeView },
   setup () {
     return { example }
   },
@@ -57,7 +57,7 @@ export default {
 
 .doc-typo {
   &_col {
-    @include spacing-padding(400, 0);
+    padding: spacing(400, 0);
     flex: 1;
   }
 

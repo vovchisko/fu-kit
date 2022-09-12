@@ -1,37 +1,53 @@
 <template>
   <div
-      class="fu-text"
-      :class="{'_disabled': $attrs.disabled !== undefined || $attrs.readOnly  !== undefined }"
+      class="ui-text"
       v-bind="{ class: $attrs.class }"
+      :class="{'_disabled': $attrs.disabled !== undefined || $attrs.readOnly  !== undefined }"
   >
-    <slot />
-    <slot name="left" />
-    <input
+    <textarea
+        ref="textarea"
         v-bind="{...$attrs, class: undefined}"
         :value="modelValue"
-        class="fu-text_input"
-        @input="$emit('update:modelValue', $event.target.value)"
-    >
-    <slot name="right" />
+        class="ui-text_textarea"
+        @input="handleInput"
+    />
   </div>
 </template>
 
 <script>
-export default {
-  name: 'fu-text',
+import { defineComponent, onMounted, ref } from 'vue'
+
+export default defineComponent({
+  name: 'ui-textarea',
   props: {
     modelValue: {
       type: [ String, Number ],
       default: '',
     },
+    autoResize: { type: Boolean, default: false },
   },
   emits: [ 'update:modelValue' ],
-}
+  setup (props, { emit }) {
+    const textarea = ref(null)
+    const handleInput = async (e) => {
+      emit('update:modelValue', e.target.value)
+      resize(e.target)
+    }
+    const resize = (elm) => {
+      if (!props.autoResize) return
+      elm.style.height = 'auto'
+      elm.style.height = `${ elm.scrollHeight }px`
+    }
+    onMounted(() => resize(textarea.value))
+
+    return { handleInput, textarea }
+  },
+})
 </script>
 <style lang="scss" scoped>
 @import "../../scss";
 
-.fu-text {
+.ui-text {
   @include typo(200);
 
   padding: 0;
@@ -46,33 +62,34 @@ export default {
   transition-duration: 240ms;
   transition-timing-function: ease-in-out;
   transition-property: border-color, box-shadow;
-  height: var(--ui-lt-h);
+  min-height: var(--ui-lt-h);
   background: var(--ui-pal-bg);
 
-  &_input {
+  &_textarea {
+    @include scrollbar-awesome();
     @include typo(200);
-    @include spacing-padding(100, 300);
+    padding: spacing(200, 300);
+    margin: spacing(100, 100, 100, 0);
 
-    font-family: var(--typo-font-ui);
     color: var(--ui-pal-text);
     caret-color: var(--ui-pal);
-    min-height: min(100%);
-    border: none;
+    border: 0 none;
     outline: none;
     background: transparent;
     box-sizing: border-box;
     flex: 1;
     display: block;
-    min-width: 0;
-    margin: 0;
+    min-width: var(--ui-textarea-min-w, 0);
+    max-width: var(--ui-textarea-max-w, unset);
+    resize: var(--ui-textarea-resize, vertical);
+    min-height: var(--ui-textarea-min-h, 4em);
+    max-height: var(--ui-textarea-max-h, 400px);
+    height: var(--ui-lt-h);
+    font-family: var(--typo-font-ui);
 
     &::selection {
       background-color: var(--ui-pal);
       color: var(--ui-pal-text-select);
-    }
-
-    &::placeholder {
-      color: var(--ui-pal-placeholder);
     }
 
     &[disabled], &[read-only] {
@@ -94,7 +111,6 @@ export default {
 
   &._disabled {
     border: var(--ui-lt-border-width) var(--ui-lt-disabled-border-style) var(--ui-pal-disabled-border);
-    background: var(--ui-pal-bg);
     box-shadow: none;
   }
 }

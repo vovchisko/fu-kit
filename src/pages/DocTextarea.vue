@@ -1,15 +1,15 @@
 <template>
   <div class="doc-textarea">
-    <fu-textarea v-model="val" placeholder="this is a text area" auto-resize />
-    <fu-textarea class="brand" v-model="val" placeholder="this is a text area" />
-    <fu-button>Like submit</fu-button>
-    <fu-code-view label="Example">{{ example }}</fu-code-view>
+    <ui-textarea v-model="val" placeholder="this is a text area" auto-resize />
+    <ui-textarea class="brand" v-model="val" placeholder="this is a text area" />
+    <ui-button>Like submit</ui-button>
+    <ui-code-view label="Example">{{ example }}</ui-code-view>
   </div>
 </template>
 
 <script>
 import { ref }                              from 'vue'
-import { FuButton, FuCodeView, FuTextarea } from '../entry.js'
+import { UiButton, UiCodeView, UiTextarea } from '../entry.js'
 
 const example = `
 TBD
@@ -17,7 +17,7 @@ TBD
 
 export default {
   name: 'doc-textarea',
-  components: { FuTextarea, FuButton, FuCodeView },
+  components: { UiTextarea, UiButton, UiCodeView },
   setup () {
     const val = ref(`Where does it come from?
 
@@ -48,7 +48,7 @@ from the 1914 translation by H. Rackham.
 <style lang="scss">
 
 .doc-textarea {
-  @include spacing-padding(300);
+  padding: spacing(300);
 
   gap: 1em;
   display: flex;

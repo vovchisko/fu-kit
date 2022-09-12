@@ -2,15 +2,18 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 import Home from './pages/Home.vue'
 
-import DocButton   from './pages/DocButton.vue'
-import DocTypo     from './pages/DocTypo.vue'
-import DocSelect   from './pages/DocSelect.vue'
-import DocText     from './pages/DocText.vue'
-import DocTextarea from './pages/DocTextarea.vue'
-import DocSidebar  from './pages/DocSidebar.vue'
-import DocCheck    from './pages/DocCheck.vue'
-import DocModal    from './pages/DocModal.vue'
-import DocDropdown from './pages/DocDropdown.vue'
+import DocButton         from './pages/DocButton.vue'
+import DocTypo           from './pages/DocTypo.vue'
+import DocSelect         from './pages/DocSelect.vue'
+import DocText           from './pages/DocText.vue'
+import DocTextarea       from './pages/DocTextarea.vue'
+import DocCodeInput      from './pages/DocCodeInput.vue'
+import DocSidebar        from './pages/DocSidebar.vue'
+import DocCheck          from './pages/DocCheck.vue'
+import DocModal          from './pages/DocModal.vue'
+import DocDropdown       from './pages/DocDropdown.vue'
+import DocProgressRadial from './pages/DocProgressRadial.vue'
+import DocIcon           from './pages/DocIcon.vue'
 
 const ROUTE_NAMES = Object.freeze({
   HOME: 'HOME',
@@ -20,10 +23,13 @@ const ROUTE_NAMES = Object.freeze({
   DOC_DROPDOWN: 'DOC_DROPDOWN',
   DOC_TEXT: 'DOC_TEXT',
   DOC_TEXTAREA: 'DOC_TEXTAREA',
+  DOC_CODE_INPUT: 'DOC_CODE_INPUT',
   DOC_SIDEBAR: 'DOC_SIDEBAR',
   DOC_CHECK: 'DOC_CHECK',
   DOC_RADIO: 'DOC_RADIO',
   DOC_MODAL: 'DOC_MODAL',
+  DOC_PROGRESS_RADIAL: 'DOC_PROGRESS_RADIAL',
+  DOC_ICON: 'DOC_ICON',
 })
 
 const routes = [
@@ -33,10 +39,13 @@ const routes = [
   { path: '/select', name: ROUTE_NAMES.DOC_SELECT, component: DocSelect },
   { path: '/text', name: ROUTE_NAMES.DOC_TEXT, component: DocText },
   { path: '/textarea', name: ROUTE_NAMES.DOC_TEXTAREA, component: DocTextarea },
+  { path: '/code-input', name: ROUTE_NAMES.DOC_CODE_INPUT, component: DocCodeInput },
   { path: '/sidebar', name: ROUTE_NAMES.DOC_SIDEBAR, component: DocSidebar },
   { path: '/modal', name: ROUTE_NAMES.DOC_MODAL, component: DocModal },
   { path: '/dropdown', name: ROUTE_NAMES.DOC_DROPDOWN, component: DocDropdown },
   { path: '/check', name: ROUTE_NAMES.DOC_CHECK, component: DocCheck },
+  { path: '/progress-radial', name: ROUTE_NAMES.DOC_PROGRESS_RADIAL, component: DocProgressRadial },
+  { path: '/icon', name: ROUTE_NAMES.DOC_ICON, component: DocIcon },
 ]
 
 const router = createRouter({

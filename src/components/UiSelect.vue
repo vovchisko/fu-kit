@@ -1,7 +1,7 @@
 <template>
-  <label class="fu-select" v-bind="{ class: $attrs.class }">
+  <label class="ui-select" v-bind="{ class: $attrs.class }">
     <select
-        class="fu-select_select"
+        class="ui-select_select"
         v-bind="{  ...$attrs, class: undefined }"
         :value="modelValue"
         @input="$emit('update:modelValue', $event.target.value)"
@@ -12,8 +12,10 @@
 </template>
 
 <script>
-export default {
-  name: 'fu-select',
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+  name: 'ui-select',
   props: {
     modelValue: {
       type: [ String, Number ],
@@ -21,13 +23,13 @@ export default {
     },
   },
   emits: [ 'update:modelValue' ],
-}
+})
 </script>
 
 <style lang="scss" scoped>
 @import "../../scss";
 
-.fu-select {
+.ui-select {
   @include typo(200);
 
   padding: 0;
@@ -47,7 +49,7 @@ export default {
 
   &_select {
     @include typo(200);
-    @include spacing-padding(100, 200);
+    padding: spacing(100, 200);
 
     font-family: var(--typo-font-ui);
     color: var(--ui-pal-text);

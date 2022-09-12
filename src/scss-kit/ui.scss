@@ -11,7 +11,7 @@
   }
 
   &::-webkit-scrollbar-thumb {
-    border: 2px solid var(--ui-scroll-bg);
+    border: 1px solid var(--ui-scroll-bg, inherit);
     border-radius: var(--ui-scroll-width);
     @if ($hide) {
       background-color: inherit;
@@ -47,5 +47,3 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
-
-

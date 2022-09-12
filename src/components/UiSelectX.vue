@@ -1,24 +1,23 @@
 <template>
-  <label class="fu-select-x" v-bind="$attrs">
+  <label class="ui-select-x" v-bind="$attrs" v-click-away="onClickAway">
     <input
         tabindex="0"
-        class="fu-select-x_input"
+        class="ui-select-x_input"
         ref="refSearch"
         v-model="search"
-        :placeholder="model"
+        :placeholder="placeholder"
         @keydown="onTextKeydown"
         @focus="onTextFocus"
-        @blur="onSomeBlur"
         spellcheck="false"
     />
-    <span class="fu-select-x_list" v-show="filteredItems.length" ref="refList" @keydown="onArrows">
+    <span class="ui-select-x_list" v-show="filteredItems.length" ref="refList" @keydown="onArrows">
       <button
-          class="fu-select-x_list-item"
+          class="ui-select-x_list-item"
           :class="{'_selected': e.value === model}"
           tabindex="-1"
+          type="button"
           v-for="(e) in filteredItems"
           @click="onSelect($event,e)"
-          @blur="onSomeBlur"
       >
         {{ e.label }}
       </button>
@@ -27,24 +26,27 @@
 </template>
 
 <script>
-import { computed, nextTick, ref, watch } from 'vue'
+import { computed, defineComponent, nextTick, ref, watch } from 'vue'
+import { directive as clickAway }                          from 'vue3-click-away'
 
-import FuText   from './FuText.vue'
-import FuButton from './FuButton.vue'
+import UiText   from './UiText.vue'
+import UiButton from './UiButton.vue'
 
-export default {
-  name: 'fu-select-x',
-  components: { FuButton, FuText },
+export default defineComponent({
+  name: 'ui-select-x',
+  components: { UiButton, UiText },
+  directives: { clickAway },
   props: {
     modelValue: { type: [ String, Number ], default: '' },
     options: { type: Array, default: [] },
     allowCustom: { type: Boolean, default: false },
+    placeholder: { type: String },
   },
   emits: [ 'update:modelValue', 'select' ],
   setup (props, { emit }) {
     const refSearch = ref(null)
     const refList = ref(null)
-    const search = ref('')
+    const search = ref(props.modelValue || '')
     const model = ref(props.modelValue)
 
     watch(() => props.modelValue, (value) => {
@@ -96,6 +98,8 @@ export default {
           nodes[0].click()
         } else if (props.allowCustom) {
           onSelect(e, { label: search.value, value: search.value })
+        } else {
+          search.value = model.value
         }
 
         e.preventDefault()
@@ -157,14 +161,8 @@ export default {
       }
     }
 
-    const onSomeBlur = async (e) => {
-      await nextTick() // todo: investigate why it's required
-      if (
-          refSearch.value !== document.activeElement &&
-          refList.value !== document.activeElement.parentElement
-      ) {
-        search.value = model.value
-      }
+    const onClickAway = () => {
+      search.value = model.value
     }
 
     return {
@@ -178,16 +176,16 @@ export default {
       onArrows,
       onSelect,
       onTextFocus,
-      onSomeBlur,
+      onClickAway,
     }
   },
-}
+})
 </script>
 
 <style lang="scss" scoped>
 @import "../../scss";
 
-.fu-select-x {
+.ui-select-x {
   @include typo(200);
 
   padding: 0;
@@ -208,7 +206,7 @@ export default {
 
   &_input {
     @include typo(200);
-    @include spacing-padding(100, 300);
+    padding: spacing(100, 300);
 
     font-family: var(--typo-font-ui);
     color: var(--ui-pal-text);
@@ -227,13 +225,13 @@ export default {
       outline: none;
     }
 
-    &:not(:focus)::placeholder {
-      color: pal(prime);
-    }
-
     &::selection {
       background-color: var(--ui-pal);
       color: var(--ui-pal-text-select);
+    }
+
+    &::placeholder {
+      color: var(--ui-pal-placeholder);
     }
   }
 
@@ -259,7 +257,7 @@ export default {
     z-index: var(--lt-z-pop);
 
     &-item {
-      @include spacing-padding(200, 300);
+      padding: spacing(200, 300);
       @include typo(200, 300);
 
       border: 0 none;

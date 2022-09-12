@@ -1,25 +1,25 @@
 <template>
-  <div class="fu-code-view">
-    <fu-button-link
+  <div class="ui-code-view">
+    <ui-button-link
         v-if="collapse"
-        class="fu-code-view_toggle"
+        class="ui-code-view_toggle"
         @click="isShown = !isShown"
     >
       {{ isShown ? 'Hide' : 'Show' }} {{ label }}
-    </fu-button-link>
-    <p class="fu-code-view_title" v-else-if="label">{{ label }}</p>
-    <pre v-if="collapse ? isShown : true" class="fu-code-view_pre"><slot /></pre>
+    </ui-button-link>
+    <p class="ui-code-view_title" v-else-if="label">{{ label }}</p>
+    <pre v-if="collapse ? isShown : true" class="ui-code-view_pre"><slot /></pre>
   </div>
 </template>
 
 <script>
-import { ref, toRaw } from 'vue'
+import { defineComponent, ref, toRaw } from 'vue'
 
-import FuButtonLink from './FuButtonLink.vue'
+import UiButtonLink from './UiButtonLink.vue'
 
-export default {
-  name: 'fu-code-view',
-  components: { FuButtonLink },
+export default defineComponent({
+  name: 'ui-code-view',
+  components: { UiButtonLink },
   props: {
     label: { type: String, default: '' },
     collapse: { type: Boolean, default: null },
@@ -30,14 +30,14 @@ export default {
     const label = props.label
     return { isShown, label, collapse }
   },
-}
+})
 </script>
 
 <style scoped lang="scss">
 @import "../../scss";
 
-.fu-code-view {
-  @include spacing-margin(200, 0);
+.ui-code-view {
+  margin: spacing(200, 0);
 
   &_title {
     @include typo(100);
@@ -48,7 +48,7 @@ export default {
 
   &_pre {
     @include scrollbar-awesome();
-    @include spacing-padding(300, 200);
+    padding: spacing(300, 200);
 
     font-family: var(--typo-font-mono);
     overflow: auto;

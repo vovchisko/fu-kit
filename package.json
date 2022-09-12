@@ -15,17 +15,19 @@
   "files": [
     "src/components/*",
     "src/scss-kit/*",
+    "src/utils/*",
     "src/entry.js",
+    "src/constants.js",
     "reset.scss",
     "root.scss",
     "scss.scss"
   ],
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.9.3",
-    "vite": "^2.6.4",
     "cross-env": "^7.0.3",
     "rimraf": "^3.0.2",
-    "sass": "^1.26.5"
+    "sass": "^1.26.5",
+    "vite": "^2.6.4"
   },
   "peerDependencies": {
     "vue": "^3.2.16"
@@ -34,8 +36,10 @@
     "node": ">=12"
   },
   "dependencies": {
+    "lodash": "^4.17.21",
     "vue": "^3.2.16",
     "vue-router": "^4.0.0-0",
+    "vue-the-mask": "^0.11.1",
     "vue3-click-away": "^1.2.1"
   }
 }

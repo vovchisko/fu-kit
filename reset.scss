@@ -26,7 +26,13 @@ h1, h2, h3, h4, h5, h6, header {
 
 input, button, textarea, select, span, b, small {
   box-sizing: border-box;
-  line-height: 1.2;
+  line-height: 1;
+  font-family: var(--typo-font-text);
+  font-size: inherit;
+}
+
+pre {
+  font-family: var(--typo-font-mono);
 }
 
 h1 {
@@ -68,4 +74,8 @@ a {
   &:active, &:focus {
     color: var(--pal-link-active);
   }
+}
+
+svg {
+  fill: none;
 }

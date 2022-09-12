@@ -1,7 +1,7 @@
 <template>
-  <div class="doc-sidebar">
-    <fu-modal side="right" :is-open="isModalOpen" @close="isModalOpen = false">
-      <div class="doc-sidebar_content">
+  <div class="doc-modal">
+    <ui-modal :is-open="state.isOpen" @close="state.isOpen = false">
+      <div class="doc-modal_content">
         <h4>What is Lorem Ipsum?</h4>
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
           standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
@@ -9,38 +9,39 @@
           essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
           passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem
           Ipsum.</p>
-        <fu-button @click="isModalOpen = false">Close</fu-button>
+        <ui-button @click="state.isOpen = false">Close</ui-button>
       </div>
-    </fu-modal>
-    <fu-button @click="isModalOpen = true">Open Modal</fu-button>
+    </ui-modal>
+    <div class="doc-modal_options">
+      <ui-button @click="state.isOpen = true">Open modal</ui-button>
+    </div>
   </div>
 </template>
 
 <script>
-import { ref }               from 'vue'
-import { FuButton, FuModal } from '../entry.js'
 
-const example = `
-TBD
+import { reactive } from 'vue'
 
-`
+import UiModal   from '../components/UiModal.vue'
+import UiButton  from '../components/UiButton.vue'
+import UiSelectX from '../components/UiSelectX.vue'
 
 export default {
-  name: 'doc-sidebar',
-  components: { FuButton, FuModal },
+  name: 'doc-modal',
+  components: { UiButton, UiModal, UiSelectX },
   setup () {
-    const isModalOpen = ref(false)
-    return { example, isModalOpen }
+    const state = reactive({
+      isOpen: false,
+    })
+    return { state }
   },
 }
 </script>
 
 <style lang="scss">
-
-.doc-sidebar {
+.doc-modal {
   &_content {
-    @include spacing-padding(400);
-
+    padding: spacing(500);
     display: flex;
     flex-direction: column;
     gap: 1em;
@@ -53,6 +54,12 @@ export default {
     color: pal(text-dimm);
     font-weight: normal;
     border-bottom: 1px solid color(grey200);
+  }
+
+  &_options {
+    display: flex;
+    align-items: center;
+    gap: spacing(400);
   }
 }
 </style>

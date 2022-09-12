@@ -1,11 +1,10 @@
 @import "src/scss-kit/typo";
 @import "src/scss-kit/colors";
 
-:root {
-
+html {
   // RAW RGB VALUES
   --rgb-white: #{hex2rgb(#FFFFFF)};
-  --rgb-light: #{hex2rgb(#FEFEFE)};
+  --rgb-light: #{hex2rgb(#FAFAFA)};
   --rgb-grey100: #{hex2rgb(#F4F4F4)};
   --rgb-grey200: #{hex2rgb(#DCDCDC)};
   --rgb-grey300: #{hex2rgb(#BFBFBF)};
@@ -18,13 +17,13 @@
   --rgb-dark: #{hex2rgb(#151515)};
   --rgb-black: #{hex2rgb(#000000)};
 
-  --rgb-brand: #{hex2rgb(#7F9CBB)};
-  --rgb-primary: #{hex2rgb(#2196F3)};
-  --rgb-secondary: #{hex2rgb(#434F5F)};
-  --rgb-positive: #{hex2rgb(#13964B)};
-  --rgb-warning: #{hex2rgb(#FF9900)};
-  --rgb-negative: #{hex2rgb(#FF331F)};
-  --rgb-link: #{hex2rgb(#0077B6)};
+  --rgb-brand: #{hex2rgb(#0095ff)};
+  --rgb-primary: #{hex2rgb(#0095ff)};
+  --rgb-secondary: #{hex2rgb(#131315)};
+  --rgb-positive: #{hex2rgb(#3e9400)};
+  --rgb-warning: #{hex2rgb(#ff7300)};
+  --rgb-negative: #{hex2rgb(#ff3535)};
+  --rgb-link: #{hex2rgb(#0095ff)};
 
   // Format palette colors: "--pal-{code}": #RGB
 
@@ -56,15 +55,16 @@
   --pal-acc-warning: rgb(var(--rgb-white));
   --pal-acc-negative: rgb(var(--rgb-white));
 
-  --pal-text: rgb(var(--rgb-dark));
+  --pal-text: rgb(var(--rgb-grey700));
   --pal-text-dimm: rgb(var(--rgb-grey600));
   --pal-block: rgb(var(--rgb-grey100));
   --pal-block-border: rgb(var(--rgb-grey200));
   --pal-bg: rgb(var(--rgb-white));
-  --pal-overlay: rgba(var(--rgb-dark), 0.2);
-  --pal-link: rgb(var(--rgb-link));
+  --pal-overlay: rgba(var(--rgb-grey500), 0.2);
+  --pal-link: rgb(var(--rgb-primary));
   --pal-link-active: rgb(var(--rgb-brand));
 
+  --ui-rgb: var(--rgb-primary);
   --ui-pal: var(--pal-primary);
   --ui-pal-bg: var(--pal-bg);
   --ui-pal-acc: var(--pal-acc-primary);
@@ -75,18 +75,24 @@
   --ui-pal-disabled: rgb(var(--rgb-grey100));
   --ui-pal-disabled-border: rgb(var(--rgb-grey300));
 
-  --ui-transition: linear 120ms;
   --ui-lt-h: 36px;
   --ui-lt-h-sub: 22px;
+  --ui-lt-check-border-width: 2px;
+  --ui-switch-h: 24px;
+  --ui-switch-w: 38px;
+  --ui-check-size: 20px;
+  --ui-check-border-w: 2px;
   --ui-lt-border-style: solid;
-  --ui-lt-border-width: 1px;
+  --ui-lt-border-width: 2px;
   --ui-lt-border-radius: var(--lt-border-radius-inner);
   --ui-lt-disabled-border-style: dashed;
 
   --ui-scroll-bg: inherit;
-  --ui-scroll-width: 11px;
+  --ui-scroll-width: 8px;
 
-  --typo-font-text: Avenir, Helvetica, Arial, sans-serif;
+  --ui-dropdown-max-height: 30vh;
+
+  --typo-font-text: Helvetica, 'Segoe UI', San Francisco, Roboto, Lucida Sans;
   --typo-font-heading: var(--typo-font-text);
   --typo-font-ui: var(--typo-font-text);
   --typo-font-mono: monospace;
@@ -109,8 +115,8 @@
   --typo-lh200: 16px;
   --typo-lh300: 18px;
   --typo-lh400: 22px;
-  --typo-lh500: 26px;
-  --typo-lh600: 32px;
+  --typo-lh500: 24px;
+  --typo-lh600: 36px;
   --typo-lh700: 42px;
   --typo-lh800: 48px;
   --typo-lh900: 64px;
@@ -126,8 +132,8 @@
   --lt-sp800: 256px;
   --lt-sp900: 512px;
 
-  --lt-border-radius: 9px;
-  --lt-border-radius-inner: 5px;
+  --lt-border-radius: 0px;
+  --lt-border-radius-inner: 0px;
 
   --lt-z-1: 1;
   --lt-z-back: -1;
@@ -135,4 +141,6 @@
   --lt-z-nav: 2000;
   --lt-z-modal-backdrop: 3000;
   --lt-z-modal: 3001;
+
+  --ui-transition: linear 120ms;
 }

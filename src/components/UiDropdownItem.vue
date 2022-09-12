@@ -1,6 +1,6 @@
 <template>
   <div
-      class="fu-dropdown-item"
+      class="ui-dropdown-item"
       :class="{
       '_interactive': interactive || autoClose,
       '_active': active,
@@ -12,8 +12,10 @@
 </template>
 
 <script>
-export default {
-  name: 'fu-dropdown-item',
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+  name: 'ui-dropdown-item',
   props: {
     autoClose: { type: Boolean, default: false },
     interactive: { type: Boolean, default: false },
@@ -27,32 +29,24 @@ export default {
       }
     },
   },
-}
+})
 </script>
 
 <style lang="scss" scoped>
 @import "../../scss";
 
-.fu-dropdown-item {
-  &:first-child {
-    margin-top: spacing(200);
-  }
-
-  &:last-child {
-    margin-bottom: spacing(200);
-  }
-
-  padding: spacing(200) calc(#{spacing(200)} + 1px);
+.ui-dropdown-item {
+  padding: spacing(200) spacing(400);
   display: flex;
   align-items: center;
+  min-height: var(--ui-lt-h);
 
   &._interactive {
     color: var(--ui-pal-text);
     cursor: pointer;
 
     &:hover {
-      color: var(--ui-pal-acc);
-      background-color: var(--ui-pal);
+      color: var(--ui-pal);
     }
 
     &:focus,
@@ -67,11 +61,6 @@ export default {
 
     &:hover {
     }
-  }
-
-  &._selected {
-    color: black;
-    background-color: orange;
   }
 }
 </style>

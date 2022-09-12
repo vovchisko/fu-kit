@@ -1,14 +1,14 @@
 <template>
   <div
-      class="fu-dropdown"
+      class="ui-dropdown"
       :class="{ '_is-open': !disabled && isOpen }"
       v-click-away="isOpen && handleClickaway"
   >
-    <div class="fu-dropdown_trigger" @click="toggle">
-      <slot />
+    <div class="ui-dropdown_trigger" @click="toggle">
+      <slot :isOpen="!disabled && isOpen" />
     </div>
 
-    <div v-if="!disabled && isOpen" class="fu-dropdown_content" ref="slotWrap">
+    <div v-if="!disabled && isOpen" class="ui-dropdown_content" :class="{ _right: snapToRight }" ref="slotWrap">
       <slot name="content" :dropdownClose="close" />
     </div>
   </div>
@@ -19,11 +19,14 @@
 
 import { directive as clickAway } from 'vue3-click-away'
 
-export default {
-  name: 'fu-dropdown',
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+  name: 'ui-dropdown',
   directives: { clickAway },
   props: {
     clickaway: { type: Boolean, default: true },
+    snapToRight: { type: Boolean, default: false },
     disabled: { type: Boolean, default: false },
   },
   emits: [ 'open', 'close' ],
@@ -57,13 +60,13 @@ export default {
       this.isOpen = false
     },
   },
-}
+})
 </script>
 
 <style lang="scss" scoped>
 @import "../../scss";
 
-.fu-dropdown {
+.ui-dropdown {
   @include typo(200);
 
   padding: 0;
@@ -78,24 +81,29 @@ export default {
 
   &_content {
     @include scrollbar-awesome();
-    @include spacing-padding(300, 0);
 
     overflow: auto;
-    max-height: 30vh;
+    min-width: 100%;
     max-width: 100vw;
+    max-height: var(--ui-dropdown-max-height);
     flex-direction: column;
     justify-content: stretch;
-    border-width: var(--ui-lt-border-width);
     border-radius: var(--ui-lt-border-radius);
-    border-color: var(--ui-pal);
-    border-style: solid;
     position: absolute;
-    left: 0;
     top: 100%;
-    min-width: 100%;
     background: var(--ui-pal-bg);
     margin-top: spacing(200);
     z-index: var(--lt-z-pop);
+    background: var(--pal-white);
+    box-shadow: 0 3px 11px rgba(var(--rgb-black), 0.2);
+
+    &:not(._right) {
+      left: 0;
+    }
+
+    &._right {
+      right: 0;
+    }
   }
 }
 </style>

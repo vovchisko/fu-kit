@@ -1,20 +1,20 @@
 <template>
-  <div class="fu-progress-radial">
-    <div class="fu-progress-radial__svg-wrap">
+  <div class="ui-progress-radial">
+    <div class="ui-progress-radial__svg-wrap">
       <svg
-          class="fu-progress-radial__svg"
+          class="ui-progress-radial__svg"
           :viewBox="`0 0 ${r2} ${r2}`"
           :width="r2"
           :height="r2"
       >
         <circle
-            class="fu-progress-radial__svg-bg"
+            class="ui-progress-radial__svg-bg"
             :cx="r"
             :cy="r"
             :r="r"
         />
         <circle
-            class="fu-progress-radial__svg-value"
+            class="ui-progress-radial__svg-value"
             :cx="r"
             :cy="r"
             :r="r"
@@ -23,7 +23,7 @@
       </svg>
     </div>
     <span
-        class="fu-progress-radial__slot"
+        class="ui-progress-radial__slot"
         v-if="hasSlot('default')">
       <slot />
     </span>
@@ -31,8 +31,10 @@
 </template>
 
 <script>
-export default {
-  name: 'fu-progress-radial',
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+  name: 'ui-progress-radial',
   props: {
     /**
      * Value must be between 0 and 1 (otherwise will be normalized automatically)
@@ -65,13 +67,13 @@ export default {
       return !!this.$slots[slot]
     },
   },
-}
+})
 </script>
 
 <style lang="scss" scoped>
 @import "../../scss";
 
-.fu-progress-radial {
+.ui-progress-radial {
   display: flex;
   position: relative;
   white-space: nowrap;
@@ -98,7 +100,7 @@ export default {
   }
 
   &__svg-bg {
-    stroke: var(--progress-radial-bg-stroke, #{pal(primary,0.2)});
+    stroke: var(--progress-radial-bg-stroke, var(--pal-block));
     fill: var(--progress-radial-bg-fill, transparent);
     stroke-width: var(--progress-radial-stroke-width, 10);
   }
@@ -110,7 +112,7 @@ export default {
     transition-duration: var(--progress-radial-t-duration, 500ms);
     transition-property: var(--progress-radial-t-property, all);
     transition-timing-function: var(--progress-radial-t-function, linear);
-    stroke: var(--progress-radial-color, #{pal(primary)});
+    stroke: var(--progress-radial-color, var(--ui-pal));
     stroke-linecap: var(--progress-radial-stroke-linecap, round);
     stroke-width: var(--progress-radial-stroke-width, 10);
   }

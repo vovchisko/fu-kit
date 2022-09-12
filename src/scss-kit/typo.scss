@@ -14,7 +14,7 @@
   }
 }
 
-@function spacing($spacing-code: null) {
+@function _spacing($spacing-code) {
   @if (
       $spacing-code == 0 or
       $spacing-code == auto or
@@ -27,16 +27,8 @@
   @return var(--lt-sp#{$spacing-code});
 }
 
-@mixin spacing-prop($prop, $t, $r: null, $b: null, $l: null) {
-  #{$prop}: spacing($t) spacing($r) spacing($b) spacing($l);
-}
-
-@mixin spacing-margin($t, $r: null, $b: null, $l: null) {
-  @include spacing-prop('margin', $t, $r, $b, $l);
-}
-
-@mixin spacing-padding($t, $r: null, $b: null, $l: null) {
-  @include spacing-prop('padding', $t, $r, $b, $l);
+@function spacing($t, $r: null, $b: null, $l: null) {
+  @return _spacing($t) _spacing($r) _spacing($b) _spacing($l)
 }
 
 @mixin ellipsis($display: block) {

@@ -1,24 +1,24 @@
 <template>
-  <fu-button
-      hollow
+  <ui-button
+      :hollow="!isCopied"
       v-bind="$attrs"
-      class="fu-copy"
+      class="ui-copy"
       @click="handleCopyToClipboard"
       :class="{'_hot': isCopied}"
   >
     <slot />
-  </fu-button>
+  </ui-button>
 </template>
 
 <script>
-import { onBeforeUnmount, ref } from 'vue'
-import FuButton                 from './FuButton.vue'
+import { defineComponent, onBeforeUnmount, ref } from 'vue'
+import UiButton                                  from './UiButton.vue'
 
-export default {
-  name: 'fu-copy',
-  components: { FuButton },
+export default defineComponent({
+  name: 'ui-copy',
+  components: { UiButton },
   props: {
-    value: { type: String, required: true },
+    value: { type: [ String, null ], required: true },
   },
   setup (props) {
     const isCopied = ref(false)
@@ -68,42 +68,21 @@ export default {
       isCopied,
     }
   },
-}
+})
 </script>
 
 <style lang="scss" scoped>
 @import "../../scss";
 
-.fu-copy {
-  @include spacing-padding(0, 200);
+.ui-copy {
+  padding: spacing(0, 200);
   @include ellipsis();
 
-  // todo: replace on vanilla button to get rid of !important maybe?
   --ui-lt-h: 2em;
-  --ui-pal: var(--pal-block-border);
-  color: var(--pal-text) !important;
-  overflow: hidden;
+  --ui-pal: var(--pal-light);
 
-  &._hollow {
-    font-weight: normal;
-
-    &:active {
-      box-shadow: none;
-    }
-
-    &:hover {
-      box-shadow: none;
-    }
-
-    &:focus {
-      box-shadow: none;
-    }
-
-    &._hot {
-      transition: none;
-      border-color: var(--pal-positive);
-    }
+  &._hot {
+    color: var(--pal-positive);
   }
-
 }
 </style>

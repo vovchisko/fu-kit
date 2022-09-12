@@ -1,7 +1,10 @@
 <template>
-  <div class="fu-sidebar" :class="{'_shown':isOpen}" @click.self="$emit('close')">
+  <div class="ui-sidebar" :class="{'_shown':isOpen}" @mousedown.self="$emit('close')">
     <transition name="bounce">
-      <div class="fu-sidebar_content" v-if="isOpen">
+      <div class="ui-sidebar_content" v-if="isOpen">
+        <button v-if="showClose" class="ui-sidebar_close" @click="$emit('close')">
+          <ui-icon name="cross" />
+        </button>
         <slot />
       </div>
     </transition>
@@ -9,21 +12,33 @@
 </template>
 
 <script>
-export default {
-  name: 'fu-sidebar',
+import { defineComponent } from 'vue'
+
+import UiIcon from './UiIcon.vue'
+
+export default defineComponent({
+  name: 'ui-sidebar',
+  components: { UiIcon },
   emits: [ 'close' ],
   props: {
     isOpen: { type: Boolean, default: false },
     // todo: right side as well
     side: { type: String, default: 'right' },
+    showClose: { type: Boolean, default: false },
   },
-}
+  watch: {
+    isOpen (val) {
+      if (val) document.body.style.overflow = 'hidden'
+      else document.body.style.overflow = 'visible'
+    },
+  },
+})
 </script>
 
 <style lang="scss">
 @import "../../scss";
 
-:root {
+html {
   --ui-sidebar-max-w: 45vw;
   --ui-sidebar-min-w: 25vw;
 }
@@ -32,7 +47,7 @@ export default {
 <style scoped lang="scss">
 @import "../../scss";
 
-.fu-sidebar {
+.ui-sidebar {
   position: fixed;
   left: 0;
   top: 0;
@@ -41,7 +56,7 @@ export default {
   z-index: var(--lt-z-nav);
   background-color: transparent;
   transition-timing-function: linear;
-  transition-duration: 600ms;
+  transition-duration: 200ms;
   transition-property: background-color, visibility;
   pointer-events: none;
   visibility: hidden;
@@ -61,10 +76,26 @@ export default {
     top: 0;
     right: 0;
     bottom: 0;
-    background: var(--pal-bg);
+    border-top-left-radius: var(--lt-border-radius);
+    border-bottom-left-radius: var(--lt-border-radius);
+    background: var(--pal-white);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
     max-width: var(--ui-sidebar-max-w);
     min-width: var(--ui-sidebar-min-w);
     transform-origin: 100% 50%;
+    width: var(--ui-sidebar-width, auto);
+  }
+
+  &_close {
+    --icon-color: var(--pal-grey800);
+
+    position: absolute;
+    top: spacing(500);
+    left: spacing(500);
+    border: none;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
   }
 }
 

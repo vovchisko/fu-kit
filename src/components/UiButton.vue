@@ -3,39 +3,47 @@
       v-bind="{
         ...$attrs,
         type: $attrs.type || 'button',
-        class: 'fu-button' + (hollow ? ' _hollow' : ''),
+        class: ['ui-button', (hollow ? ' _hollow' : ''), (naked ? ' _naked' : ''), (isLoading ? ' _loading' : '')].join(''),
       }"
       @mouseup="mUp"
   >
     <slot />
+    <ui-icon v-if="isLoading" name="loader" class="ui-button_loader" />
   </button>
 </template>
 
 <script>
-export default {
-  name: 'fu-button',
+import { defineComponent } from 'vue'
+
+import UiIcon from './UiIcon.vue'
+
+export default defineComponent({
+  name: 'ui-button',
+  components: { UiIcon },
   props: {
     hollow: { type: Boolean, default: false },
+    naked: { type: Boolean, default: false },
+    isLoading: { type: Boolean, default: false },
   },
-  setup (props) {
+  setup () {
     const mUp = (e) => e.target.blur()
-    return { hollow: props.hollow, mUp }
+    return { mUp }
   },
-}
+})
 </script>
 
 <style lang="scss" scoped>
 @import "../../scss";
 
-.fu-button {
+.ui-button {
   @include typo(200);
 
-  padding: var(--ui-button-padding, #{spacing(300)} #{spacing(400)});
   display: flex;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
   cursor: pointer;
+  padding: var(--ui-button-padding, #{spacing(300)} #{spacing(400)});
   font-family: var(--typo-font-ui);
   min-height: var(--ui-lt-h);
   border-width: var(--ui-lt-border-width);
@@ -47,9 +55,12 @@ export default {
   color: var(--ui-pal-acc);
   line-height: 1;
   will-change: box-shadow, transform;
-
+  gap: var(--ui-button-gap, #{spacing(300)});
   outline: none;
   user-select: none;
+
+  --icon-size: 1em;
+
   -webkit-tap-highlight-color: transparent;
 
   & > * {
@@ -66,7 +77,6 @@ export default {
   }
 
   &:active {
-    transform: translateY(2px);
     transition-duration: 20ms;
     box-shadow: 0 3px 4px -2px var(--ui-pal);
   }
@@ -86,7 +96,6 @@ export default {
 
     &:hover {
       box-shadow: 0 3px 10px -4px var(--ui-pal);
-      color: var(--ui-pal);
     }
 
     &:focus {
@@ -101,6 +110,60 @@ export default {
       color: var(--ui-pal-disabled-border);
       box-shadow: none;
     }
+  }
+
+  &._naked {
+    background: transparent;
+    color: var(--ui-pal);
+    border: 0 none;
+    padding: var(--ui-button-padding, var(--lt-sp300));
+
+    &:hover {
+      box-shadow: none;
+    }
+
+    &:focus {
+      box-shadow: none;
+    }
+
+    &:active {
+      box-shadow: none;
+    }
+
+    &:disabled {
+      color: var(--ui-pal-disabled-border);
+      box-shadow: none;
+    }
+  }
+
+  &._loading {
+    color: transparent;
+  }
+
+  &_loader {
+    --icon-size: 1em;
+    --icon-color: var(--ui-pal-acc);
+    position: absolute;
+    animation: spin 2s infinite;
+  }
+
+  &._hollow > &_loader, &._naked > &_loader {
+    --icon-size: 1em;
+    --icon-color: var(--ui-pal);
+    position: absolute;
+    animation: spin 2s infinite;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: scale(1) rotate(0);
+  }
+  50% {
+    transform: scale(1.5) rotate(180deg);
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
   }
 }
 </style>

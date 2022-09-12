@@ -2,36 +2,36 @@
   <div class="doc-select">
     <div class="doc-select_row">
       <label>Boring Select</label>
-      <fu-select v-model="val">
+      <ui-select v-model="val">
         <option v-for="i in list" :value="i.value">{{ i.label }}</option>
-      </fu-select>
+      </ui-select>
     </div>
 
     <div class="doc-select_row brand">
       <label>Fancy select with search</label>
-      <fu-select-x v-model="val" :options="list" />
+      <ui-select-x v-model="val" :options="list" />
     </div>
 
     <div class="doc-select_row positive">
       <label>Fancy select with search</label>
-      <fu-select-x v-model="val" :options="list" />
+      <ui-select-x v-model="val" :options="list" />
     </div>
 
     <div class="doc-select_row negative">
       <label>Fancy select with search</label>
-      <fu-select-x v-model="val" :options="list" />
+      <ui-select-x v-model="val" :options="list" />
     </div>
   </div>
 </template>
 
 <script>
 import { ref }                 from 'vue'
-import { FuSelect, FuSelectX } from '../entry.js'
+import { UiSelect, UiSelectX } from '../entry.js'
 
 
 export default {
   name: 'doc-buttons',
-  components: { FuSelectX, FuSelect },
+  components: { UiSelectX, UiSelect },
   setup () {
     const val = ref('val1')
     const list = [
@@ -53,7 +53,7 @@ export default {
 
   & label {
     @include typo(200);
-    @include spacing-margin(200, 0);
+    margin: spacing(200, 0);
   }
 }
 </style>

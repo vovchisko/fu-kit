@@ -1,54 +1,53 @@
 <template>
   <div
-      class="fu-text"
+      :class="{'_disabled': disabled || $attrs.readOnly !== undefined, 'ui-text': !naked }"
       v-bind="{ class: $attrs.class }"
-      :class="{'_disabled': $attrs.disabled !== undefined || $attrs.readOnly  !== undefined }"
   >
-    <textarea
-        ref="textarea"
-        v-bind="{...$attrs, class: undefined}"
+    <slot />
+    <slot name="left" />
+    <input
+        v-bind="{...$attrs, disabled, class: undefined}"
         :value="modelValue"
-        class="fu-text_textarea"
-        @input="handleInput"
-    />
+        class="ui-text_input"
+        :class="{ _naked: naked }"
+        @input="$emit('update:modelValue', $event.target.value)"
+        @focus="handleFocus"
+        ref="inputRef"
+    >
+    <slot name="right" />
   </div>
 </template>
 
 <script>
-import { onMounted, ref } from 'vue'
+import { defineComponent } from 'vue'
 
-export default {
-  name: 'fu-textarea',
+export default defineComponent({
+  name: 'ui-text',
   props: {
+    disabled: { type: Boolean, default: false },
+    autoSelect: { type: Boolean, default: false },
+    naked: { type: Boolean, default: false },
     modelValue: {
       type: [ String, Number ],
       default: '',
     },
-    autoResize: { type: Boolean, default: false },
   },
   emits: [ 'update:modelValue' ],
-  setup (props, { emit }) {
-    const textarea = ref(null)
-    const handleInput = async (e) => {
-      emit('update:modelValue', e.target.value)
-      resize(e.target)
-    }
-    const resize = (elm) => {
-      if (!props.autoResize) return
-      elm.style.height = 'auto'
-      elm.style.height = `${ elm.scrollHeight }px`
-    }
-    onMounted(() => resize(textarea.value))
-
-    return { handleInput, textarea }
+  expose: [ 'focus' ],
+  methods: {
+    focus () {
+      this.$refs.inputRef.focus()
+    },
+    handleFocus () {
+      if (this.autoSelect) this.$refs.inputRef.select()
+    },
   },
-}
+})
 </script>
-
 <style lang="scss" scoped>
 @import "../../scss";
 
-.fu-text {
+.ui-text {
   @include typo(200);
 
   padding: 0;
@@ -63,17 +62,17 @@ export default {
   transition-duration: 240ms;
   transition-timing-function: ease-in-out;
   transition-property: border-color, box-shadow;
-  min-height: var(--ui-lt-h);
-  background: var(--ui-pal-bg);
+  height: var(--ui-lt-h);
+  background: var(--pal-white);
 
-  &_textarea {
-    @include scrollbar-awesome();
+  &_input {
     @include typo(200);
-    @include spacing-padding(200);
-    @include spacing-margin(100);
+    padding: var(--ui-input-padding, #{spacing(100)} #{spacing(300)});
 
+    font-family: var(--typo-font-ui);
     color: var(--ui-pal-text);
     caret-color: var(--ui-pal);
+    min-height: min(100%);
     border: none;
     outline: none;
     background: transparent;
@@ -81,19 +80,24 @@ export default {
     flex: 1;
     display: block;
     min-width: 0;
-    resize: var(--ui-textarea-resize, vertical);
-    min-height: var(--ui-lt-h);
-    height: var(--ui-lt-h);
-    font-family: var(--typo-font-ui);
+    margin: 0;
 
     &::selection {
       background-color: var(--ui-pal);
       color: var(--ui-pal-text-select);
     }
 
+    &::placeholder {
+      color: var(--ui-pal-placeholder);
+    }
+
     &[disabled], &[read-only] {
-      cursor: text;
+      cursor: not-allowed;
       color: var(--ui-pal-disabled-border);
+    }
+
+    &._naked {
+      padding: var(--ui-input-padding, 0);
     }
   }
 
@@ -110,6 +114,7 @@ export default {
 
   &._disabled {
     border: var(--ui-lt-border-width) var(--ui-lt-disabled-border-style) var(--ui-pal-disabled-border);
+    background: var(--ui-pal-bg);
     box-shadow: none;
   }
 }

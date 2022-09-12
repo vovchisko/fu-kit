@@ -3,7 +3,7 @@
       v-bind="{
         ...$attrs,
         type: $attrs.type || 'button',
-        class: 'fu-button-link',
+        class: 'ui-button-link',
       }"
       @mouseup="mUp"
   >
@@ -12,8 +12,10 @@
 </template>
 
 <script>
-export default {
-  name: 'fu-button-link',
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+  name: 'ui-button-link',
   props: {
     hollow: { type: Boolean, default: false },
   },
@@ -21,23 +23,22 @@ export default {
     const mUp = (e) => e.target.blur()
     return { hollow: props.hollow, mUp }
   },
-}
+})
 </script>
 
 <style lang="scss" scoped>
 @import "../../scss";
 
-.fu-button-link {
+.ui-button-link {
   @include typo(200);
-  @include spacing-padding(0, 0);
+  padding: spacing(0, 0);
 
   display: inline-block;
-  font-weight: normal;
   box-sizing: border-box;
   cursor: pointer;
   font-family: var(--typo-font-text);
   border: 0 none;
-  transition: var(--ui-transition);
+  transition: all var(--ui-transition);
   background: transparent;
   color: var(--pal-link);
   line-height: 1;
@@ -45,24 +46,24 @@ export default {
   outline: none;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
-  text-decoration: underline;
+  text-decoration: none;
 
   & > * {
     pointer-events: none;
   }
 
   &:hover {
-    text-decoration: none;
+    text-decoration: underline;
   }
 
   &:focus {
     color: var(--pal-link-active);
-    text-decoration: underline dashed;
+    text-decoration: underline;
   }
 
   &:active {
     color: var(--pal-link-active);
-    text-decoration: underline dashed;
+    text-decoration: underline;
   }
 
   &:disabled {

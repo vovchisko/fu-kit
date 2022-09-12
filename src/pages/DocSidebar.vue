@@ -1,6 +1,6 @@
 <template>
   <div class="doc-sidebar">
-    <fu-sidebar side="right" :is-open="rightIsOpen" @close="rightIsOpen = false">
+    <ui-sidebar side="right" :is-open="rightIsOpen" @close="rightIsOpen = false">
       <div class="doc-sidebar_content">
         <h4>What is Lorem Ipsum?</h4>
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
@@ -9,16 +9,16 @@
           essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
           passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem
           Ipsum.</p>
-        <fu-button @click="rightIsOpen = false">Open Right One</fu-button>
+        <ui-button @click="rightIsOpen = false">Open Right One</ui-button>
       </div>
-    </fu-sidebar>
-    <fu-button @click="rightIsOpen = true">Open Right One</fu-button>
+    </ui-sidebar>
+    <ui-button @click="rightIsOpen = true">Open Right One</ui-button>
   </div>
 </template>
 
 <script>
 import { ref }                 from 'vue'
-import { FuButton, FuSidebar } from '../entry.js'
+import { UiButton, UiSidebar } from '../entry.js'
 
 const example = `
 TBD
@@ -27,7 +27,7 @@ TBD
 
 export default {
   name: 'doc-sidebar',
-  components: { FuButton, FuSidebar },
+  components: { UiButton, UiSidebar },
   setup () {
     const rightIsOpen = ref(false)
     return { example, rightIsOpen }
@@ -36,10 +36,9 @@ export default {
 </script>
 
 <style lang="scss">
-
 .doc-sidebar {
   &_content {
-    @include spacing-padding(400);
+    padding: spacing(400);
 
     display: flex;
     flex-direction: column;

@@ -1,44 +1,73 @@
 <template>
   <div class="doc-button">
     <div class="doc-button_row">
-      <fu-button>default</fu-button>
-      <fu-button class="primary">primary</fu-button>
-      <fu-button class="secondary">secondary</fu-button>
-      <fu-button class="positive">positive</fu-button>
-      <fu-button class="warning">warning</fu-button>
-      <fu-button class="negative">negative</fu-button>
-      <fu-button disabled>disabled</fu-button>
+      <ui-button>default</ui-button>
+      <ui-button class="primary">primary</ui-button>
+      <ui-button class="secondary">secondary</ui-button>
+      <ui-button class="positive">positive</ui-button>
+      <ui-button class="warning">warning</ui-button>
+      <ui-button class="negative">negative</ui-button>
+      <ui-button disabled>disabled</ui-button>
     </div>
     <div class="doc-button_row">
-      <fu-button hollow>default</fu-button>
-      <fu-button hollow class="primary">primary</fu-button>
-      <fu-button hollow class="secondary">secondary</fu-button>
-      <fu-button hollow class="positive">positive</fu-button>
-      <fu-button hollow class="warning">warning</fu-button>
-      <fu-button hollow class="negative">negative</fu-button>
-      <fu-button hollow disabled>disabled</fu-button>
+      <ui-button hollow>default</ui-button>
+      <ui-button hollow class="primary">primary</ui-button>
+      <ui-button hollow class="secondary">secondary</ui-button>
+      <ui-button hollow class="positive">positive</ui-button>
+      <ui-button hollow class="warning">warning</ui-button>
+      <ui-button hollow class="negative">negative</ui-button>
+      <ui-button hollow disabled>disabled</ui-button>
     </div>
     <div class="doc-button_row">
-      <fu-button class="primary">
+      <ui-button class="primary">
         primary buttons<br />with a long text inside
-      </fu-button>
+      </ui-button>
 
-      <fu-button class="secondary">
-        <h4>HUGE TEXT</h4>
-      </fu-button>
+      <ui-button class="secondary">
+        HUGE TEXT
+      </ui-button>
+
+      <ui-button naked>
+        naked
+      </ui-button>
+    </div>
+    <div class="doc-button_row">
+      <ui-button :is-loading="isLoading" @click="isLoading = !isLoading">
+        <ui-icon name="gear" />
+        <span>with loading</span>
+      </ui-button>
+      <ui-button class="negative" :is-loading="isLoading" @click="isLoading = !isLoading">
+        <ui-icon name="gear" />
+        <span>with loading</span>
+      </ui-button>
+      <ui-button hollow :is-loading="isLoading" @click="isLoading = !isLoading">
+        <ui-icon name="gear" />
+        <span>with loading</span>
+      </ui-button>
+      <ui-button hollow class="negative" :is-loading="isLoading" @click="isLoading = !isLoading">
+        <ui-icon name="gear" />
+        <span>with loading</span>
+      </ui-button>
+      <ui-button naked :is-loading="isLoading" @click="isLoading = !isLoading">
+        <ui-icon name="gear" />
+        <span>with loading</span>
+      </ui-button>
     </div>
 
-    <fu-code-view label="Example">{{ example }}</fu-code-view>
+    <ui-code-view label="Example">{{ example }}</ui-code-view>
   </div>
 </template>
 
 <script>
-import { FuButton, FuCodeView } from '../entry.js'
+import { ref }    from 'vue'
+import UiButton   from '../components/UiButton.vue'
+import UiCodeView from '../components/UiCodeView.vue'
+import UiIcon     from '../components/UiIcon.vue'
 
 const example = `
 /// vue
-<fu-button hollow>default</fu-button>
-<fu-button hollow class="primary">primary</fu-button>
+<ui-button hollow>default</ui-button>
+<ui-button hollow class="primary">primary</ui-button>
 
 /// css
 .primary {
@@ -48,9 +77,10 @@ const example = `
 
 export default {
   name: 'doc-button',
-  components: { FuCodeView, FuButton },
+  components: { UiCodeView, UiButton, UiIcon },
   setup () {
-    return { example }
+    const isLoading = ref(false)
+    return { example, isLoading }
   },
 }
 </script>
@@ -58,7 +88,8 @@ export default {
 <style lang="scss">
 .doc-button {
   &_row {
-    @include spacing-padding(300);
+    padding: spacing(300);
+
     gap: 1em;
     display: flex;
   }

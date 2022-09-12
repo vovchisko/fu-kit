@@ -15,9 +15,12 @@
         <router-link to="/dropdown" active-class="_active" class="app_main-nav-link">Dropdown</router-link>
         <router-link to="/text" active-class="_active" class="app_main-nav-link">Text</router-link>
         <router-link to="/textarea" active-class="_active" class="app_main-nav-link">Textarea</router-link>
+        <router-link to="/code-input" active-class="_active" class="app_main-nav-link">Code Input</router-link>
         <router-link to="/sidebar" active-class="_active" class="app_main-nav-link">Sidebar</router-link>
         <router-link to="/modal" active-class="_active" class="app_main-nav-link">Modal</router-link>
         <router-link to="/check" active-class="_active" class="app_main-nav-link">Check</router-link>
+        <router-link to="/progress-radial" active-class="_active" class="app_main-nav-link">Progress</router-link>
+        <router-link to="/icon" active-class="_active" class="app_main-nav-link">Icon</router-link>
       </nav>
       <div class="app_main-page">
         <router-view />
@@ -28,10 +31,23 @@
       <small class="app_footer-copy">MIT License 2021 @vovchisko</small>
     </footer>
   </div>
+  <ui-icon-provider />
 </template>
 
+<script>
+import { UiIconProvider } from './entry.js'
+
+export default {
+  name: 'app',
+  components: { UiIconProvider },
+}
+</script>
+
 <style lang="scss">
-:root {
+@import '../reset.scss';
+@import '../root.scss';
+
+html {
   --lt-header-height: 92px;
   --lt-footer-height: 64px;
   --lt-horizontal-padding: 32px;
@@ -52,26 +68,32 @@ body {
 }
 
 .brand {
+  --ui-rgb: var(--rgb-brand);
   --ui-pal: var(--pal-brand);
 }
 
 .primary {
+  --ui-rgb: var(--rgb-primary);
   --ui-pal: var(--pal-primary);
 }
 
 .secondary {
+  --ui-rgb: var(--rgb-secondary);
   --ui-pal: var(--pal-secondary);
 }
 
 .positive {
+  --ui-rgb: var(--rgb-positive);
   --ui-pal: var(--pal-positive);
 }
 
 .warning {
+  --ui-rgb: var(--rgb-warning);
   --ui-pal: var(--pal-warning);
 }
 
 .negative {
+  --ui-rgb: var(--rgb-negative);
   --ui-pal: var(--pal-negative);
 }
 </style>
@@ -110,8 +132,6 @@ body {
     }
 
     &-nav {
-      @include spacing-padding(200);
-
       padding: 0 var(--lt-horizontal-padding);
       position: sticky;
       left: 0;
@@ -121,9 +141,12 @@ body {
       display: flex;
       flex-direction: column;
       gap: spacing(200);
-      min-width: 200px;
+      min-width: 180px;
 
       &-link {
+        @include typo(100);
+
+        text-transform: uppercase;
         width: 10em;
         display: block;
         text-decoration: none;
