@@ -1,7 +1,7 @@
 <template>
-  <div class="ui-sidebar" :class="{'_shown':isOpen}" @mousedown.self="$emit('close')">
+  <div :class="{'_shown':isOpen}" class="ui-sidebar" @mousedown.self="$emit('close')">
     <transition name="bounce">
-      <div class="ui-sidebar_content" v-if="isOpen">
+      <div v-if="isOpen" class="ui-sidebar_content">
         <button v-if="showClose" class="ui-sidebar_close" @click="$emit('close')">
           <ui-icon name="cross" />
         </button>
@@ -44,7 +44,7 @@ html {
 }
 </style>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 @import "../../scss";
 
 .ui-sidebar {

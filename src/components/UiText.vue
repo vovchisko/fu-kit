@@ -6,13 +6,13 @@
     <slot />
     <slot name="left" />
     <input
-        v-bind="{...$attrs, disabled, class: undefined}"
+        ref="inputRef"
+        :class="{ _naked: naked }"
         :value="modelValue"
         class="ui-text_input"
-        :class="{ _naked: naked }"
-        @input="$emit('update:modelValue', $event.target.value)"
+        v-bind="{...$attrs, disabled, class: undefined}"
         @focus="handleFocus"
-        ref="inputRef"
+        @input="$emit('update:modelValue', $event.target.value)"
     >
     <slot name="right" />
   </div>

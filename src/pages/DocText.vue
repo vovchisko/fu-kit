@@ -2,12 +2,12 @@
   <div class="doc-text">
     <div class="doc-text_row">
       <ui-text v-model="val" placeholder="placeholder" />
-      <ui-text class="secondary" v-model="val" placeholder="placeholder" />
-      <ui-text class="brand" v-model="val" placeholder="placeholder" />
-      <ui-text disabled v-model="val" placeholder="placeholder" />
+      <ui-text v-model="val" class="secondary" placeholder="placeholder" />
+      <ui-text v-model="val" class="brand" placeholder="placeholder" />
+      <ui-text v-model="val" disabled placeholder="placeholder" />
     </div>
     <div class="doc-text_row">
-      <ui-text v-model="val" placeholder="disabled placeholder" class="doc-sandbox_row-text">
+      <ui-text v-model="val" class="doc-sandbox_row-text" placeholder="disabled placeholder">
         <template #left>
           <p class="icon"> ❤️</p>
         </template>

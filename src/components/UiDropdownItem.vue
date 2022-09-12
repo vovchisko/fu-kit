@@ -1,10 +1,10 @@
 <template>
   <div
-      class="ui-dropdown-item"
       :class="{
       '_interactive': interactive || autoClose,
       '_active': active,
     }"
+      class="ui-dropdown-item"
       @click="handleClick"
   >
     <slot />

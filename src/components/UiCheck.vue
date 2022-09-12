@@ -1,27 +1,27 @@
 <template>
   <label
-      class="ui-check"
       :class="{'_disabled': isDisabled,  '_checked': modelValue }"
+      class="ui-check"
       v-bind="{ class: $attrs.class, style: $attrs.style }"
       @mouseup="mouseUp"
   >
     <input
-        v-bind="{...$attrs, disabled: isDisabled, type: 'checkbox', class: undefined, style: undefined}"
-        class="ui-check_input"
-        @input="$emit('update:modelValue', $event.target.checked)"
-        :checked="modelValue"
         ref="inputRef"
+        :checked="modelValue"
+        class="ui-check_input"
+        v-bind="{...$attrs, disabled: isDisabled, type: 'checkbox', class: undefined, style: undefined}"
+        @input="$emit('update:modelValue', $event.target.checked)"
     >
     <span
-        class="ui-check_box"
         :class="{
           'ui-check_switch': switchLike,
           'ui-check_check': !switchLike,
           _loading: isLoading
         }"
+        class="ui-check_box"
     >
         <svg v-if="!switchLike" class="ui-check_check-icon" viewBox="0 0 24 24">
-          <path stroke="var(--ui-pal, currentColor)" stroke-linecap="round" stroke-width="2" d="m7.5 12.5 4 3 5.5-8" />
+          <path d="m7.5 12.5 4 3 5.5-8" stroke="var(--ui-pal, currentColor)" stroke-linecap="round" stroke-width="2" />
         </svg>
     </span>
     <slot />

@@ -1,14 +1,14 @@
 <template>
   <div
+      :class="{'_disabled': $attrs.disabled !== undefined || $attrs.readOnly  !== undefined }"
       class="ui-text"
       v-bind="{ class: $attrs.class }"
-      :class="{'_disabled': $attrs.disabled !== undefined || $attrs.readOnly  !== undefined }"
   >
     <textarea
         ref="textarea"
-        v-bind="{...$attrs, class: undefined}"
         :value="modelValue"
         class="ui-text_textarea"
+        v-bind="{...$attrs, class: undefined}"
         @input="handleInput"
     />
   </div>

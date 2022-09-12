@@ -3,24 +3,24 @@
     <div class="doc-text_col">
       <h4>ui-check</h4>
       <ui-check v-model="val">Default</ui-check>
-      <ui-check class="primary" v-model="val">Check primary</ui-check>
-      <ui-check class="secondary" v-model="val">Check secondary</ui-check>
-      <ui-check class="brand" v-model="val">Check brand</ui-check>
-      <ui-check class="positive" v-model="val">Check positive</ui-check>
-      <ui-check class="negative" v-model="val">Check negative</ui-check>
-      <ui-check class="warning" v-model="val">Check warning</ui-check>
-      <ui-check disabled v-model="val">Disabled</ui-check>
+      <ui-check v-model="val" class="primary">Check primary</ui-check>
+      <ui-check v-model="val" class="secondary">Check secondary</ui-check>
+      <ui-check v-model="val" class="brand">Check brand</ui-check>
+      <ui-check v-model="val" class="positive">Check positive</ui-check>
+      <ui-check v-model="val" class="negative">Check negative</ui-check>
+      <ui-check v-model="val" class="warning">Check warning</ui-check>
+      <ui-check v-model="val" disabled>Disabled</ui-check>
     </div>
     <div class="doc-text_col">
       <h4>with switch-like</h4>
-      <ui-check switch-like v-model="val">Default</ui-check>
-      <ui-check switch-like class="primary" v-model="val">Switch primary</ui-check>
-      <ui-check switch-like class="secondary" v-model="val">Switch secondary</ui-check>
-      <ui-check switch-like class="brand" v-model="val">Switch brand</ui-check>
-      <ui-check switch-like class="positive" v-model="val">Switch positive</ui-check>
-      <ui-check switch-like class="negative" v-model="val">Switch negative</ui-check>
-      <ui-check switch-like class="warning" v-model="val">Switch warning</ui-check>
-      <ui-check switch-like disabled v-model="val">Disabled</ui-check>
+      <ui-check v-model="val" switch-like>Default</ui-check>
+      <ui-check v-model="val" class="primary" switch-like>Switch primary</ui-check>
+      <ui-check v-model="val" class="secondary" switch-like>Switch secondary</ui-check>
+      <ui-check v-model="val" class="brand" switch-like>Switch brand</ui-check>
+      <ui-check v-model="val" class="positive" switch-like>Switch positive</ui-check>
+      <ui-check v-model="val" class="negative" switch-like>Switch negative</ui-check>
+      <ui-check v-model="val" class="warning" switch-like>Switch warning</ui-check>
+      <ui-check v-model="val" disabled switch-like>Disabled</ui-check>
     </div>
   </div>
   <ui-code-view label="Example">{{ example }}</ui-code-view>

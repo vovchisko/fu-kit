@@ -6,7 +6,7 @@
 
       <h2 class="home_splash-slogan">Unreasonable UI<br>for unreasonable man.</h2>
 
-      <ui-copy value="npm i fu-kit" class="home_splash-copy">📋 npm i fu-kit</ui-copy>
+      <ui-copy class="home_splash-copy" value="npm i fu-kit">📋 npm i fu-kit</ui-copy>
 
       <p class="home_text">* Flexible, but not too much.</p>
       <p class="home_text">* Customizable, but not an "options-creep".</p>

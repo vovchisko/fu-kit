@@ -8,7 +8,7 @@
       @mouseup="mUp"
   >
     <slot />
-    <ui-icon v-if="isLoading" name="loader" class="ui-button_loader" />
+    <ui-icon v-if="isLoading" class="ui-button_loader" name="loader" />
   </button>
 </template>
 

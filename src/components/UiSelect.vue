@@ -1,9 +1,9 @@
 <template>
   <label class="ui-select" v-bind="{ class: $attrs.class }">
     <select
+        :value="modelValue"
         class="ui-select_select"
         v-bind="{  ...$attrs, class: undefined }"
-        :value="modelValue"
         @input="$emit('update:modelValue', $event.target.value)"
     >
       <slot />

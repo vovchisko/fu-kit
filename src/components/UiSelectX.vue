@@ -1,22 +1,22 @@
 <template>
-  <label class="ui-select-x" v-bind="$attrs" v-click-away="onClickAway">
+  <label v-click-away="onClickAway" class="ui-select-x" v-bind="$attrs">
     <input
-        tabindex="0"
-        class="ui-select-x_input"
         ref="refSearch"
         v-model="search"
         :placeholder="placeholder"
-        @keydown="onTextKeydown"
-        @focus="onTextFocus"
+        class="ui-select-x_input"
         spellcheck="false"
+        tabindex="0"
+        @focus="onTextFocus"
+        @keydown="onTextKeydown"
     />
-    <span class="ui-select-x_list" v-show="filteredItems.length" ref="refList" @keydown="onArrows">
+    <span v-show="filteredItems.length" ref="refList" class="ui-select-x_list" @keydown="onArrows">
       <button
-          class="ui-select-x_list-item"
+          v-for="(e) in filteredItems"
           :class="{'_selected': e.value === model}"
+          class="ui-select-x_list-item"
           tabindex="-1"
           type="button"
-          v-for="(e) in filteredItems"
           @click="onSelect($event,e)"
       >
         {{ e.label }}

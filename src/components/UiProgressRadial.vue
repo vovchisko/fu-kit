@@ -2,29 +2,29 @@
   <div class="ui-progress-radial">
     <div class="ui-progress-radial__svg-wrap">
       <svg
-          class="ui-progress-radial__svg"
+          :height="r2"
           :viewBox="`0 0 ${r2} ${r2}`"
           :width="r2"
-          :height="r2"
+          class="ui-progress-radial__svg"
       >
         <circle
-            class="ui-progress-radial__svg-bg"
             :cx="r"
             :cy="r"
             :r="r"
+            class="ui-progress-radial__svg-bg"
         />
         <circle
-            class="ui-progress-radial__svg-value"
             :cx="r"
             :cy="r"
             :r="r"
             :style="valueStyle"
+            class="ui-progress-radial__svg-value"
         />
       </svg>
     </div>
     <span
-        class="ui-progress-radial__slot"
-        v-if="hasSlot('default')">
+        v-if="hasSlot('default')"
+        class="ui-progress-radial__slot">
       <slot />
     </span>
   </div>

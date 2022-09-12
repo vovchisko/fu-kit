@@ -7,16 +7,16 @@
         <template #content="{dropdownClose}">
           <ui-dropdown-item
               v-for="i in list"
+              :active="selectVal === i.value"
               auto-close
               @click="selectVal = i.value"
-              :active="selectVal === i.value"
           >
             Interactive Autoclose {{ i.label }}
           </ui-dropdown-item>
 
           <hr />
 
-          <ui-dropdown-item @click="selectVal = ''" interactive>
+          <ui-dropdown-item interactive @click="selectVal = ''">
             Unselect interactive w/o auto-close
           </ui-dropdown-item>
 
@@ -24,7 +24,7 @@
             Non-interactive at all
           </ui-dropdown-item>
 
-          <ui-dropdown-item @click="dropdownClose()" interactive>
+          <ui-dropdown-item interactive @click="dropdownClose()">
             Manual close with dropdownClose()
           </ui-dropdown-item>
 
@@ -40,16 +40,16 @@
         <template #content="{dropdownClose}">
           <ui-dropdown-item
               v-for="i in list"
+              :active="selectVal === i.value"
               auto-close
               @click="selectVal = i.value"
-              :active="selectVal === i.value"
           >
             Interactive Autoclose {{ i.label }}
           </ui-dropdown-item>
 
           <hr />
 
-          <ui-dropdown-item @click="selectVal = ''" interactive>
+          <ui-dropdown-item interactive @click="selectVal = ''">
             Unselect interactive w/o auto-close
           </ui-dropdown-item>
 
@@ -57,7 +57,7 @@
             Non-interactive at all
           </ui-dropdown-item>
 
-          <ui-dropdown-item @click="dropdownClose()" interactive>
+          <ui-dropdown-item interactive @click="dropdownClose()">
             Manual close with dropdownClose()
           </ui-dropdown-item>
 

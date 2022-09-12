@@ -2,25 +2,25 @@
   <div>
     <header class="app_header">
       <h1 class="app_header-logo">
-        <router-link to="/" active-class="_active" class="app_header-logo-link">FU*KIT COMPONENTS</router-link>
+        <router-link active-class="_active" class="app_header-logo-link" to="/">FU*KIT COMPONENTS</router-link>
       </h1>
     </header>
 
     <main class="app_main">
       <nav class="app_main-nav">
-        <router-link to="/" active-class="_active" class="app_main-nav-link">Home</router-link>
-        <router-link to="/typo" active-class="_active" class="app_main-nav-link">Typography</router-link>
-        <router-link to="/button" active-class="_active" class="app_main-nav-link">Button</router-link>
-        <router-link to="/select" active-class="_active" class="app_main-nav-link">Select</router-link>
-        <router-link to="/dropdown" active-class="_active" class="app_main-nav-link">Dropdown</router-link>
-        <router-link to="/text" active-class="_active" class="app_main-nav-link">Text</router-link>
-        <router-link to="/textarea" active-class="_active" class="app_main-nav-link">Textarea</router-link>
-        <router-link to="/code-input" active-class="_active" class="app_main-nav-link">Code Input</router-link>
-        <router-link to="/sidebar" active-class="_active" class="app_main-nav-link">Sidebar</router-link>
-        <router-link to="/modal" active-class="_active" class="app_main-nav-link">Modal</router-link>
-        <router-link to="/check" active-class="_active" class="app_main-nav-link">Check</router-link>
-        <router-link to="/progress-radial" active-class="_active" class="app_main-nav-link">Progress</router-link>
-        <router-link to="/icon" active-class="_active" class="app_main-nav-link">Icon</router-link>
+        <router-link active-class="_active" class="app_main-nav-link" to="/">Home</router-link>
+        <router-link active-class="_active" class="app_main-nav-link" to="/typo">Typography</router-link>
+        <router-link active-class="_active" class="app_main-nav-link" to="/button">Button</router-link>
+        <router-link active-class="_active" class="app_main-nav-link" to="/select">Select</router-link>
+        <router-link active-class="_active" class="app_main-nav-link" to="/dropdown">Dropdown</router-link>
+        <router-link active-class="_active" class="app_main-nav-link" to="/text">Text</router-link>
+        <router-link active-class="_active" class="app_main-nav-link" to="/textarea">Textarea</router-link>
+        <router-link active-class="_active" class="app_main-nav-link" to="/code-input">Code Input</router-link>
+        <router-link active-class="_active" class="app_main-nav-link" to="/sidebar">Sidebar</router-link>
+        <router-link active-class="_active" class="app_main-nav-link" to="/modal">Modal</router-link>
+        <router-link active-class="_active" class="app_main-nav-link" to="/check">Check</router-link>
+        <router-link active-class="_active" class="app_main-nav-link" to="/progress-radial">Progress</router-link>
+        <router-link active-class="_active" class="app_main-nav-link" to="/icon">Icon</router-link>
       </nav>
       <div class="app_main-page">
         <router-view />

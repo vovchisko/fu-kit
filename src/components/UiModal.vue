@@ -1,9 +1,9 @@
 <template>
-  <div class="ui-modal" :class="{'_shown':isOpen}" @click.self="$emit('close')">
+  <div :class="{'_shown':isOpen}" class="ui-modal" @click.self="$emit('close')">
     <transition name="bounce">
-      <div class="ui-modal_window" v-if="isOpen">
+      <div v-if="isOpen" class="ui-modal_window">
         <ui-button-link class="ui-modal_window-close" @click="$emit('close')">
-          <ui-icon name="cross" class="ui-modal_window-close-icon" />
+          <ui-icon class="ui-modal_window-close-icon" name="cross" />
         </ui-button-link>
         <slot />
       </div>
@@ -32,7 +32,7 @@ export default defineComponent({
 })
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 @import "../../scss";
 
 .ui-modal {

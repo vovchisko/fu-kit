@@ -2,27 +2,27 @@
   <div class="code-input">
     <div class="code-input_wrapper">
       <input
-          :maxlength="$props.length"
-          type="text"
-          class="code-input_inp"
-          :value="$props.modelValue"
-          @input="handleInput"
           ref="inp"
+          :maxlength="$props.length"
+          :value="$props.modelValue"
+          class="code-input_inp"
+          type="text"
+          v-bind="{ ...$attrs }"
+          @input="handleInput"
           @focus.passive="selectionUpdate"
           @dragend.passive="selectionUpdate"
           @mouseup.passive="selectionUpdate"
           @keydown.passive="selectionUpdate"
           @keyup.passive="selectionUpdate"
-          v-bind="{ ...$attrs }"
       />
       <div
           v-for="i in $props.length"
           :key="'char' + i"
-          class="code-input_char"
           :class="{
             '_select': i - 1 >= selection.from && i - 1 < selection.to && selection.from !== selection.to,
             '_cursor': i - 1 === selection.to,
           }"
+          class="code-input_char"
       >
         <span class="code-input_char-item">{{ chars[i - 1] || '' }}</span>
       </div>

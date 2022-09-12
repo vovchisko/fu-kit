@@ -1,7 +1,7 @@
 <template>
   <div class="doc-textarea">
-    <ui-textarea v-model="val" placeholder="this is a text area" auto-resize />
-    <ui-textarea class="brand" v-model="val" placeholder="this is a text area" />
+    <ui-textarea v-model="val" auto-resize placeholder="this is a text area" />
+    <ui-textarea v-model="val" class="brand" placeholder="this is a text area" />
     <ui-button>Like submit</ui-button>
     <ui-code-view label="Example">{{ example }}</ui-code-view>
   </div>

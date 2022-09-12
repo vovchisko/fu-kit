@@ -1,15 +1,15 @@
 <template>
   <div
-      class="ui-dropdown"
-      :class="{ '_is-open': !disabled && isOpen }"
       v-click-away="isOpen && handleClickaway"
+      :class="{ '_is-open': !disabled && isOpen }"
+      class="ui-dropdown"
   >
     <div class="ui-dropdown_trigger" @click="toggle">
       <slot :isOpen="!disabled && isOpen" />
     </div>
 
-    <div v-if="!disabled && isOpen" class="ui-dropdown_content" :class="{ _right: snapToRight }" ref="slotWrap">
-      <slot name="content" :dropdownClose="close" />
+    <div v-if="!disabled && isOpen" ref="slotWrap" :class="{ _right: snapToRight }" class="ui-dropdown_content">
+      <slot :dropdownClose="close" name="content" />
     </div>
   </div>
 </template>

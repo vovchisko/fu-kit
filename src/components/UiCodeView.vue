@@ -7,7 +7,7 @@
     >
       {{ isShown ? 'Hide' : 'Show' }} {{ label }}
     </ui-button-link>
-    <p class="ui-code-view_title" v-else-if="label">{{ label }}</p>
+    <p v-else-if="label" class="ui-code-view_title">{{ label }}</p>
     <pre v-if="collapse ? isShown : true" class="ui-code-view_pre"><slot /></pre>
   </div>
 </template>
@@ -33,7 +33,7 @@ export default defineComponent({
 })
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 @import "../../scss";
 
 .ui-code-view {

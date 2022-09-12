@@ -1,10 +1,10 @@
 <template>
   <ui-button
-      :hollow="!isCopied"
-      v-bind="$attrs"
-      class="ui-copy"
-      @click="handleCopyToClipboard"
       :class="{'_hot': isCopied}"
+      :hollow="!isCopied"
+      class="ui-copy"
+      v-bind="$attrs"
+      @click="handleCopyToClipboard"
   >
     <slot />
   </ui-button>

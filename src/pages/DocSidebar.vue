@@ -1,6 +1,6 @@
 <template>
   <div class="doc-sidebar">
-    <ui-sidebar side="right" :is-open="rightIsOpen" @close="rightIsOpen = false">
+    <ui-sidebar :is-open="rightIsOpen" side="right" @close="rightIsOpen = false">
       <div class="doc-sidebar_content">
         <h4>What is Lorem Ipsum?</h4>
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
