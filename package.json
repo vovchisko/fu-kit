@@ -1,6 +1,6 @@
 {
   "name": "fu-kit",
-  "version": "0.6.2",
+  "version": "0.6.3",
   "description": "",
   "main": "src/entry.js",
   "scripts": {
