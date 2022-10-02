@@ -2,6 +2,7 @@
 export { default as UiButton }         from './components/UiButton.vue'
 export { default as UiButtonLink }     from './components/UiButtonLink.vue'
 export { default as UiCodeView }       from './components/UiCodeView.vue'
+export { default as UiCodeInput }      from './components/UiCodeInput.vue'
 export { default as UiCopy }           from './components/UiCopy.vue'
 export { default as UiSelect }         from './components/UiSelect.vue'
 export { default as UiSelectX }        from './components/UiSelectX.vue'
