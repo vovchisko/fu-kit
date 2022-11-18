@@ -19,7 +19,7 @@
     "src/entry.js",
     "src/constants.js",
     "reset.scss",
-    "root.scss",
+    "theme.scss",
     "scss.scss"
   ],
   "devDependencies": {

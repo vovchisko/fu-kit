@@ -33,23 +33,23 @@
     </div>
     <div class="doc-button_row">
       <ui-button :is-loading="isLoading" @click="isLoading = !isLoading">
-        <ui-icon name="gear" />
+        <ui-icon name="cross" />
         <span>with loading</span>
       </ui-button>
       <ui-button :is-loading="isLoading" class="negative" @click="isLoading = !isLoading">
-        <ui-icon name="gear" />
+        <ui-icon name="cross" />
         <span>with loading</span>
       </ui-button>
       <ui-button :is-loading="isLoading" hollow @click="isLoading = !isLoading">
-        <ui-icon name="gear" />
+        <ui-icon name="cross" />
         <span>with loading</span>
       </ui-button>
       <ui-button :is-loading="isLoading" class="negative" hollow @click="isLoading = !isLoading">
-        <ui-icon name="gear" />
+        <ui-icon name="cross" />
         <span>with loading</span>
       </ui-button>
       <ui-button :is-loading="isLoading" naked @click="isLoading = !isLoading">
-        <ui-icon name="gear" />
+        <ui-icon name="cross" />
         <span>with loading</span>
       </ui-button>
     </div>
