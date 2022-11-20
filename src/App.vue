@@ -6,8 +6,8 @@
       </h1>
 
       <div class="app_header-themes">
-        <ui-button :hollow="UI.state.selected!==UI.THEMES.DARK" @click="UI.selectTheme(UI.THEMES.DARK)">Dark</ui-button>
         <ui-button :hollow="UI.state.selected!==UI.THEMES.LIGHT" @click="UI.selectTheme(UI.THEMES.LIGHT)">Light</ui-button>
+        <ui-button :hollow="UI.state.selected!==UI.THEMES.DARK" @click="UI.selectTheme(UI.THEMES.DARK)">Dark</ui-button>
         <ui-button :hollow="UI.state.selected!==UI.THEMES.CUSTOM" @click="UI.selectTheme(UI.THEMES.CUSTOM)">Fu</ui-button>
         <ui-button :hollow="UI.state.selected!==UI.THEMES.AUTO" @click="UI.selectTheme(UI.THEMES.AUTO)">Auto</ui-button>
       </div>

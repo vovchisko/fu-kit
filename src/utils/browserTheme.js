@@ -1,8 +1,8 @@
 import Signal from 'a-signal'
 
 const SYS_THEMES = Object.freeze({
-  DARK: 'dark',
   LIGHT: 'light',
+  DARK: 'dark',
   AUTO: '',
 })
 

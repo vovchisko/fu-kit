@@ -1,13 +1,12 @@
 <template>
   <div class="home">
-    <div class="home_splash" data-theme="dark">
+    <div class="home_splash">
       <div class="home_splash-hero">FU*KIT UI</div>
       <div class="home_splash-version">v{{ version }}</div>
 
       <h2 class="home_splash-slogan">Unreasonable UI<br>for unreasonable man.</h2>
 
-      <ui-copy class="home_splash-copy" value="npm i fu-kit">📋 npm i fu-kit</ui-copy>
-
+      <p class="home_text">* Not too complicated, intuitive, but no docs.</p>
       <p class="home_text">* Flexible, but not too much.</p>
       <p class="home_text">* Customizable, but not an "options-creep".</p>
       <p class="home_text">* Not too bad, not too good.</p>
@@ -39,16 +38,17 @@ export default {
   min-width: 0;
 
   &_splash {
-    padding: spacing(600, 500);
+    --pal-text: white;
 
+    padding: spacing(600, 500);
     border-radius: 16px;
-    color: var(--pal-front);
     aspect-ratio: 1 / 1.1;
     max-width: 100%;
     min-height: 780px;
     background-image: url('../assets/splash-screen.jpg');
     background-size: cover;
     background-position: 50%;
+    color: var(--pal-text);
 
     &-hero {
       font-size: 90px;
@@ -85,9 +85,6 @@ export default {
   &_text {
     @include typo(200);
     margin: spacing(300, 300);
-
-    text-shadow: 0 1px 1px black;
-    color: var(--pal-grey900);
   }
 }
 </style>
