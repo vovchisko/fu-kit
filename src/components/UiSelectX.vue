@@ -202,7 +202,7 @@ export default defineComponent({
   transition-property: border-color, box-shadow;
   height: var(--ui-lt-h);
   position: relative;
-  background: var(--ui-pal-bg);
+  background-color: var(--ui-pal-bg);
 
   &_input {
     @include typo(200);
@@ -269,6 +269,7 @@ export default defineComponent({
       font-family: var(--typo-font-ui);
       background: transparent;
       outline: none;
+      color: var(--ui-pal-text);
 
       &:hover {
         background-color: var(--ui-pal-lateral);

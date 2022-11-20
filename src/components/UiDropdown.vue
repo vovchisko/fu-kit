@@ -94,7 +94,7 @@ export default defineComponent({
     background: var(--ui-pal-bg);
     margin-top: spacing(200);
     z-index: var(--lt-z-pop);
-    background: var(--pal-front);
+    background: var(--pal-bg);
     box-shadow: 0 3px 11px rgba(var(--rgb-front), 0.2);
 
     &:not(._right) {

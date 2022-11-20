@@ -3,6 +3,7 @@ import Signal from 'a-signal'
 const SYS_THEMES = Object.freeze({
   DARK: 'dark',
   LIGHT: 'light',
+  AUTO: '',
 })
 
 const query = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null

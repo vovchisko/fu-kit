@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <div class="home_splash">
+    <div class="home_splash" data-theme="dark">
       <div class="home_splash-hero">FU*KIT UI</div>
       <div class="home_splash-version">v{{ version }}</div>
 
@@ -87,7 +87,7 @@ export default {
     margin: spacing(300, 300);
 
     text-shadow: 0 1px 1px black;
-    color: var(--pal-semi-front);
+    color: var(--pal-grey900);
   }
 }
 </style>

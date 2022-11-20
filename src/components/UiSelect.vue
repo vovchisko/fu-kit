@@ -68,6 +68,12 @@ export default defineComponent({
       cursor: not-allowed;
       color: var(--ui-pal-disabled-border);
     }
+
+    &:deep(option) {
+      line-height: var(--ui-lt-h);
+      background: var(--ui-pal-bg);
+      color: var(--ui-pal-text);
+    }
   }
 
   &:hover {

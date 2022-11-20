@@ -24,8 +24,7 @@
 
   // Format palette colors: "--pal-{code}": #RGB
 
-  --pal-front: rgb(var(--rgb-back));
-  --pal-semi-front: rgb(var(--rgb-grey100));
+  --pal-back: rgb(var(--rgb-back));
 
   --pal-grey100: rgb(var(--rgb-grey100));
   --pal-grey200: rgb(var(--rgb-grey200));
@@ -37,8 +36,7 @@
   --pal-grey800: rgb(var(--rgb-grey800));
   --pal-grey900: rgb(var(--rgb-grey900));
 
-  --pal-semi-back: rgb(var(--rgb-grey900));
-  --pal-back: rgb(var(--rgb-front));
+  --pal-front: rgb(var(--rgb-front));
 
   --pal-primary: rgb(var(--rgb-primary));
   --pal-secondary: rgb(var(--rgb-secondary));

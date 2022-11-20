@@ -4,6 +4,13 @@
       <h1 class="app_header-logo">
         <router-link active-class="_active" class="app_header-logo-link" to="/">FU*KIT COMPONENTS</router-link>
       </h1>
+
+      <div class="app_header-themes">
+        <ui-button :hollow="UI.state.selected!==UI.THEMES.DARK" @click="UI.selectTheme(UI.THEMES.DARK)">Dark</ui-button>
+        <ui-button :hollow="UI.state.selected!==UI.THEMES.LIGHT" @click="UI.selectTheme(UI.THEMES.LIGHT)">Light</ui-button>
+        <ui-button :hollow="UI.state.selected!==UI.THEMES.CUSTOM" @click="UI.selectTheme(UI.THEMES.CUSTOM)">Fu</ui-button>
+        <ui-button :hollow="UI.state.selected!==UI.THEMES.AUTO" @click="UI.selectTheme(UI.THEMES.AUTO)">Auto</ui-button>
+      </div>
     </header>
 
     <main class="app_main">
@@ -37,16 +44,23 @@
 
 <script>
 import { UiIconProvider } from './entry.js'
+import UiButtonLink       from './components/UiButtonLink.vue'
+import UiButton           from './components/UiButton.vue'
+import { UI }             from './pages/ui.js'
 
 export default {
   name: 'app',
-  components: { UiIconProvider },
+  components: { UiButton, UiButtonLink, UiIconProvider },
+  setup () {
+    return { UI }
+  },
 }
 </script>
 
 <style lang="scss" scoped>
 
 .app {
+
   &_header {
     grid-area: header;
     display: flex;
@@ -65,6 +79,12 @@ export default {
         color: var(--pal-text);
         text-decoration: none;
       }
+    }
+
+    &-themes {
+      display: flex;
+      gap: spacing(300);
+      align-items: center;
     }
   }
 

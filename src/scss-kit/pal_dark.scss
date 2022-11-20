@@ -1,5 +1,72 @@
 @import "colors";
 
 @mixin pal_dark {
-  @include pal_light()
+  // RAW RGB VALUES
+  --rgb-back: #{hex2rgb(#000000)};
+
+  --rgb-grey100: #{hex2rgb(#151515)};
+  --rgb-grey200: #{hex2rgb(#232326)};
+  --rgb-grey300: #{hex2rgb(#363636)};
+  --rgb-grey400: #{hex2rgb(#515151)};
+  --rgb-grey500: #{hex2rgb(#6C6C6C)};
+  --rgb-grey600: #{hex2rgb(#A5A5A5)};
+  --rgb-grey700: #{hex2rgb(#BFBFBF)};
+  --rgb-grey800: #{hex2rgb(#DCDCDC)};
+  --rgb-grey900: #{hex2rgb(#FAFAFA)};
+
+  --rgb-front: #{hex2rgb(#FFFFFF)};
+
+  --rgb-primary: #{hex2rgb(#0095ff)};
+  --rgb-secondary: #{hex2rgb(#5492c4)};
+  --rgb-positive: #{hex2rgb(#3e9400)};
+  --rgb-warning: #{hex2rgb(#ff7300)};
+  --rgb-negative: #{hex2rgb(#ff3535)};
+
+  // Format palette colors: "--pal-{code}": #RGB
+
+  --pal-back: rgb(var(--rgb-back));
+
+  --pal-grey100: rgb(var(--rgb-grey100));
+  --pal-grey200: rgb(var(--rgb-grey200));
+  --pal-grey300: rgb(var(--rgb-grey300));
+  --pal-grey400: rgb(var(--rgb-grey400));
+  --pal-grey500: rgb(var(--rgb-grey500));
+  --pal-grey600: rgb(var(--rgb-grey600));
+  --pal-grey700: rgb(var(--rgb-grey700));
+  --pal-grey800: rgb(var(--rgb-grey800));
+  --pal-grey900: rgb(var(--rgb-grey900));
+
+  --pal-front: rgb(var(--rgb-front));
+
+  --pal-primary: rgb(var(--rgb-primary));
+  --pal-secondary: rgb(var(--rgb-secondary));
+  --pal-positive: rgb(var(--rgb-positive));
+  --pal-warning: rgb(var(--rgb-warning));
+  --pal-negative: rgb(var(--rgb-negative));
+
+  --pal-acc-primary: rgb(var(--rgb-front));
+  --pal-acc-secondary: rgb(var(--rgb-front));
+  --pal-acc-positive: rgb(var(--rgb-front));
+  --pal-acc-warning: rgb(var(--rgb-front));
+  --pal-acc-negative: rgb(var(--rgb-front));
+
+  --pal-text: rgb(var(--rgb-grey700));
+  --pal-text-dimm: rgb(var(--rgb-grey600));
+  --pal-block: rgb(var(--rgb-grey100));
+  --pal-block-border: rgb(var(--rgb-grey200));
+  --pal-bg: rgb(var(--rgb-grey200));
+  --pal-overlay: rgba(var(--rgb-grey500), 0.2);
+  --pal-link: rgb(var(--rgb-primary));
+  --pal-link-active: rgb(var(--rgb-primary));
+
+  --ui-rgb: var(--rgb-primary);
+  --ui-pal: var(--pal-primary);
+  --ui-pal-bg: var(--pal-grey100);
+  --ui-pal-acc: var(--pal-acc-primary);
+  --ui-pal-lateral: var(--pal-grey300);
+  --ui-pal-text: var(--pal-front);
+  --ui-pal-text-select: var(--pal-front);
+  --ui-pal-placeholder: var(--pal-grey300);
+  --ui-pal-disabled: var(--pal-grey100);
+  --ui-pal-disabled-border: var(--pal-grey300);
 }

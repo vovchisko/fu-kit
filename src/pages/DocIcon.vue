@@ -40,7 +40,7 @@ export default {
     const colorOptions = [
       { value: '', label: 'default' },
       { value: '--pal-front', label: '--pal-front' },
-      { value: '--pal-semi-front', label: '--pal-semi-front' },
+      { value: '--pal-grey900', label: '--pal-grey900' },
       { value: '--pal-grey100', label: '--pal-grey100' },
       { value: '--pal-grey200', label: '--pal-grey200' },
       { value: '--pal-grey300', label: '--pal-grey300' },
@@ -50,7 +50,7 @@ export default {
       { value: '--pal-grey700', label: '--pal-grey700' },
       { value: '--pal-grey800', label: '--pal-grey800' },
       { value: '--pal-grey900', label: '--pal-grey900' },
-      { value: '--pal-semi-back', label: '--pal-semi-back' },
+      { value: '--pal-grey100', label: '--pal-grey100' },
       { value: '--pal-back', label: '--pal-back' },
       { value: '--pal-primary', label: '--pal-primary' },
       { value: '--pal-secondary', label: '--pal-secondary' },
