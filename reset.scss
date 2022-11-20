@@ -71,11 +71,22 @@ label {
 a {
   color: var(--pal-link);
 
-  &:active, &:focus {
+  &:active {
     color: var(--pal-link-active);
+  }
+
+  &:focus, &:hover {
+    color: var(--pal-link-hover);
+    text-decoration: underline;
   }
 }
 
 svg {
   fill: none;
+}
+
+hr {
+  border-width: 0 0 var(--ui-lt-border-width) 0;
+  border-color: var(--ui-pal-lateral);
+  margin: var(--hr-margin, spacing(200)) 0;
 }

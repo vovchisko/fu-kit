@@ -54,7 +54,9 @@ export default defineComponent({
     overflow: auto;
     max-width: 100%;
     background: var(--pal-block);
-    border: 1px solid var(--pal-block-border);
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--pal-block-border, black);
     border-radius: var(--ui-lt-border-radius);
 
     --ui-scroll-bg: var(--pal-block);

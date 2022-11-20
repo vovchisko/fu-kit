@@ -3,7 +3,7 @@
     <div class="doc-text_row">
       <ui-text v-model="val" placeholder="placeholder" />
       <ui-text v-model="val" class="secondary" placeholder="placeholder" />
-      <ui-text v-model="val" class="brand" placeholder="placeholder" />
+      <ui-text v-model="val" class="primary" placeholder="placeholder" />
       <ui-text v-model="val" disabled placeholder="placeholder" />
     </div>
     <div class="doc-text_row">

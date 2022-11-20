@@ -4,7 +4,7 @@
         :value="modelValue"
         class="ui-select_select"
         v-bind="{  ...$attrs, class: undefined }"
-        @input="$emit('update:modelValue', $event.target.value)"
+        @input.stop="$emit('update:modelValue', $event.target.value)"
     >
       <slot />
     </select>
@@ -68,11 +68,17 @@ export default defineComponent({
       cursor: not-allowed;
       color: var(--ui-pal-disabled-border);
     }
+
+    &:deep(option) {
+      line-height: var(--ui-lt-h);
+      background: var(--ui-pal-bg);
+      color: var(--ui-pal-text);
+    }
   }
 
   &:hover {
     outline: none;
-    box-shadow: 0 5px 12px -4px rgb(var(--rgb-dark), 0.2);
+    box-shadow: 0 5px 12px -4px rgb(var(--rgb-front), 0.2);
   }
 
   &:focus-within {

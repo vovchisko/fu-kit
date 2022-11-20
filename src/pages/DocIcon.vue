@@ -39,8 +39,8 @@ export default {
     icons.sort()
     const colorOptions = [
       { value: '', label: 'default' },
-      { value: '--pal-white', label: '--pal-white' },
-      { value: '--pal-light', label: '--pal-light' },
+      { value: '--pal-front', label: '--pal-front' },
+      { value: '--pal-grey900', label: '--pal-grey900' },
       { value: '--pal-grey100', label: '--pal-grey100' },
       { value: '--pal-grey200', label: '--pal-grey200' },
       { value: '--pal-grey300', label: '--pal-grey300' },
@@ -50,9 +50,8 @@ export default {
       { value: '--pal-grey700', label: '--pal-grey700' },
       { value: '--pal-grey800', label: '--pal-grey800' },
       { value: '--pal-grey900', label: '--pal-grey900' },
-      { value: '--pal-dark', label: '--pal-dark' },
-      { value: '--pal-black', label: '--pal-black' },
-      { value: '--pal-brand', label: '--pal-brand' },
+      { value: '--pal-grey100', label: '--pal-grey100' },
+      { value: '--pal-back', label: '--pal-back' },
       { value: '--pal-primary', label: '--pal-primary' },
       { value: '--pal-secondary', label: '--pal-secondary' },
       { value: '--pal-positive', label: '--pal-positive' },

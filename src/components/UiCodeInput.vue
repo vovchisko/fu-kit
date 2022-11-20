@@ -117,7 +117,7 @@ export default {
     }
 
     &._select &-item {
-      color: var(--pal-white);
+      color: var(--pal-front);
       background: var(--pal-primary);
     }
 
@@ -126,7 +126,7 @@ export default {
     }
 
     input:focus ~ &._cursor &-item {
-      border-bottom-color: var(--pal-black);
+      border-bottom-color: var(--pal-front);
     }
   }
 }

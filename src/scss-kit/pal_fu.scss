@@ -1,0 +1,73 @@
+@import "colors";
+
+@mixin pal_fu {
+  --rgb-back: #{hex2rgb(#000000)};
+  --rgb-grey100: #{hex2rgb(#1a1e21)};
+  --rgb-grey200: #{hex2rgb(#252b2f)};
+  --rgb-grey300: #{hex2rgb(#2c3338)};
+  --rgb-grey400: #{hex2rgb(#3e434b)};
+  --rgb-grey500: #{hex2rgb(#666a75)};
+  --rgb-grey600: #{hex2rgb(#A5A5A5)};
+  --rgb-grey700: #{hex2rgb(#BFBFBF)};
+  --rgb-grey800: #{hex2rgb(#DCDCDC)};
+  --rgb-grey900: #{hex2rgb(#FAFAFA)};
+  --rgb-front: #{hex2rgb(#FFFFFF)};
+
+  --rgb-primary: #{hex2rgb(#ff7300)};
+  --rgb-secondary: #{hex2rgb(#ff4400)};
+  --rgb-positive: #{hex2rgb(#ffecdd)};
+  --rgb-warning: #{hex2rgb(#ffc500)};
+  --rgb-negative: #{hex2rgb(#ff3535)};
+
+  --rgb-link: #{hex2rgb(#0072bd)};
+  --rgb-link-active: #{hex2rgb(#0095ff)};
+  --rgb-link-hover: #{hex2rgb(#0095ff)};
+  --rgb-link-visited: #{hex2rgb(#6250ff)};
+
+  --pal-back: rgb(var(--rgb-back));
+  --pal-grey100: rgb(var(--rgb-grey100));
+  --pal-grey200: rgb(var(--rgb-grey200));
+  --pal-grey300: rgb(var(--rgb-grey300));
+  --pal-grey400: rgb(var(--rgb-grey400));
+  --pal-grey500: rgb(var(--rgb-grey500));
+  --pal-grey600: rgb(var(--rgb-grey600));
+  --pal-grey700: rgb(var(--rgb-grey700));
+  --pal-grey800: rgb(var(--rgb-grey800));
+  --pal-grey900: rgb(var(--rgb-grey900));
+  --pal-front: rgb(var(--rgb-front));
+
+  --pal-primary: rgb(var(--rgb-primary));
+  --pal-secondary: rgb(var(--rgb-secondary));
+  --pal-positive: rgb(var(--rgb-positive));
+  --pal-warning: rgb(var(--rgb-warning));
+  --pal-negative: rgb(var(--rgb-negative));
+
+  --pal-acc-primary: rgb(var(--rgb-front));
+  --pal-acc-secondary: rgb(var(--rgb-front));
+  --pal-acc-positive: rgb(var(--rgb-back));
+  --pal-acc-warning: rgb(var(--rgb-front));
+  --pal-acc-negative: rgb(var(--rgb-front));
+
+  --pal-text: rgb(var(--rgb-grey900));
+  --pal-text-dimm: rgb(var(--rgb-grey600));
+  --pal-block: rgb(var(--rgb-grey100));
+  --pal-block-border: rgb(var(--rgb-grey200));
+  --pal-bg: rgb(var(--rgb-grey200));
+  --pal-overlay: rgba(var(--rgb-grey500), 0.2);
+
+  --pal-link: rgb(var(--rgb-link));
+  --pal-link-active: rgb(var(--rgb-link-active));
+  --pal-link-hover: rgb(var(--rgb-link-hover));
+  --pal-link-visited: rgb(var(--rgb-link-visited));
+
+  --ui-rgb: var(--rgb-primary);
+  --ui-pal: var(--pal-primary);
+  --ui-pal-bg: var(--pal-grey100);
+  --ui-pal-acc: var(--pal-acc-primary);
+  --ui-pal-lateral: var(--pal-grey300);
+  --ui-pal-text: var(--pal-front);
+  --ui-pal-text-select: var(--pal-front);
+  --ui-pal-placeholder: var(--pal-grey400);
+  --ui-pal-disabled: var(--pal-grey300);
+  --ui-pal-disabled-border: var(--pal-grey500);
+}

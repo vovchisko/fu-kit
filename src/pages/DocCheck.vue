@@ -5,7 +5,6 @@
       <ui-check v-model="val">Default</ui-check>
       <ui-check v-model="val" class="primary">Check primary</ui-check>
       <ui-check v-model="val" class="secondary">Check secondary</ui-check>
-      <ui-check v-model="val" class="brand">Check brand</ui-check>
       <ui-check v-model="val" class="positive">Check positive</ui-check>
       <ui-check v-model="val" class="negative">Check negative</ui-check>
       <ui-check v-model="val" class="warning">Check warning</ui-check>
@@ -16,7 +15,6 @@
       <ui-check v-model="val" switch-like>Default</ui-check>
       <ui-check v-model="val" class="primary" switch-like>Switch primary</ui-check>
       <ui-check v-model="val" class="secondary" switch-like>Switch secondary</ui-check>
-      <ui-check v-model="val" class="brand" switch-like>Switch brand</ui-check>
       <ui-check v-model="val" class="positive" switch-like>Switch positive</ui-check>
       <ui-check v-model="val" class="negative" switch-like>Switch negative</ui-check>
       <ui-check v-model="val" class="warning" switch-like>Switch warning</ui-check>

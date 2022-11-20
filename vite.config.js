@@ -1,8 +1,6 @@
 import { defineConfig } from 'vite'
 import pluginVue        from '@vitejs/plugin-vue'
 
-
-// https://vitejs.dev/config/
 export default defineConfig({
   build: { outDir: 'docs' },
   plugins: [ pluginVue() ],

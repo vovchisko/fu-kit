@@ -8,9 +8,7 @@
 
 Lightweight cozy components library for Vue3.
 
-Non-buildable Vue3 SFC components built, mostly, to work with vite, but with some additional pain can works with vue-cli+webpack.
-
-Use it with caution. This is my play yard. 
+Use it with caution. This is my play yard.
 
 ## Standard Vue run sequence
 

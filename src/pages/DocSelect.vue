@@ -7,7 +7,7 @@
       </ui-select>
     </div>
 
-    <div class="doc-select_row brand">
+    <div class="doc-select_row primary">
       <label>Fancy select with search</label>
       <ui-select-x v-model="val" :options="list" />
     </div>

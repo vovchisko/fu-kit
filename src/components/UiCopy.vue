@@ -79,7 +79,7 @@ export default defineComponent({
   @include ellipsis();
 
   --ui-lt-h: 2em;
-  --ui-pal: var(--pal-light);
+  --ui-pal: var(--pal-grey900);
 
   &._hot {
     color: var(--pal-positive);

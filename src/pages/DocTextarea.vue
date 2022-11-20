@@ -1,7 +1,7 @@
 <template>
   <div class="doc-textarea">
     <ui-textarea v-model="val" auto-resize placeholder="this is a text area" />
-    <ui-textarea v-model="val" class="brand" placeholder="this is a text area" />
+    <ui-textarea v-model="val" class="primary" placeholder="this is a text area" />
     <ui-button>Like submit</ui-button>
     <ui-code-view label="Example">{{ example }}</ui-code-view>
   </div>
@@ -54,10 +54,6 @@ from the 1914 translation by H. Rackham.
   display: flex;
   flex-direction: column;
 
-  --text-focus-pal: var(--pal-brand);
-
-  .brand {
-    --ui-pal: var(--pal-brand);
-  }
+  --text-focus-pal: var(--pal-primary);
 }
 </style>

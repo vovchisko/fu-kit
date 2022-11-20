@@ -4,11 +4,19 @@
       <h1 class="app_header-logo">
         <router-link active-class="_active" class="app_header-logo-link" to="/">FU*KIT COMPONENTS</router-link>
       </h1>
+
+      <div class="app_header-themes">
+        <ui-button :hollow="UI.state.selected!==UI.THEMES.LIGHT" @click="UI.selectTheme(UI.THEMES.LIGHT)">Light</ui-button>
+        <ui-button :hollow="UI.state.selected!==UI.THEMES.DARK" @click="UI.selectTheme(UI.THEMES.DARK)">Dark</ui-button>
+        <ui-button :hollow="UI.state.selected!==UI.THEMES.CUSTOM" @click="UI.selectTheme(UI.THEMES.CUSTOM)">Fu</ui-button>
+        <ui-button :hollow="UI.state.selected!==UI.THEMES.AUTO" @click="UI.selectTheme(UI.THEMES.AUTO)">Auto</ui-button>
+      </div>
     </header>
 
     <main class="app_main">
       <nav class="app_main-nav">
         <router-link active-class="_active" class="app_main-nav-link" to="/">Home</router-link>
+        <router-link active-class="_active" class="app_main-nav-link" to="/theme">Theme</router-link>
         <router-link active-class="_active" class="app_main-nav-link" to="/typo">Typography</router-link>
         <router-link active-class="_active" class="app_main-nav-link" to="/button">Button</router-link>
         <router-link active-class="_active" class="app_main-nav-link" to="/select">Select</router-link>
@@ -36,71 +44,24 @@
 
 <script>
 import { UiIconProvider } from './entry.js'
+import { UI }             from './pages/ui.js'
+
+import UiButtonLink from './components/UiButtonLink.vue'
+import UiButton     from './components/UiButton.vue'
 
 export default {
   name: 'app',
-  components: { UiIconProvider },
+  components: { UiButton, UiButtonLink, UiIconProvider },
+  setup () {
+    return { UI }
+  },
 }
 </script>
-
-<style lang="scss">
-@import '../reset.scss';
-@import '../root.scss';
-
-html {
-  --lt-header-height: 92px;
-  --lt-footer-height: 64px;
-  --lt-horizontal-padding: 32px;
-}
-
-body {
-  font-family: var(--typo-font-text);
-  color: var(--pal-text);
-  background: var(--pal-bg);
-}
-
-#app {
-  @include scrollbar-awesome();
-}
-
-body {
-  transition: background-color linear 200ms;
-}
-
-.brand {
-  --ui-rgb: var(--rgb-brand);
-  --ui-pal: var(--pal-brand);
-}
-
-.primary {
-  --ui-rgb: var(--rgb-primary);
-  --ui-pal: var(--pal-primary);
-}
-
-.secondary {
-  --ui-rgb: var(--rgb-secondary);
-  --ui-pal: var(--pal-secondary);
-}
-
-.positive {
-  --ui-rgb: var(--rgb-positive);
-  --ui-pal: var(--pal-positive);
-}
-
-.warning {
-  --ui-rgb: var(--rgb-warning);
-  --ui-pal: var(--pal-warning);
-}
-
-.negative {
-  --ui-rgb: var(--rgb-negative);
-  --ui-pal: var(--pal-negative);
-}
-</style>
 
 <style lang="scss" scoped>
 
 .app {
+
   &_header {
     grid-area: header;
     display: flex;
@@ -120,6 +81,12 @@ body {
         text-decoration: none;
       }
     }
+
+    &-themes {
+      display: flex;
+      gap: spacing(300);
+      align-items: center;
+    }
   }
 
   &_main {
@@ -132,12 +99,13 @@ body {
     }
 
     &-nav {
-      padding: 0 var(--lt-horizontal-padding);
       position: sticky;
       left: 0;
       top: 0;
       bottom: 0;
-      border-right: 1px solid rgba(var(--rgb-grey500), 0.1);
+      border-width: 0 1px 0 0;
+      border-color: rgba(var(--rgb-grey500, black), 0.1);
+      border-style: solid;
       display: flex;
       flex-direction: column;
       gap: spacing(200);
@@ -150,14 +118,14 @@ body {
         width: 10em;
         display: block;
         text-decoration: none;
-        line-height: 2em;
+        padding: spacing(300) var(--lt-horizontal-padding);
 
         &:hover {
-          color: var(--pal-link-active);
+          text-decoration: underline;
         }
 
         &._active {
-          color: var(--pal-link-active);
+          background: var(--pal-grey300);
           text-decoration: underline;
         }
       }
