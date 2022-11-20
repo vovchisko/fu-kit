@@ -44,9 +44,10 @@
 
 <script>
 import { UiIconProvider } from './entry.js'
-import UiButtonLink       from './components/UiButtonLink.vue'
-import UiButton           from './components/UiButton.vue'
 import { UI }             from './pages/ui.js'
+
+import UiButtonLink from './components/UiButtonLink.vue'
+import UiButton     from './components/UiButton.vue'
 
 export default {
   name: 'app',
@@ -98,7 +99,6 @@ export default {
     }
 
     &-nav {
-      padding: 0 var(--lt-horizontal-padding);
       position: sticky;
       left: 0;
       top: 0;
@@ -118,14 +118,14 @@ export default {
         width: 10em;
         display: block;
         text-decoration: none;
-        line-height: 2em;
+        padding: spacing(300) var(--lt-horizontal-padding);
 
         &:hover {
-          color: var(--pal-link-active);
+          text-decoration: underline;
         }
 
         &._active {
-          color: var(--pal-link-active);
+          background: var(--pal-grey300);
           text-decoration: underline;
         }
       }

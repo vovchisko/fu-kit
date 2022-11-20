@@ -27,10 +27,6 @@
           <ui-dropdown-item interactive @click="dropdownClose()">
             Manual close with dropdownClose()
           </ui-dropdown-item>
-
-          <hr />
-
-          <h5>Not even a component</h5>
         </template>
       </ui-dropdown>
 
@@ -60,10 +56,6 @@
           <ui-dropdown-item interactive @click="dropdownClose()">
             Manual close with dropdownClose()
           </ui-dropdown-item>
-
-          <hr />
-
-          <h5>Not even a component</h5>
         </template>
       </ui-dropdown>
     </div>

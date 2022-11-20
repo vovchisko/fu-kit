@@ -126,7 +126,7 @@ export default {
     }
 
     input:focus ~ &._cursor &-item {
-      border-bottom-color: var(--pal-back);
+      border-bottom-color: var(--pal-front);
     }
   }
 }

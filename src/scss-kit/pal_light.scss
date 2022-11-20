@@ -1,9 +1,7 @@
 @import "colors";
 
 @mixin pal_light {
-  // RAW RGB VALUES
   --rgb-back: #{hex2rgb(#FFFFFF)};
-
   --rgb-grey100: #{hex2rgb(#FAFAFA)};
   --rgb-grey200: #{hex2rgb(#DCDCDC)};
   --rgb-grey300: #{hex2rgb(#BFBFBF)};
@@ -13,7 +11,6 @@
   --rgb-grey700: #{hex2rgb(#363636)};
   --rgb-grey800: #{hex2rgb(#1C1C1C)};
   --rgb-grey900: #{hex2rgb(#151515)};
-
   --rgb-front: #{hex2rgb(#000000)};
 
   --rgb-primary: #{hex2rgb(#0095ff)};
@@ -22,10 +19,12 @@
   --rgb-warning: #{hex2rgb(#ff7300)};
   --rgb-negative: #{hex2rgb(#ff3535)};
 
-  // Format palette colors: "--pal-{code}": #RGB
+  --rgb-link: #{hex2rgb(#0072bd)};
+  --rgb-link-active: #{hex2rgb(#0095ff)};
+  --rgb-link-hover: #{hex2rgb(#0095ff)};
+  --rgb-link-visited: #{hex2rgb(#6250ff)};
 
   --pal-back: rgb(var(--rgb-back));
-
   --pal-grey100: rgb(var(--rgb-grey100));
   --pal-grey200: rgb(var(--rgb-grey200));
   --pal-grey300: rgb(var(--rgb-grey300));
@@ -35,7 +34,6 @@
   --pal-grey700: rgb(var(--rgb-grey700));
   --pal-grey800: rgb(var(--rgb-grey800));
   --pal-grey900: rgb(var(--rgb-grey900));
-
   --pal-front: rgb(var(--rgb-front));
 
   --pal-primary: rgb(var(--rgb-primary));
@@ -50,14 +48,17 @@
   --pal-acc-warning: rgb(var(--rgb-back));
   --pal-acc-negative: rgb(var(--rgb-back));
 
-  --pal-text: rgb(var(--rgb-grey700));
+  --pal-text: rgb(var(--rgb-grey900));
   --pal-text-dimm: rgb(var(--rgb-grey600));
-  --pal-block: rgb(var(--rgb-grey100));
-  --pal-block-border: rgb(var(--rgb-grey200));
+  --pal-block: rgb(var(--rgb-grey200));
+  --pal-block-border: rgb(var(--rgb-grey300));
   --pal-bg: rgb(var(--rgb-back));
   --pal-overlay: rgba(var(--rgb-grey500), 0.2);
-  --pal-link: rgb(var(--rgb-primary));
-  --pal-link-active: rgb(var(--rgb-primary));
+
+  --pal-link: rgb(var(--rgb-link));
+  --pal-link-active: rgb(var(--rgb-link-active));
+  --pal-link-hover: rgb(var(--rgb-link-hover));
+  --pal-link-visited: rgb(var(--rgb-link-visited));
 
   --ui-rgb: var(--rgb-primary);
   --ui-pal: var(--pal-primary);

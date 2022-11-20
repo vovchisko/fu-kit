@@ -9,7 +9,7 @@ $spacing_growth_k: 2;
   --ui-check-size: 20px;
   --ui-check-border-w: 2px;
   --ui-lt-border-style: solid;
-  --ui-lt-border-width: 2px;
+  --ui-lt-border-width: 1px;
   --ui-lt-border-radius: var(--lt-border-radius-inner);
   --ui-lt-disabled-border-style: dashed;
 
@@ -23,8 +23,7 @@ $spacing_growth_k: 2;
   --typo-font-ui: var(--typo-font-text);
   --typo-font-mono: monospace;
 
-  // font-size
-  // format font-size vars: "--lt-{code}": 14px;
+  // font-sizes
   --typo-h100: 12px;
   --typo-h200: 14px;
   --typo-h300: 16px;
@@ -35,8 +34,7 @@ $spacing_growth_k: 2;
   --typo-h800: 36px;
   --typo-h900: 42px;
 
-  // line-height vars (typo usually has the same number part)
-  // format font-size vars: "--typo-{code}": 14px;
+  // line heights
   --typo-lh100: 14px;
   --typo-lh200: 16px;
   --typo-lh300: 18px;

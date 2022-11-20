@@ -14,7 +14,7 @@ html {
   @include pal_dark();
 }
 
-[data-theme="custom"] {
+[data-theme="fu"] {
   @include pal_fu();
 }
 
@@ -31,24 +31,29 @@ body {
 .primary {
   --ui-rgb: var(--rgb-primary);
   --ui-pal: var(--pal-primary);
+  --ui-pal-acc: var(--pal-acc-primary);
 }
 
 .secondary {
   --ui-rgb: var(--rgb-secondary);
   --ui-pal: var(--pal-secondary);
+  --ui-pal-acc: var(--pal-acc-secondary);
 }
 
 .positive {
   --ui-rgb: var(--rgb-positive);
   --ui-pal: var(--pal-positive);
+  --ui-pal-acc: var(--pal-acc-positive);
 }
 
 .warning {
   --ui-rgb: var(--rgb-warning);
   --ui-pal: var(--pal-warning);
+  --ui-pal-acc: var(--pal-acc-warning);
 }
 
 .negative {
   --ui-rgb: var(--rgb-negative);
   --ui-pal: var(--pal-negative);
+  --ui-pal-acc: var(--pal-acc-negative);
 }
