@@ -24,8 +24,6 @@
   ],
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.9.3",
-    "cross-env": "^7.0.3",
-    "rimraf": "^3.0.2",
     "sass": "^1.26.5",
     "vite": "^2.6.4"
   },
@@ -37,10 +35,8 @@
   },
   "dependencies": {
     "a-signal": "^2.2.1",
-    "lodash": "^4.17.21",
     "vue": "^3.2.16",
     "vue-router": "^4.0.0-0",
-    "vue-the-mask": "^0.11.1",
     "vue3-click-away": "^1.2.1"
   }
 }
