@@ -153,7 +153,7 @@ export default defineComponent({
   }
 
   &:hover:not(&._disabled) &_box {
-    box-shadow: 0 5px 12px -4px rgb(var(--rgb-dark), 0.2);
+    box-shadow: 0 5px 12px -4px rgb(var(--rgb-front), 0.2);
   }
 
   &:hover {

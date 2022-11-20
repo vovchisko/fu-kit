@@ -9,6 +9,7 @@
     <main class="app_main">
       <nav class="app_main-nav">
         <router-link active-class="_active" class="app_main-nav-link" to="/">Home</router-link>
+        <router-link active-class="_active" class="app_main-nav-link" to="/theme">Theme</router-link>
         <router-link active-class="_active" class="app_main-nav-link" to="/typo">Typography</router-link>
         <router-link active-class="_active" class="app_main-nav-link" to="/button">Button</router-link>
         <router-link active-class="_active" class="app_main-nav-link" to="/select">Select</router-link>
@@ -82,7 +83,9 @@ export default {
       left: 0;
       top: 0;
       bottom: 0;
-      border-right: 1px solid rgba(var(--rgb-grey500), 0.1);
+      border-width: 0 1px 0 0;
+      border-color: rgba(var(--rgb-grey500, black), 0.1);
+      border-style: solid;
       display: flex;
       flex-direction: column;
       gap: spacing(200);

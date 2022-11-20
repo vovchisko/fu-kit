@@ -1,0 +1,5 @@
+@import "colors";
+
+@mixin pal_dark {
+  @include pal_light()
+}

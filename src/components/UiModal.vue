@@ -66,7 +66,7 @@ export default defineComponent({
     position: relative;
     margin: auto;
     border-radius: var(--ui-lt-border-radius);
-    background: var(--pal-white);
+    background: var(--pal-front);
     max-width: 100vw;
 
     &-close {

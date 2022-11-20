@@ -1,4 +1,10 @@
+@import "src/scss-kit/ui";
 @import "src/scss-kit/media";
 @import "src/scss-kit/colors";
 @import "src/scss-kit/typo";
-@import "src/scss-kit/ui";
+
+@import "src/scss-kit/pal_light";
+@import "src/scss-kit/pal_dark";
+@import "src/scss-kit/pal_fu";
+
+@import "src/scss-kit/typo_default";

@@ -1,0 +1,73 @@
+$spacing_growth_k: 2;
+
+@mixin typo_default {
+  --ui-lt-h: 36px;
+  --ui-lt-h-sub: 22px;
+  --ui-lt-check-border-width: 2px;
+  --ui-switch-h: 24px;
+  --ui-switch-w: 38px;
+  --ui-check-size: 20px;
+  --ui-check-border-w: 2px;
+  --ui-lt-border-style: solid;
+  --ui-lt-border-width: 2px;
+  --ui-lt-border-radius: var(--lt-border-radius-inner);
+  --ui-lt-disabled-border-style: dashed;
+
+  --ui-scroll-bg: inherit;
+  --ui-scroll-width: 8px;
+
+  --ui-dropdown-max-height: 30vh;
+
+  --typo-font-text: Helvetica, 'Segoe UI', San Francisco, Roboto, Lucida Sans;
+  --typo-font-heading: var(--typo-font-text);
+  --typo-font-ui: var(--typo-font-text);
+  --typo-font-mono: monospace;
+
+  // font-size
+  // format font-size vars: "--lt-{code}": 14px;
+  --typo-h100: 12px;
+  --typo-h200: 14px;
+  --typo-h300: 16px;
+  --typo-h400: 18px;
+  --typo-h500: 22px;
+  --typo-h600: 26px;
+  --typo-h700: 30px;
+  --typo-h800: 36px;
+  --typo-h900: 42px;
+
+  // line-height vars (typo usually has the same number part)
+  // format font-size vars: "--typo-{code}": 14px;
+  --typo-lh100: 14px;
+  --typo-lh200: 16px;
+  --typo-lh300: 18px;
+  --typo-lh400: 22px;
+  --typo-lh500: 24px;
+  --typo-lh600: 36px;
+  --typo-lh700: 42px;
+  --typo-lh800: 48px;
+  --typo-lh900: 64px;
+
+  // spacing vars
+
+  --lt-sp100: #{$spacing_growth_k *  1}px; // =
+  --lt-sp200: #{$spacing_growth_k *  2}px; // ==
+  --lt-sp300: #{$spacing_growth_k *  3}px; // ===
+  --lt-sp400: #{$spacing_growth_k *  5}px; // =====
+  --lt-sp500: #{$spacing_growth_k *  8}px; // ========
+  --lt-sp600: #{$spacing_growth_k * 11}px; // ===========
+  --lt-sp700: #{$spacing_growth_k * 15}px; // ===============
+  --lt-sp800: #{$spacing_growth_k * 21}px; // =====================
+  --lt-sp900: #{$spacing_growth_k * 28}px; // ============================
+
+  --lt-border-radius: 0px;
+  --lt-border-radius-inner: 0px;
+
+  --lt-z-1: 1;
+  --lt-z-back: -1;
+  --lt-z-pop: 1000;
+  --lt-z-nav: 2000;
+  --lt-z-modal-backdrop: 3000;
+  --lt-z-modal: 3001;
+
+  --ui-transition: linear 120ms;
+}

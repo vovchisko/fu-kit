@@ -1,13 +1,21 @@
 html {
-  @include theme_default();
+  @include typo_default();
 
   --lt-header-height: 92px;
   --lt-footer-height: 64px;
   --lt-horizontal-padding: 32px;
 }
 
-[data-theme="default"] {
-    // moar themes!
+[data-theme="light"] {
+  @include pal_light();
+}
+
+[data-theme="dark"] {
+  @include pal_dark();
+}
+
+[data-theme="custom"] {
+  @include pal_fu();
 }
 
 body {
@@ -18,15 +26,6 @@ body {
 
 #app {
   @include scrollbar-awesome();
-}
-
-body {
-  transition: background-color linear 200ms;
-}
-
-.brand {
-  --ui-rgb: var(--rgb-brand);
-  --ui-pal: var(--pal-brand);
 }
 
 .primary {

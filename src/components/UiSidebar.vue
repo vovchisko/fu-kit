@@ -78,7 +78,7 @@ html {
     bottom: 0;
     border-top-left-radius: var(--lt-border-radius);
     border-bottom-left-radius: var(--lt-border-radius);
-    background: var(--pal-white);
+    background: var(--pal-front);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
     max-width: var(--ui-sidebar-max-w);
     min-width: var(--ui-sidebar-min-w);

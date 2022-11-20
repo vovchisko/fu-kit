@@ -42,7 +42,7 @@ export default {
     padding: spacing(600, 500);
 
     border-radius: 16px;
-    color: var(--pal-white);
+    color: var(--pal-front);
     aspect-ratio: 1 / 1.1;
     max-width: 100%;
     min-height: 780px;
@@ -87,7 +87,7 @@ export default {
     margin: spacing(300, 300);
 
     text-shadow: 0 1px 1px black;
-    color: var(--pal-light);
+    color: var(--pal-semi-front);
   }
 }
 </style>

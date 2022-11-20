@@ -1,4 +1,5 @@
 /* eslint-disable import/prefer-default-export */
+
 export { default as UiButton }         from './components/UiButton.vue'
 export { default as UiButtonLink }     from './components/UiButtonLink.vue'
 export { default as UiCodeView }       from './components/UiCodeView.vue'
@@ -16,3 +17,5 @@ export { default as UiDropdownItem }   from './components/UiDropdownItem.vue'
 export { default as UiIconProvider }   from './components/UiIconProvider.vue'
 export { default as UiIcon }           from './components/UiIcon.vue'
 export { default as UiProgressRadial } from './components/UiProgressRadial.vue'
+
+export { default as browserTheme } from './utils/browserTheme.js'

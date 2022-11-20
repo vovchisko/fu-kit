@@ -63,7 +63,7 @@ export default defineComponent({
   transition-timing-function: ease-in-out;
   transition-property: border-color, box-shadow;
   height: var(--ui-lt-h);
-  background: var(--pal-white);
+  background: var(--pal-front);
 
   &_input {
     @include typo(200);
@@ -103,7 +103,7 @@ export default defineComponent({
 
   &:hover {
     outline: none;
-    box-shadow: 0 5px 12px -4px rgb(var(--rgb-dark), 0.2);
+    box-shadow: 0 5px 12px -4px rgb(var(--rgb-front), 0.2);
   }
 
   &:focus-within {
