@@ -2,6 +2,7 @@
   "name": "fu-kit",
   "version": "0.7.1",
   "description": "",
+  "type": "module",
   "main": "src/entry.js",
   "scripts": {
     "dev": "vite",
@@ -22,19 +23,19 @@
     "scss.scss"
   ],
   "devDependencies": {
-    "@vitejs/plugin-vue": "^1.9.3",
-    "sass": "^1.26.5",
-    "vite": "^2.6.4"
+    "@vitejs/plugin-vue": "^4.5.0",
+    "sass": "^1.69.5",
+    "vite": "^5.0.2"
   },
   "peerDependencies": {
-    "vue": "^3.2.16"
+    "vue": "^3.3.9"
   },
   "engines": {
-    "node": ">=12"
+    "node": ">=20"
   },
   "dependencies": {
     "a-signal": "^2.2.1",
-    "vue": "^3.2.16",
+    "vue": "^3.3.9",
     "vue-router": "^4.0.0-0",
     "vue3-click-away": "^1.2.1"
   }
