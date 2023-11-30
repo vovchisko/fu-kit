@@ -34,7 +34,7 @@
 import { UiCodeView } from '../entry.js'
 
 const example =
-    `
+          `
 .h200 {
   @include typo(200);
 }
@@ -64,27 +64,35 @@ export default {
   .h100 {
     @include typo(100);
   }
+
   .h200 {
     @include typo(200);
   }
+
   .h300 {
     @include typo(300);
   }
+
   .h400 {
     @include typo(400);
   }
+
   .h500 {
     @include typo(500);
   }
+
   .h600 {
     @include typo(600);
   }
+
   .h700 {
     @include typo(700);
   }
+
   .h800 {
     @include typo(800);
   }
+
   .h900 {
     @include typo(900);
   }

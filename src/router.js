@@ -13,8 +13,8 @@ import DocCheck          from './pages/DocCheck.vue'
 import DocModal          from './pages/DocModal.vue'
 import DocDropdown       from './pages/DocDropdown.vue'
 import DocProgressRadial from './pages/DocProgressRadial.vue'
-import DocIcon  from './pages/DocIcon.vue'
-import DocTheme from './pages/DocThemes.vue'
+import DocIcon           from './pages/DocIcon.vue'
+import DocTheme          from './pages/DocThemes.vue'
 
 const ROUTE_NAMES = Object.freeze({
   HOME: 'HOME',

@@ -48,18 +48,5 @@ export default {
     width: 400px;
     max-width: 90vw;
   }
-
-  &_title {
-    margin-bottom: spacing(400);
-    color: pal(text-dimm);
-    font-weight: normal;
-    border-bottom: 1px solid color(grey200);
-  }
-
-  &_options {
-    display: flex;
-    align-items: center;
-    gap: spacing(400);
-  }
 }
 </style>

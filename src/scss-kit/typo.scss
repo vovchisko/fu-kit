@@ -16,7 +16,7 @@
 
 @function _spacing($spacing-code) {
   @if (
-      $spacing-code == 0 or
+          $spacing-code == 0 or
       $spacing-code == auto or
       $spacing-code == unset or
       $spacing-code == null

@@ -47,7 +47,6 @@ export default {
 
   &_title {
     margin-bottom: spacing(400);
-    color: pal(text-dimm);
     font-weight: normal;
     border-bottom: 1px solid color(grey200);
   }

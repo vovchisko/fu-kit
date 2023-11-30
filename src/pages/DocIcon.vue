@@ -78,6 +78,7 @@ export default {
     display: flex;
     gap: spacing(400);
   }
+
   &_icons {
     --icon-secondary-color: var(--pal-grey300);
     margin: spacing(400, 0);
@@ -94,6 +95,7 @@ export default {
     @include respond-below(xs) {
       grid-template-columns: repeat(3, 1fr);
     }
+
     &-item {
       display: flex;
       flex-direction: column;
