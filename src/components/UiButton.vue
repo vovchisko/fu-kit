@@ -143,6 +143,7 @@ export default defineComponent({
   &_loader {
     --icon-size: 1em;
     --icon-color: var(--ui-pal-acc);
+
     position: absolute;
     animation: spin 2s infinite;
   }
@@ -150,6 +151,7 @@ export default defineComponent({
   &._hollow > &_loader, &._naked > &_loader {
     --icon-size: 1em;
     --icon-color: var(--ui-pal);
+
     position: absolute;
     animation: spin 2s infinite;
   }
