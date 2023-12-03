@@ -35,21 +35,19 @@ fs.readdir(svgDir, (err, files) => {
   })
 
   combinedSvgContent += '</svg>\n' +
-                        '</template>\n' +
-                        '\n' +
+                        '</template>\n\n' +
                         '<script>\n' +
                         'export default {\n' +
                         'name: \'ui-icon-provider\',\n' +
                         '}\n' +
-                        '</script>\n' +
-                        '\n' +
+                        '</script>\n\n' +
                         '<style lang="scss" scoped>\n' +
                         '\n' +
                         '</style>'
 
   combinedSvgContent = combinedSvgContent.replaceAll('></path>', ' />')
   combinedSvgContent = combinedSvgContent.replaceAll('viewbox', 'viewBox')
-  combinedSvgContent = combinedSvgContent.replaceAll('stroke="black"', 'stroke="var(--icon-color, currentColor)" stroke-width="var(--icon-stroke-width, 1px)"')
+  combinedSvgContent = combinedSvgContent.replaceAll('stroke="black"', 'stroke="var(--icon-color, currentColor)"')
 
   fs.writeFileSync(outputFile, combinedSvgContent)
 

@@ -17,5 +17,6 @@ export { default as UiDropdownItem }   from './components/UiDropdownItem.vue'
 export { default as UiIconProvider }   from './components/UiIconProvider.vue'
 export { default as UiIcon }           from './components/UiIcon.vue'
 export { default as UiProgressRadial } from './components/UiProgressRadial.vue'
+export { default as UiImg }            from './components/UiImg.vue'
 
 export { default as browserTheme } from './utils/browserTheme.js'

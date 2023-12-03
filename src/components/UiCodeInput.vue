@@ -31,36 +31,28 @@
 </template>
 
 <script>
-import { computed, onBeforeUnmount, onMounted, reactive, ref } from 'vue'
+import { computed, reactive, ref } from 'vue'
 
 export default {
   name: 'ui-code-input',
   props: {
-    modelValue: {
-      type: String,
-    },
-    length: {
-      type: Number,
-      default: 6,
-    },
+    modelValue: { type: String },
+    length: { type: Number, default: 6 },
   },
   setup (props, { emit }) {
     const selection = reactive({ from: 0, to: 0 })
     const inp = ref(null)
 
     const selectionUpdate = (e) => {
-      selection.from = e.target.selectionStart
-      selection.to = e.target.selectionEnd
+      requestAnimationFrame(() => {
+        selection.from = e.target.selectionStart
+        selection.to = e.target.selectionEnd
+      })
     }
 
-    const handleInput = (e) => {
-      emit('update:modelValue', e.target.value)
-    }
+    const handleInput = (e) => emit('update:modelValue', e.target.value)
 
     const chars = computed(() => (props.modelValue).split(''))
-
-    onMounted(() => { })
-    onBeforeUnmount(() => { })
 
     return { chars, selection, selectionUpdate, inp, handleInput }
   },

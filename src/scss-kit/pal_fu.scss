@@ -14,8 +14,8 @@
   --rgb-front: #{hex2rgb(#FFFFFF)};
 
   --rgb-primary: #{hex2rgb(#ff7300)};
-  --rgb-secondary: #{hex2rgb(#ff4400)};
-  --rgb-positive: #{hex2rgb(#ffecdd)};
+  --rgb-secondary: #{hex2rgb(#ffecdd)};
+  --rgb-positive: #{hex2rgb(#ff4400)};
   --rgb-warning: #{hex2rgb(#ffc500)};
   --rgb-negative: #{hex2rgb(#ff3535)};
 
@@ -42,11 +42,11 @@
   --pal-warning: rgb(var(--rgb-warning));
   --pal-negative: rgb(var(--rgb-negative));
 
-  --pal-acc-primary: rgb(var(--rgb-front));
-  --pal-acc-secondary: rgb(var(--rgb-front));
-  --pal-acc-positive: rgb(var(--rgb-back));
-  --pal-acc-warning: rgb(var(--rgb-front));
-  --pal-acc-negative: rgb(var(--rgb-front));
+  --pal-primary-acc: rgb(var(--rgb-front));
+  --pal-secondary-acc: rgb(var(--rgb-back));
+  --pal-positive-acc: rgb(var(--rgb-front));
+  --pal-warning-acc: rgb(var(--rgb-front));
+  --pal-negative-acc: rgb(var(--rgb-front));
 
   --pal-text: rgb(var(--rgb-grey900));
   --pal-text-dimm: rgb(var(--rgb-grey600));
@@ -63,7 +63,7 @@
   --ui-rgb: var(--rgb-primary);
   --ui-pal: var(--pal-primary);
   --ui-pal-bg: var(--pal-grey100);
-  --ui-pal-acc: var(--pal-acc-primary);
+  --ui-pal-acc: var(--pal-primary-acc);
   --ui-pal-lateral: var(--pal-grey300);
   --ui-pal-text: var(--pal-front);
   --ui-pal-text-select: var(--pal-front);

@@ -3,12 +3,18 @@
       v-bind="{
         ...$attrs,
         type: $attrs.type || 'button',
-        class: ['ui-button', (hollow ? ' _hollow' : ''), (naked ? ' _naked' : ''), (isLoading ? ' _loading' : '')].join(''),
+        class: [
+            'ui-button',
+            (!hollow && !naked ? ' _solid' : ''),
+            (hollow ? ' _hollow' : ''),
+            (naked ? ' _naked' : ''),
+            (isLoading ? ' _loading' : '')
+        ].join(''),
       }"
       @mouseup="mUp"
   >
     <slot />
-    <ui-icon v-if="isLoading" class="ui-button_loader" name="loader" />
+    <ui-icon v-if="isLoading" class="ui-button_loader" name="spinner" />
   </button>
 </template>
 
@@ -38,34 +44,101 @@ export default defineComponent({
 .ui-button {
   @include typo(200);
 
+  --icon-size: 1em;
+
+  -webkit-tap-highlight-color: transparent;
+
+  outline: none;
+  user-select: none;
   display: flex;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
   cursor: pointer;
-  padding: var(--ui-button-padding, #{spacing(300)} #{spacing(400)});
-  font-family: var(--typo-font-ui);
-  min-height: var(--ui-lt-h);
-  border-width: var(--ui-lt-border-width);
-  border-style: var(--ui-lt-border-style);
-  border-color: var(--ui-pal);
-  border-radius: var(--ui-lt-border-radius);
-  transition: all var(--ui-transition);
-  background: var(--ui-pal);
-  color: var(--ui-pal-acc);
   line-height: 1;
   will-change: box-shadow, transform;
-  gap: var(--ui-button-gap, #{spacing(300)});
-  outline: none;
-  user-select: none;
+  transition: all var(--ui-transition);
 
-  --icon-size: 1em;
+  &._solid {
+    padding: var(--ui-button-padding, #{spacing(300, 400)});
+    font-family: var(--typo-font-ui);
+    min-height: var(--ui-lt-h);
+    border-width: var(--ui-lt-border-width);
+    border-style: var(--ui-lt-border-style);
+    border-color: var(--ui-pal);
+    border-radius: var(--ui-lt-border-radius);
+    background: var(--ui-pal);
+    color: var(--ui-pal-acc);
+    gap: var(--ui-button-gap, #{spacing(300)});
+  }
 
-  -webkit-tap-highlight-color: transparent;
+  &._hollow {
+    background: transparent;
+    padding: var(--ui-button-padding, #{spacing(300, 400)});
+    color: var(--ui-pal);
+    border-width: var(--ui-lt-border-width);
+    border-style: var(--ui-lt-border-style);
+    border-color: var(--ui-pal);
+    border-radius: var(--ui-lt-border-radius);
+    gap: var(--ui-button-gap, #{spacing(300)});
+    min-height: var(--ui-lt-h);
+
+
+    &:hover {
+      box-shadow: 0 3px 10px -4px var(--ui-pal);
+    }
+
+    &:focus {
+      box-shadow: 0 3px 10px -4px var(--ui-pal);
+    }
+
+    &:active {
+      box-shadow: 0 1px 4px -2px var(--ui-pal);
+    }
+
+    &:disabled {
+      color: var(--ui-pal-disabled-border);
+      box-shadow: none;
+    }
+  }
+
+  &._naked {
+    background: transparent;
+    color: var(--ui-pal);
+    border: 1px solid transparent;
+    padding: var(--ui-button-padding, #{spacing(300, 400)});
+    gap: var(--ui-button-gap, #{spacing(300)});
+    min-height: var(--ui-lt-h);
+
+    &:hover {
+      box-shadow: none;
+    }
+
+    &:focus {
+      box-shadow: none;
+    }
+
+    &:active {
+      box-shadow: none;
+    }
+
+    &:disabled {
+      color: var(--ui-pal-disabled-border);
+      box-shadow: none;
+    }
+  }
+
+  //
+  // DON'T
+  //
 
   & > * {
     pointer-events: none;
   }
+
+  //
+  // STATES
+  //
 
   &:hover {
     text-decoration: none;
@@ -90,58 +163,16 @@ export default defineComponent({
     box-shadow: none;
   }
 
-  &._hollow {
-    background: transparent;
-    color: var(--ui-pal);
-
-    &:hover {
-      box-shadow: 0 3px 10px -4px var(--ui-pal);
-    }
-
-    &:focus {
-      box-shadow: 0 3px 10px -4px var(--ui-pal);
-    }
-
-    &:active {
-      box-shadow: 0 1px 4px -2px var(--ui-pal);
-    }
-
-    &:disabled {
-      color: var(--ui-pal-disabled-border);
-      box-shadow: none;
-    }
-  }
-
-  &._naked {
-    background: transparent;
-    color: var(--ui-pal);
-    border: 0 none;
-    padding: var(--ui-button-padding, var(--lt-sp300));
-
-    &:hover {
-      box-shadow: none;
-    }
-
-    &:focus {
-      box-shadow: none;
-    }
-
-    &:active {
-      box-shadow: none;
-    }
-
-    &:disabled {
-      color: var(--ui-pal-disabled-border);
-      box-shadow: none;
-    }
-  }
+  //
+  // LOADER
+  //
 
   &._loading {
     color: transparent;
   }
 
   &_loader {
-    --icon-size: 1em;
+    --icon-size: 1.4em;
     --icon-color: var(--ui-pal-acc);
 
     position: absolute;
@@ -149,7 +180,7 @@ export default defineComponent({
   }
 
   &._hollow > &_loader, &._naked > &_loader {
-    --icon-size: 1em;
+    --icon-size: 1.4em;
     --icon-color: var(--ui-pal);
 
     position: absolute;
@@ -159,13 +190,13 @@ export default defineComponent({
 
 @keyframes spin {
   0% {
-    transform: scale(1) rotate(0);
+    transform: rotate(0);
   }
   50% {
-    transform: scale(1.5) rotate(180deg);
+    transform: rotate(180deg);
   }
   100% {
-    transform: scale(1) rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 </style>

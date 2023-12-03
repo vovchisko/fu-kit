@@ -14,11 +14,11 @@ import DocModal          from './pages/DocModal.vue'
 import DocDropdown       from './pages/DocDropdown.vue'
 import DocProgressRadial from './pages/DocProgressRadial.vue'
 import DocIcon           from './pages/DocIcon.vue'
-import DocTheme          from './pages/DocThemes.vue'
+import DocImg          from './pages/DocImg.vue'
 
 const ROUTE_NAMES = Object.freeze({
   HOME: 'HOME',
-  DOC_THEME: 'DOC_THEME',
+  DOC_IMG: 'DOC_IMG',
   DOC_TYPO: 'DOC_TYPO',
   DOC_BUTTON: 'DOC_BUTTON',
   DOC_SELECT: 'DOC_SELECT',
@@ -36,7 +36,7 @@ const ROUTE_NAMES = Object.freeze({
 
 const routes = [
   { path: '/', name: ROUTE_NAMES.HOME, component: Home },
-  { path: '/theme', name: ROUTE_NAMES.DOC_THEME, component: DocTheme },
+  { path: '/img', name: ROUTE_NAMES.DOC_IMG, component: DocImg },
   { path: '/typo', name: ROUTE_NAMES.DOC_TYPO, component: DocTypo },
   { path: '/button', name: ROUTE_NAMES.DOC_BUTTON, component: DocButton },
   { path: '/select', name: ROUTE_NAMES.DOC_SELECT, component: DocSelect },
