@@ -24,6 +24,5 @@ svg {
   height: var(--icon-size, 24px);
   width: var(--icon-size, 24px);
   min-width: var(--icon-size, 24px);
-  stroke-width: 2px;
 }
 </style>

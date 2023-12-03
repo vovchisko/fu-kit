@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "build-icon-provider": "node ./scripts/svg-to-symbols.js"
   },
   "sideEffects": [
     "*.scss",
@@ -24,6 +25,7 @@
   ],
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.5.0",
+    "jsdom": "^23.0.1",
     "sass": "^1.69.5",
     "vite": "^5.0.2"
   },
