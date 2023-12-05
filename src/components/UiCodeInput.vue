@@ -28,7 +28,6 @@
         <span class="code-input_char-item">{{ chars[i - 1] || '' }}</span>
       </div>
     </div>
-    {{ selection }}
   </div>
 </template>
 
@@ -128,16 +127,17 @@ export default {
       background: var(--pal-primary);
     }
 
-    input:focus ~ &._cursor {
+    input:focus ~ &._cursor,
+    input:focus ~ &._cursor_0 {
       border-color: var(--ui-pal);
-    }
-
-    input:focus ~ &._cursor_0 &-item {
-      border-left-color: var(--pal-front);
     }
 
     input:focus ~ &._cursor &-item, {
       border-right-color: var(--pal-front);
+    }
+
+    input:focus ~ &._cursor_0 &-item {
+      border-left-color: var(--pal-front);
     }
   }
 }

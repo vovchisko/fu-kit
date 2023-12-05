@@ -9,10 +9,11 @@
 </template>
 
 <script>
+import { ref } from 'vue'
+
 import UiCodeInput from '../components/UiCodeInput.vue'
 import UiCheck     from '../components/UiCheck.vue'
 import UiCodeView  from '../components/UiCodeView.vue'
-import { ref }     from 'vue'
 import UiText      from '../components/UiText.vue'
 
 export default {
