@@ -13,10 +13,11 @@ import UiCodeInput from '../components/UiCodeInput.vue'
 import UiCheck     from '../components/UiCheck.vue'
 import UiCodeView  from '../components/UiCodeView.vue'
 import { ref }     from 'vue'
+import UiText      from '../components/UiText.vue'
 
 export default {
   name: 'doc-code-input',
-  components: { UiCodeView, UiCodeInput, UiCheck },
+  components: { UiText, UiCodeView, UiCodeInput, UiCheck },
   setup () {
     const pin = ref('')
     const error = ref(false)
@@ -28,7 +29,7 @@ export default {
 
 <style lang="scss" scoped>
 ._error {
-  --charbox-text-color: var(--pal-negative);
-  --charbox-border-color: var(--pal-negative);
+  --ui-pal: var(--pal-negative);
+  --ui-pal-text: var(--pal-warning);
 }
 </style>
