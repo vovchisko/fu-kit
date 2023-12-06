@@ -74,7 +74,7 @@ import UiButton      from '../components/UiButton.vue'
 import UiButtonLink  from '../components/UiButtonLink.vue'
 import UiCodeView    from '../components/UiCodeView.vue'
 import UiIcon        from '../components/UiIcon.vue'
-import UiButtonRoute from '../components/UIButtonRoute.vue'
+import UiButtonRoute from '../components/UiButtonRoute.vue'
 
 import { ROUTE_NAMES } from '../route-names.js'
 
