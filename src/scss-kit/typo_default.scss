@@ -1,4 +1,4 @@
-$spacing_growth_k: 2;
+$spacing_growth_k: 3;
 
 @mixin typo_default {
   --ui-lt-h: 36px;
@@ -24,6 +24,7 @@ $spacing_growth_k: 2;
   --typo-font-mono: monospace;
 
   // font-sizes
+  --typo-h50: 10px;
   --typo-h100: 12px;
   --typo-h200: 14px;
   --typo-h300: 16px;
@@ -35,6 +36,7 @@ $spacing_growth_k: 2;
   --typo-h900: 42px;
 
   // line heights
+  --typo-lh50: 12px;
   --typo-lh100: 14px;
   --typo-lh200: 16px;
   --typo-lh300: 18px;

@@ -6,17 +6,25 @@
       </h1>
 
       <div class="app_header-themes">
-        <ui-button :hollow="UI.state.selected!==UI.THEMES.LIGHT" @click="UI.selectTheme(UI.THEMES.LIGHT)">Light</ui-button>
-        <ui-button :hollow="UI.state.selected!==UI.THEMES.DARK" @click="UI.selectTheme(UI.THEMES.DARK)">Dark</ui-button>
-        <ui-button :hollow="UI.state.selected!==UI.THEMES.CUSTOM" @click="UI.selectTheme(UI.THEMES.CUSTOM)">Fu</ui-button>
-        <ui-button :hollow="UI.state.selected!==UI.THEMES.AUTO" @click="UI.selectTheme(UI.THEMES.AUTO)">Auto</ui-button>
+        <ui-button :naked="UI.state.selected!==UI.THEMES.LIGHT" @click="UI.selectTheme(UI.THEMES.LIGHT)">
+          <ui-icon name="sun" />
+        </ui-button>
+        <ui-button :naked="UI.state.selected!==UI.THEMES.DARK" @click="UI.selectTheme(UI.THEMES.DARK)">
+          <ui-icon name="moon" />
+        </ui-button>
+        <ui-button :naked="UI.state.selected!==UI.THEMES.CUSTOM" @click="UI.selectTheme(UI.THEMES.CUSTOM)">
+          <ui-icon name="fire" />
+        </ui-button>
+        <ui-button :naked="UI.state.selected!==UI.THEMES.AUTO" @click="UI.selectTheme(UI.THEMES.AUTO)">
+          <ui-icon name="asterisks" />
+        </ui-button>
       </div>
     </header>
 
     <main class="app_main">
       <nav class="app_main-nav">
         <router-link active-class="_active" class="app_main-nav-link" to="/">Home</router-link>
-        <router-link active-class="_active" class="app_main-nav-link" to="/theme">Theme</router-link>
+        <router-link active-class="_active" class="app_main-nav-link" to="/img">Img</router-link>
         <router-link active-class="_active" class="app_main-nav-link" to="/typo">Typography</router-link>
         <router-link active-class="_active" class="app_main-nav-link" to="/button">Button</router-link>
         <router-link active-class="_active" class="app_main-nav-link" to="/select">Select</router-link>
@@ -48,10 +56,11 @@ import { UI }             from './pages/ui.js'
 
 import UiButtonLink from './components/UiButtonLink.vue'
 import UiButton     from './components/UiButton.vue'
+import UiIcon       from './components/UiIcon.vue'
 
 export default {
   name: 'app',
-  components: { UiButton, UiButtonLink, UiIconProvider },
+  components: { UiIcon, UiButton, UiButtonLink, UiIconProvider },
   setup () {
     return { UI }
   },
@@ -112,7 +121,7 @@ export default {
       min-width: 180px;
 
       &-link {
-        @include typo(100);
+        @include typo(200);
 
         text-transform: uppercase;
         width: 10em;
@@ -122,11 +131,13 @@ export default {
 
         &:hover {
           text-decoration: underline;
+          background: var(--pal-grey100);
         }
 
         &._active {
-          background: var(--pal-grey300);
-          text-decoration: underline;
+          background: var(--pal-primary);
+          color: var(--pal-secondary-acc);
+          text-decoration: none;
         }
       }
     }

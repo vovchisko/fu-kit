@@ -53,8 +53,15 @@
         <span>with loading</span>
       </ui-button>
     </div>
+
     <div class="doc-button_row">
       <ui-button-link>Button-link is here</ui-button-link>
+    </div>
+
+
+
+    <div class="doc-button_row">
+      <ui-button-route :to="{name: ROUTE_NAMES.DOC_BUTTON}">Button Route</ui-button-route>
     </div>
 
     <ui-code-view label="Example">{{ example }}</ui-code-view>
@@ -62,11 +69,15 @@
 </template>
 
 <script>
-import { ref }      from 'vue'
-import UiButton     from '../components/UiButton.vue'
-import UiButtonLink from '../components/UiButtonLink.vue'
-import UiCodeView   from '../components/UiCodeView.vue'
-import UiIcon       from '../components/UiIcon.vue'
+import { ref }       from 'vue'
+import UiButton      from '../components/UiButton.vue'
+import UiButtonLink  from '../components/UiButtonLink.vue'
+import UiCodeView    from '../components/UiCodeView.vue'
+import UiIcon        from '../components/UiIcon.vue'
+import UiButtonRoute from '../components/UIButtonRoute.vue'
+
+import { ROUTE_NAMES } from '../route-names.js'
+
 
 const example = `
 /// vue
@@ -81,10 +92,10 @@ const example = `
 
 export default {
   name: 'doc-button',
-  components: { UiCodeView, UiButton, UiIcon, UiButtonLink },
+  components: { UiButtonRoute, UiCodeView, UiButton, UiIcon, UiButtonLink },
   setup () {
     const isLoading = ref(false)
-    return { example, isLoading }
+    return { example, isLoading, ROUTE_NAMES }
   },
 }
 </script>

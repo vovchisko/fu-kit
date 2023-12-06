@@ -26,7 +26,6 @@
 //
 //  COLOR HELPERS
 //
-
 @function pal($color-code, $opacity:1) {
   @if ($opacity < 1) {
     @return rgba(var(--pal-#{$color-code}), #{$opacity})
@@ -37,9 +36,9 @@
 
 @function pal-acc($color-code, $opacity:1) {
   @if ($opacity < 1) {
-    @return rgba(var(--pal-acc-#{$color-code}), #{$opacity})
+    @return rgba(var(--pal-#{$color-code}-acc), #{$opacity})
   } @else {
-    @return rgb(var(--pal-acc-#{$color-code}))
+    @return rgb(var(--pal-#{$color-code}-acc))
   }
 }
 

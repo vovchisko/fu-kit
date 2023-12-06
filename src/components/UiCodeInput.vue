@@ -20,7 +20,8 @@
           :key="'char' + i"
           :class="{
             '_select': i - 1 >= selection.from && i - 1 < selection.to && selection.from !== selection.to,
-            '_cursor': i - 1 === selection.to,
+            '_cursor': i  === selection.to,
+            '_cursor_0': selection.from === 0 && selection.to === 0 && i === 1,
           }"
           class="code-input_char"
       >
@@ -31,36 +32,29 @@
 </template>
 
 <script>
-import { computed, onBeforeUnmount, onMounted, reactive, ref } from 'vue'
+import { computed, reactive, ref } from 'vue'
 
 export default {
   name: 'ui-code-input',
   props: {
-    modelValue: {
-      type: String,
-    },
-    length: {
-      type: Number,
-      default: 6,
-    },
+    type: { type: String, default: 'text' },
+    modelValue: { type: String },
+    length: { type: Number, default: 4 },
   },
   setup (props, { emit }) {
     const selection = reactive({ from: 0, to: 0 })
     const inp = ref(null)
 
     const selectionUpdate = (e) => {
-      selection.from = e.target.selectionStart
-      selection.to = e.target.selectionEnd
+      requestAnimationFrame(() => {
+        selection.from = e.target.selectionStart
+        selection.to = e.target.selectionEnd
+      })
     }
 
-    const handleInput = (e) => {
-      emit('update:modelValue', e.target.value)
-    }
+    const handleInput = (e) => emit('update:modelValue', e.target.value)
 
     const chars = computed(() => (props.modelValue).split(''))
-
-    onMounted(() => { })
-    onBeforeUnmount(() => { })
 
     return { chars, selection, selectionUpdate, inp, handleInput }
   },
@@ -69,10 +63,8 @@ export default {
 
 <style lang="scss" scoped>
 .code-input {
-  --charbox-width: 34px;
-  --chabox-height: 48px;
-
   display: flex;
+  height: var(--ui-lt-h);
 
   &_wrapper {
     position: relative;
@@ -84,36 +76,50 @@ export default {
   }
 
   &_inp {
-    padding: 14px;
+    --extra-indent: calc((var(--ui-lt-h) + #{spacing(200)}));
+
     position: absolute;
-    width: 100%;
-    border: none;
-    background: transparent;
+    width: calc(100% + var(--extra-indent));
+    height: 100%;
+    border: 0 none;
     font-family: var(--typo-font-mono);
-    font-size: var(--typo-h200);
-    letter-spacing: 41px;
+    font-size: var(--typo-font-ui);
+    letter-spacing: calc(var(--ui-lt-h) + #{spacing(200)});
+    margin-left: calc(var(--extra-indent) / -2);
     outline: none;
+    background: transparent;
     opacity: 0;
+    padding: 0;
   }
 
   &_char {
-    width: var(--charbox-width);
-    height: var(--ui-lt-h);
-    border: 1px solid var(--charbox-border-color, var(--pal-grey300));
+    width: var(--ui-lt-h);
+    height: 100%;
+    border-style: var(--ui-lt-border-style);
+    border-width: var(--ui-lt-border-width);
+    border-color: var(--ui-pal-lateral);
     border-radius: var(--ui-lt-border-radius);
-    color: var(--charbox-text-color, var(--pal-grey900));
+    background: var(--ui-pal-bg);
+    color: var(--ui-pal-text);
     align-items: center;
     justify-content: center;
     display: flex;
+    gap: spacing(100);
 
     &-item {
-      border-width: 2px 0;
+      font-family: var(--typo-font-mono);
+      font-size: var(--typo-h300);
+      border-width: 0 2px 0 2px;
       border-style: solid;
       border-color: transparent;
       background: transparent;
-      min-width: 0.75em;
-      min-height: 1.5em;
       text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: spacing(200);
+      min-width: calc(var(--ui-lt-h) / 2);
+      min-height: calc(var(--ui-lt-h) / 2);
     }
 
     &._select &-item {
@@ -121,12 +127,17 @@ export default {
       background: var(--pal-primary);
     }
 
-    input:focus ~ &._cursor {
+    input:focus ~ &._cursor,
+    input:focus ~ &._cursor_0 {
       border-color: var(--ui-pal);
     }
 
-    input:focus ~ &._cursor &-item {
-      border-bottom-color: var(--pal-front);
+    input:focus ~ &._cursor &-item, {
+      border-right-color: var(--pal-front);
+    }
+
+    input:focus ~ &._cursor_0 &-item {
+      border-left-color: var(--pal-front);
     }
   }
 }

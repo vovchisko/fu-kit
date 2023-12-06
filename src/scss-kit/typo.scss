@@ -28,7 +28,7 @@
 }
 
 @function spacing($t, $r: null, $b: null, $l: null) {
-  @return _spacing($t) _spacing($r) _spacing($b) _spacing($l)
+  @return _spacing($t) _spacing($r) _spacing($b) _spacing($l);
 }
 
 @mixin ellipsis($display: block) {

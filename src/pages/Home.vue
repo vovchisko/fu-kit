@@ -62,7 +62,7 @@ export default {
 
       background: var(--pal-negative);
       display: inline-flex;
-      color: var(--pal-acc-negative);
+      color: var(--pal-negative-acc);
     }
 
     &-slogan {

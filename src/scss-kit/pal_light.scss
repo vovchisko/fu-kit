@@ -42,11 +42,11 @@
   --pal-warning: rgb(var(--rgb-warning));
   --pal-negative: rgb(var(--rgb-negative));
 
-  --pal-acc-primary: rgb(var(--rgb-back));
-  --pal-acc-secondary: rgb(var(--rgb-back));
-  --pal-acc-positive: rgb(var(--rgb-back));
-  --pal-acc-warning: rgb(var(--rgb-back));
-  --pal-acc-negative: rgb(var(--rgb-back));
+  --pal-primary-acc: rgb(var(--rgb-back));
+  --pal-secondary-acc: rgb(var(--rgb-back));
+  --pal-positive-acc: rgb(var(--rgb-back));
+  --pal-warning-acc: rgb(var(--rgb-back));
+  --pal-negative-acc: rgb(var(--rgb-back));
 
   --pal-text: rgb(var(--rgb-grey900));
   --pal-text-dimm: rgb(var(--rgb-grey600));
@@ -63,7 +63,7 @@
   --ui-rgb: var(--rgb-primary);
   --ui-pal: var(--pal-primary);
   --ui-pal-bg: var(--pal-bg);
-  --ui-pal-acc: var(--pal-acc-primary);
+  --ui-pal-acc: var(--pal-primary-acc);
   --ui-pal-lateral: rgb(var(--rgb-grey200));
   --ui-pal-text: rgb(var(--rgb-front));
   --ui-pal-text-select: rgb(var(--rgb-back));
