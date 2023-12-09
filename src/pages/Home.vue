@@ -45,7 +45,7 @@ export default {
     aspect-ratio: 1 / 1.1;
     max-width: 100%;
     min-height: 780px;
-    background-image: url('../assets/splash-screen.jpg');
+    background-image: url('/img/splash-screen.jpg');
     background-size: cover;
     background-position: 50%;
     color: var(--pal-text);

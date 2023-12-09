@@ -25,7 +25,7 @@ import UiImg from '../components/UiImg.vue'
 
 const example = ``
 
-const pic = '/src/assets/splash-screen.jpg'
+const pic = '/img/splash-screen.jpg'
 
 
 export default {
