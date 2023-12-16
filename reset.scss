@@ -1,9 +1,17 @@
 @import "src/scss-kit/typo";
 
 body {
+  @include typo(200);
+
+  font-family: var(--typo-font-text);
+  color: var(--pal-text);
+  background-color: var(--pal-bg);
+  color-scheme: var(--ui-color-scheme);
+
   margin: 0;
   padding: 0;
-  color: var(--pal-text);
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 address, article, aside, blockquote, details, dialog, dd, div, dl, dt, fieldset, figcaption,
@@ -13,7 +21,6 @@ ol, p, pre, section, table, ul {
   padding: 0;
   box-sizing: border-box;
   font-family: var(--typo-font-text);
-  line-height: 1.2;
 }
 
 h1, h2, h3, h4, h5, h6, header {
@@ -21,7 +28,7 @@ h1, h2, h3, h4, h5, h6, header {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  line-height: 1.2;
+  line-height: 1.25;
 }
 
 input, button, textarea, select, span, b, small {
@@ -32,31 +39,56 @@ input, button, textarea, select, span, b, small {
 }
 
 pre {
+  @include typo(100);
+
+  text-align: inherit;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: 1.25;
   font-family: var(--typo-font-mono);
 }
 
+a {
+  color: var(--pal-link);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:focus, &:active {
+    color: var(--pal-link-active);
+    text-decoration: underline;
+  }
+}
+
 h1 {
-  @include typo(700);
+  @include typo(700, 700);
 }
 
 h2 {
-  @include typo(600);
+  @include typo(600, 600);
 }
 
 h3 {
-  @include typo(500);
+  @include typo(500, 500);
 }
 
 h4 {
-  @include typo(400);
+  @include typo(400, 400);
 }
 
 h5 {
-  @include typo(300);
+  @include typo(300, 300);
+}
+
+h6 {
+  @include typo(200, 200);
 }
 
 p {
-  @include typo(200);
+  @include typo(200, 200);
 }
 
 small {
@@ -64,7 +96,8 @@ small {
 }
 
 label {
-  @include typo(100);
+  @include typo(200, 200);
+
   display: block;
 }
 
@@ -89,4 +122,22 @@ hr {
   border-width: 0 0 var(--ui-lt-border-width) 0;
   border-color: var(--ui-pal-lateral);
   margin: var(--hr-margin, spacing(200)) 0;
+  border-style: solid;
+  padding: 0;
+}
+
+option {
+  background: var(--ui-pal-bg);
+}
+
+input:-webkit-autofill {
+  border-radius: calc(var(--ui-lt-border-radius) - var(--ui-lt-border-width));
+}
+
+input:autofill {
+  border-radius: calc(var(--ui-lt-border-radius) - var(--ui-lt-border-width));
+}
+
+[no-decoration] {
+  text-decoration: none !important;
 }

@@ -58,8 +58,6 @@
       <ui-button-link>Button-link is here</ui-button-link>
     </div>
 
-
-
     <div class="doc-button_row">
       <ui-button-route :to="{name: ROUTE_NAMES.DOC_BUTTON}">Button Route</ui-button-route>
     </div>

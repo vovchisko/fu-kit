@@ -29,31 +29,25 @@ body {
 }
 
 .primary {
-  --ui-rgb: var(--rgb-primary);
-  --ui-pal: var(--pal-primary);
-  --ui-pal-acc: var(--pal-primary-acc);
+  @include compose_ui_theme(primary);
 }
 
 .secondary {
-  --ui-rgb: var(--rgb-secondary);
-  --ui-pal: var(--pal-secondary);
-  --ui-pal-acc: var(--pal-secondary-acc);
+  @include compose_ui_theme(secondary);
 }
 
 .positive {
-  --ui-rgb: var(--rgb-positive);
-  --ui-pal: var(--pal-positive);
-  --ui-pal-acc: var(--pal-positive-acc);
+  @include compose_ui_theme(positive);
 }
 
 .warning {
-  --ui-rgb: var(--rgb-warning);
-  --ui-pal: var(--pal-warning);
-  --ui-pal-acc: var(--pal-warning-acc);
+  @include compose_ui_theme(warning);
+
+  --ui-pal-lateral: var(--pal-warning)
 }
 
 .negative {
-  --ui-rgb: var(--rgb-negative);
-  --ui-pal: var(--pal-negative);
-  --ui-pal-acc: var(--pal-negative-acc);
+  @include compose_ui_theme(negative);
+
+  --ui-pal-lateral: var(--pal-negative)
 }

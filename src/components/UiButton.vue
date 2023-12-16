@@ -60,7 +60,7 @@ export default defineComponent({
   transition: all var(--ui-transition);
 
   &._solid {
-    padding: var(--ui-button-padding, #{spacing(300, 400)});
+    padding: var(--ui-button-padding, #{spacing(200, 400)});
     font-family: var(--typo-font-ui);
     min-height: var(--ui-lt-h);
     border-width: var(--ui-lt-border-width);

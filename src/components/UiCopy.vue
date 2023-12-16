@@ -75,14 +75,9 @@ export default defineComponent({
 @import "../../scss";
 
 .ui-copy {
-  padding: spacing(0, 200);
   @include ellipsis();
 
-  --ui-lt-h: 2em;
-  --ui-pal: var(--pal-grey900);
-
   &._hot {
-    color: var(--pal-positive);
   }
 }
 </style>

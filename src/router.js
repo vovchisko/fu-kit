@@ -17,12 +17,17 @@ import DocDropdown       from './pages/DocDropdown.vue'
 import DocProgressRadial from './pages/DocProgressRadial.vue'
 import DocIcon           from './pages/DocIcon.vue'
 import DocImg            from './pages/DocImg.vue'
+import DocTime           from './pages/DocTime.vue'
+import DocVar      from './pages/DocVar.vue'
+import DocTagInput from './pages/DocTagInput.vue'
+import DocCopy     from './pages/DocCopy.vue'
 
 
 const routes = [
   { path: '/', name: ROUTE_NAMES.HOME, component: Home },
-  { path: '/img', name: ROUTE_NAMES.DOC_IMG, component: DocImg },
   { path: '/typo', name: ROUTE_NAMES.DOC_TYPO, component: DocTypo },
+  { path: '/icon', name: ROUTE_NAMES.DOC_ICON, component: DocIcon },
+  { path: '/img', name: ROUTE_NAMES.DOC_IMG, component: DocImg },
   { path: '/button', name: ROUTE_NAMES.DOC_BUTTON, component: DocButton },
   { path: '/select', name: ROUTE_NAMES.DOC_SELECT, component: DocSelect },
   { path: '/text', name: ROUTE_NAMES.DOC_TEXT, component: DocText },
@@ -33,7 +38,10 @@ const routes = [
   { path: '/dropdown', name: ROUTE_NAMES.DOC_DROPDOWN, component: DocDropdown },
   { path: '/check', name: ROUTE_NAMES.DOC_CHECK, component: DocCheck },
   { path: '/progress-radial', name: ROUTE_NAMES.DOC_PROGRESS_RADIAL, component: DocProgressRadial },
-  { path: '/icon', name: ROUTE_NAMES.DOC_ICON, component: DocIcon },
+  { path: '/time', name: ROUTE_NAMES.DOC_TIME, component: DocTime },
+  { path: '/var', name: ROUTE_NAMES.DOC_VAR, component: DocVar },
+  { path: '/tag-input', name: ROUTE_NAMES.DOC_TAG_INPUT, component: DocTagInput },
+  { path: '/copy', name: ROUTE_NAMES.DOC_COPY, component: DocCopy },
 ]
 
 const router = createRouter({

@@ -1,6 +1,9 @@
 @import "colors";
 
 @mixin pal_light {
+  --ui-color-scheme: light;
+
+  --rgb-back-edge: #{hex2rgb(#FFFFFF)};
   --rgb-back: #{hex2rgb(#FFFFFF)};
   --rgb-grey100: #{hex2rgb(#FAFAFA)};
   --rgb-grey200: #{hex2rgb(#DCDCDC)};
@@ -11,7 +14,8 @@
   --rgb-grey700: #{hex2rgb(#363636)};
   --rgb-grey800: #{hex2rgb(#1C1C1C)};
   --rgb-grey900: #{hex2rgb(#151515)};
-  --rgb-front: #{hex2rgb(#000000)};
+  --rgb-front: #{hex2rgb(#141618)};
+  --rgb-front-edge: #{hex2rgb(#000000)};
 
   --rgb-primary: #{hex2rgb(#0095ff)};
   --rgb-secondary: #{hex2rgb(#131315)};
@@ -50,8 +54,8 @@
 
   --pal-text: rgb(var(--rgb-grey900));
   --pal-text-dimm: rgb(var(--rgb-grey600));
-  --pal-block: rgb(var(--rgb-grey200));
-  --pal-block-border: rgb(var(--rgb-grey300));
+  --pal-block: rgb(var(--rgb-grey100));
+  --pal-block-border: rgb(var(--rgb-grey200));
   --pal-bg: rgb(var(--rgb-back));
   --pal-overlay: rgba(var(--rgb-grey500), 0.2);
 
@@ -62,12 +66,12 @@
 
   --ui-rgb: var(--rgb-primary);
   --ui-pal: var(--pal-primary);
-  --ui-pal-bg: var(--pal-bg);
+  --ui-pal-bg: var(--pal-grey100);
   --ui-pal-acc: var(--pal-primary-acc);
-  --ui-pal-lateral: rgb(var(--rgb-grey200));
-  --ui-pal-text: rgb(var(--rgb-front));
-  --ui-pal-text-select: rgb(var(--rgb-back));
-  --ui-pal-placeholder: rgb(var(--rgb-grey300));
-  --ui-pal-disabled: rgb(var(--rgb-grey100));
-  --ui-pal-disabled-border: rgb(var(--rgb-grey300));
+  --ui-pal-lateral: var(--pal-grey300);
+  --ui-pal-text: var(--pal-front);
+  --ui-pal-text-select: var(--pal-front);
+  --ui-pal-placeholder: var(--pal-grey500);
+  --ui-pal-disabled: var(--pal-grey100);
+  --ui-pal-disabled-border: var(--pal-grey400);
 }

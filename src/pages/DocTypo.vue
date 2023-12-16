@@ -25,30 +25,15 @@
       <div class="h800">800 Test sample</div>
       <div class="h900">900 Test sample</div>
     </div>
-
-    <ui-code-view collapse label="Example">{{ example }}</ui-code-view>
   </div>
 </template>
 
 <script>
-import { UiCodeView } from '../entry.js'
 
-const example =
-          `
-.h200 {
-  @include typo(200);
-}
-
-h4 {
-  @include typo(400, 500);
-}
-
-`
 export default {
   name: 'doc-typo',
-  components: { UiCodeView },
   setup () {
-    return { example }
+    return {}
   },
 }
 </script>
@@ -56,9 +41,15 @@ export default {
 <style lang="scss">
 
 .doc-typo {
+  display: flex;
+  gap: spacing(400);
+
   &_col {
     padding: spacing(400, 0);
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: spacing(400);
   }
 
   .h100 {

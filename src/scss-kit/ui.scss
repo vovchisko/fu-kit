@@ -47,3 +47,9 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+@mixin compose_ui_theme($theme) {
+  --ui-rgb: var(--rgb-#{$theme});
+  --ui-pal: var(--pal-#{$theme});
+  --ui-pal-acc: var(--pal-#{$theme}-acc);
+}

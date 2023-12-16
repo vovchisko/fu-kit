@@ -37,6 +37,9 @@
         <router-link active-class="_active" class="app_main-nav-link" to="/check">Check</router-link>
         <router-link active-class="_active" class="app_main-nav-link" to="/progress-radial">Progress</router-link>
         <router-link active-class="_active" class="app_main-nav-link" to="/icon">Icon</router-link>
+        <router-link active-class="_active" class="app_main-nav-link" to="/time">Time</router-link>
+        <router-link active-class="_active" class="app_main-nav-link" to="/copy">Copy</router-link>
+        <router-link active-class="_active" class="app_main-nav-link" to="/tag-input">Tag Inout</router-link>
       </nav>
       <div class="app_main-page">
         <router-view />
@@ -67,10 +70,25 @@ export default {
 }
 </script>
 
+<style lang="scss">
+body {
+  font-family: var(--typo-font-text);
+  color: var(--pal-text);
+  background: var(--pal-bg);
+}
+
+#app {
+  @include scrollbar-awesome();
+}
+
+body {
+  transition: background-color linear 200ms;
+}
+</style>
+
 <style lang="scss" scoped>
 
 .app {
-
   &_header {
     grid-area: header;
     display: flex;
@@ -78,6 +96,7 @@ export default {
     justify-content: space-between;
     height: var(--lt-header-height);
     padding: 0 var(--lt-horizontal-padding);
+    margin: 0;
 
     &-logo {
       display: flex;
@@ -112,32 +131,29 @@ export default {
       left: 0;
       top: 0;
       bottom: 0;
-      border-width: 0 1px 0 0;
-      border-color: rgba(var(--rgb-grey500, black), 0.1);
-      border-style: solid;
+      border-right: 1px solid var(--pal-block-border);
       display: flex;
       flex-direction: column;
-      gap: spacing(200);
-      min-width: 180px;
+      padding: 0;
 
       &-link {
-        @include typo(200);
+        @include typo(200, 400);
 
-        text-transform: uppercase;
-        width: 10em;
+        width: 180px;
         display: block;
         text-decoration: none;
-        padding: spacing(300) var(--lt-horizontal-padding);
+        text-transform: uppercase;
+        padding: spacing(300, 500);
 
         &:hover {
-          text-decoration: underline;
+          color: var(--pal-link-active);
           background: var(--pal-grey100);
         }
 
         &._active {
-          background: var(--pal-primary);
-          color: var(--pal-secondary-acc);
-          text-decoration: none;
+          color: var(--pal-link-active);
+          text-decoration: underline;
+          background: var(--pal-grey200);
         }
       }
     }

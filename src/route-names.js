@@ -1,4 +1,4 @@
-export const  ROUTE_NAMES = Object.freeze({
+export const ROUTE_NAMES = Object.freeze({
   HOME: 'HOME',
   DOC_IMG: 'DOC_IMG',
   DOC_TYPO: 'DOC_TYPO',
@@ -14,4 +14,8 @@ export const  ROUTE_NAMES = Object.freeze({
   DOC_MODAL: 'DOC_MODAL',
   DOC_PROGRESS_RADIAL: 'DOC_PROGRESS_RADIAL',
   DOC_ICON: 'DOC_ICON',
+  DOC_TIME: 'DOC_TIME',
+  DOC_VAR: 'DOC_VAR',
+  DOC_TAG_INPUT: 'DOC_TAG_INPUT',
+  DOC_COPY: 'DOC_COPY',
 })

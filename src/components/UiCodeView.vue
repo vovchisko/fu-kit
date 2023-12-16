@@ -48,8 +48,8 @@ export default defineComponent({
 
   &_pre {
     @include scrollbar-awesome();
-    padding: spacing(300, 200);
 
+    padding: spacing(300, 200);
     font-family: var(--typo-font-mono);
     overflow: auto;
     max-width: 100%;

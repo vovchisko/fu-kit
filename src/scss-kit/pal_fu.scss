@@ -1,7 +1,10 @@
 @import "colors";
 
 @mixin pal_fu {
-  --rgb-back: #{hex2rgb(#000000)};
+  --ui-color-scheme: dark;
+
+  --rgb-back-edge: #{hex2rgb(#000000)};
+  --rgb-back: #{hex2rgb(#141618)};
   --rgb-grey100: #{hex2rgb(#1a1e21)};
   --rgb-grey200: #{hex2rgb(#252b2f)};
   --rgb-grey300: #{hex2rgb(#2c3338)};
@@ -12,17 +15,18 @@
   --rgb-grey800: #{hex2rgb(#DCDCDC)};
   --rgb-grey900: #{hex2rgb(#FAFAFA)};
   --rgb-front: #{hex2rgb(#FFFFFF)};
+  --rgb-front-edge: #{hex2rgb(#FFFFFF)};
 
-  --rgb-primary: #{hex2rgb(#ff7300)};
-  --rgb-secondary: #{hex2rgb(#ffecdd)};
-  --rgb-positive: #{hex2rgb(#ff4400)};
-  --rgb-warning: #{hex2rgb(#ffc500)};
+  --rgb-primary: #{hex2rgb(#9f00a9)};
+  --rgb-secondary: #{hex2rgb(#7821c9)};
+  --rgb-positive: #{hex2rgb(#2eaf8f)};
+  --rgb-warning: #{hex2rgb(#ff8000)};
   --rgb-negative: #{hex2rgb(#ff3535)};
 
-  --rgb-link: #{hex2rgb(#48b4ff)};
-  --rgb-link-active: #{hex2rgb(#59caec)};
-  --rgb-link-hover: #{hex2rgb(#59caec)};
-  --rgb-link-visited: #{hex2rgb(#b38dff)};
+  --rgb-link: #{hex2rgb(#bc48ff)};
+  --rgb-link-active: #{hex2rgb(#c562ff)};
+  --rgb-link-hover: #{hex2rgb(#c562ff)};
+  --rgb-link-visited: #{hex2rgb(#bc48ff)};
 
   --pal-back: rgb(var(--rgb-back));
   --pal-grey100: rgb(var(--rgb-grey100));
@@ -43,7 +47,7 @@
   --pal-negative: rgb(var(--rgb-negative));
 
   --pal-primary-acc: rgb(var(--rgb-front));
-  --pal-secondary-acc: rgb(var(--rgb-back));
+  --pal-secondary-acc: rgb(var(--rgb-front));
   --pal-positive-acc: rgb(var(--rgb-front));
   --pal-warning-acc: rgb(var(--rgb-front));
   --pal-negative-acc: rgb(var(--rgb-front));
@@ -52,7 +56,7 @@
   --pal-text-dimm: rgb(var(--rgb-grey600));
   --pal-block: rgb(var(--rgb-grey100));
   --pal-block-border: rgb(var(--rgb-grey200));
-  --pal-bg: rgb(var(--rgb-grey200));
+  --pal-bg: rgb(var(--rgb-back));
   --pal-overlay: rgba(var(--rgb-grey500), 0.2);
 
   --pal-link: rgb(var(--rgb-link));
@@ -67,7 +71,7 @@
   --ui-pal-lateral: var(--pal-grey300);
   --ui-pal-text: var(--pal-front);
   --ui-pal-text-select: var(--pal-front);
-  --ui-pal-placeholder: var(--pal-grey400);
-  --ui-pal-disabled: var(--pal-grey300);
-  --ui-pal-disabled-border: var(--pal-grey500);
+  --ui-pal-placeholder: var(--pal-grey500);
+  --ui-pal-disabled: var(--pal-grey100);
+  --ui-pal-disabled-border: var(--pal-grey400);
 }

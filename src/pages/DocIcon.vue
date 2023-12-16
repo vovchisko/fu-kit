@@ -37,9 +37,9 @@ export default {
   components: { UiIcon, UiSelectX },
   setup () {
     const state = reactive({
-      color: '',
+      color: '--pal-front',
       size: '24px',
-      strokeWidth: '',
+      strokeWidth: '1.5px',
     })
     const icons = []
     document.querySelectorAll('[data-icon-set]').forEach(icon => {
@@ -48,10 +48,9 @@ export default {
         if (id) icons.push(id)
       })
     })
-    icons.sort()
 
     const colorOptions = [
-      { value: '', label: 'default' },
+      { value: '--pal-front-edge', label: '--pal-front-edge' },
       { value: '--pal-front', label: '--pal-front' },
       { value: '--pal-grey100', label: '--pal-grey100' },
       { value: '--pal-grey200', label: '--pal-grey200' },
@@ -62,8 +61,8 @@ export default {
       { value: '--pal-grey700', label: '--pal-grey700' },
       { value: '--pal-grey800', label: '--pal-grey800' },
       { value: '--pal-grey900', label: '--pal-grey900' },
-      { value: '--pal-grey100', label: '--pal-grey100' },
       { value: '--pal-back', label: '--pal-back' },
+      { value: '--pal-back-edge', label: '--pal-back-edge' },
       { value: '--pal-primary', label: '--pal-primary' },
       { value: '--pal-secondary', label: '--pal-secondary' },
       { value: '--pal-positive', label: '--pal-positive' },
@@ -71,7 +70,6 @@ export default {
       { value: '--pal-negative', label: '--pal-negative' },
     ]
     const sizeOptions = [
-      { value: '', label: 'default' },
       { value: '12px', label: '12px' },
       { value: '16px', label: '16px' },
       { value: '20px', label: '20px' },
@@ -81,7 +79,6 @@ export default {
     ]
 
     const strokeWidthOptions = [
-      { value: '', label: 'default' },
       { value: '1px', label: '1px' },
       { value: '1.5px', label: '1.5px' },
       { value: '2px', label: '2px' },
@@ -129,7 +126,7 @@ export default {
       }
 
       &:hover small {
-        color:  var(--pal-grey700);
+        color: var(--pal-grey700);
       }
     }
   }
