@@ -52,4 +52,8 @@
   --ui-rgb: var(--rgb-#{$theme});
   --ui-pal: var(--pal-#{$theme});
   --ui-pal-acc: var(--pal-#{$theme}-acc);
+
+  // for future, to describe shadows, overlays, etc.
+  --ui-rgb-focus: var(--rgb-#{$theme}-focus);
+  --ui-pal-focus: var(--pal-#{$theme}-focus);
 }
