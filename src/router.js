@@ -18,9 +18,10 @@ import DocProgressRadial from './pages/DocProgressRadial.vue'
 import DocIcon           from './pages/DocIcon.vue'
 import DocImg            from './pages/DocImg.vue'
 import DocTime           from './pages/DocTime.vue'
-import DocVar      from './pages/DocVar.vue'
-import DocTagInput from './pages/DocTagInput.vue'
-import DocCopy     from './pages/DocCopy.vue'
+import DocVar            from './pages/DocVar.vue'
+import DocTagInput       from './pages/DocTagInput.vue'
+import DocCopy           from './pages/DocCopy.vue'
+import DocMedia          from './pages/DocMedia.vue'
 
 
 const routes = [
@@ -42,6 +43,7 @@ const routes = [
   { path: '/var', name: ROUTE_NAMES.DOC_VAR, component: DocVar },
   { path: '/tag-input', name: ROUTE_NAMES.DOC_TAG_INPUT, component: DocTagInput },
   { path: '/copy', name: ROUTE_NAMES.DOC_COPY, component: DocCopy },
+  { path: '/media', name: ROUTE_NAMES.DOC_MEDIA, component: DocMedia },
 ]
 
 const router = createRouter({

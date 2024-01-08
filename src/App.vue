@@ -40,6 +40,7 @@
         <router-link active-class="_active" class="app_main-nav-link" to="/time">Time</router-link>
         <router-link active-class="_active" class="app_main-nav-link" to="/copy">Copy</router-link>
         <router-link active-class="_active" class="app_main-nav-link" to="/tag-input">Tag Inout</router-link>
+        <router-link active-class="_active" class="app_main-nav-link" to="/media">Media</router-link>
       </nav>
       <div class="app_main-page">
         <router-view />
@@ -139,11 +140,10 @@ body {
       &-link {
         @include typo(200, 400);
 
-        width: 180px;
+        padding: spacing(300, 500);
         display: block;
         text-decoration: none;
         text-transform: uppercase;
-        padding: spacing(300, 500);
 
         &:hover {
           color: var(--pal-link-active);

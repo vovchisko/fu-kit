@@ -18,4 +18,6 @@ export const ROUTE_NAMES = Object.freeze({
   DOC_VAR: 'DOC_VAR',
   DOC_TAG_INPUT: 'DOC_TAG_INPUT',
   DOC_COPY: 'DOC_COPY',
+  DOC_MEDIA: 'DOC_MEDIA',
+
 })
