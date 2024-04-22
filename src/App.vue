@@ -83,7 +83,7 @@ body {
 }
 
 body {
-  transition: background-color linear 200ms;
+  transition: background-color linear var(--ui-transition);
 }
 </style>
 

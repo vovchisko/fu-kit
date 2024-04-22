@@ -74,7 +74,7 @@ export default defineComponent({
 
   &._hollow {
     background: transparent;
-    padding: var(--ui-button-padding, #{spacing(300, 400)});
+    padding: var(--ui-button-padding, #{spacing(200, 400)});
     color: var(--ui-pal);
     border-width: var(--ui-lt-border-width);
     border-style: var(--ui-lt-border-style);

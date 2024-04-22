@@ -62,7 +62,7 @@ export default {
     height: 100%;
     object-fit: cover;
     aspect-ratio: inherit;
-    transition: all linear 500ms;
+    transition: all linear var(--ui-transition);
 
     &._loading {
       opacity: 0;
