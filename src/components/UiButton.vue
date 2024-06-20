@@ -2,6 +2,7 @@
   <button
       v-bind="{
         ...$attrs,
+        disabled,
         type: $attrs.type || 'button',
         class: [
             'ui-button',
@@ -15,6 +16,7 @@
   >
     <slot />
     <ui-icon v-if="isLoading" class="ui-button_loader" name="spinner" />
+
   </button>
 </template>
 
@@ -27,6 +29,7 @@ export default defineComponent({
   name: 'ui-button',
   components: { UiIcon },
   props: {
+    disabled: { type: Boolean, default: false },
     hollow: { type: Boolean, default: false },
     naked: { type: Boolean, default: false },
     isLoading: { type: Boolean, default: false },

@@ -1,8 +1,11 @@
 <template>
   <div class="doc-textarea">
-    <ui-textarea v-model="val" auto-resize placeholder="this is a text area" />
-    <ui-textarea v-model="val" class="primary" placeholder="this is a text area" />
+    <ui-textarea v-model="val" :disabled="disabled" auto-resize placeholder="this is a text area" />
+    <ui-textarea v-model="val" :disabled="disabled" class="primary" placeholder="this is a text area" />
+    <ui-textarea v-model="val" disabled class="primary" placeholder="this is a text area" />
     <ui-button>Like submit</ui-button>
+
+    <ui-check v-model="disabled">disabled</ui-check>
     <ui-code-view label="Example">{{ example }}</ui-code-view>
   </div>
 </template>
@@ -10,6 +13,7 @@
 <script>
 import { ref }                              from 'vue'
 import { UiButton, UiCodeView, UiTextarea } from '../entry.js'
+import UiCheck                              from '../components/UiCheck.vue'
 
 const example = `
 TBD
@@ -17,8 +21,10 @@ TBD
 
 export default {
   name: 'doc-textarea',
-  components: { UiTextarea, UiButton, UiCodeView },
+  components: { UiCheck, UiTextarea, UiButton, UiCodeView },
   setup () {
+    const disabled = ref(false)
+
     const val = ref(`Where does it come from?
 
 Contrary to popular belief, Lorem Ipsum is not simply random text.
@@ -40,7 +46,7 @@ below for those interested. Sections 1.10.32 and 1.10.33 from
 in their exact original form, accompanied by English versions
 from the 1914 translation by H. Rackham.
     `)
-    return { example, val }
+    return { example, val , disabled}
   },
 }
 </script>

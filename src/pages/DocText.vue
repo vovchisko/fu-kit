@@ -1,9 +1,10 @@
 <template>
   <div class="doc-text">
     <div class="doc-text_row">
-      <ui-text v-model="val" placeholder="placeholder" />
-      <ui-text v-model="val" class="secondary" placeholder="placeholder" />
-      <ui-text v-model="val" class="primary" placeholder="placeholder" />
+      <ui-text v-model="val" :disabled="disabled" placeholder="placeholder" />
+      <ui-text v-model="val" :disabled="disabled" class="secondary" placeholder="placeholder" />
+      <ui-text v-model="val" :disabled="disabled" class="primary" placeholder="placeholder" />
+      <ui-text v-model="val" :disabled="disabled" disabled placeholder="placeholder" />
       <ui-text v-model="val" disabled placeholder="placeholder" />
     </div>
     <div class="doc-text_row">
@@ -16,6 +17,8 @@
         </template>
       </ui-text>
     </div>
+
+    <ui-check v-model="disabled">disabled</ui-check>
     <ui-code-view label="Example">{{ example }}</ui-code-view>
   </div>
 </template>
@@ -23,6 +26,7 @@
 <script>
 import { ref }                from 'vue'
 import { UiCodeView, UiText } from '../entry.js'
+import UiCheck                from '../components/UiCheck.vue'
 
 const example = `
 TBD
@@ -30,10 +34,11 @@ TBD
 
 export default {
   name: 'doc-text',
-  components: { UiCodeView, UiText },
+  components: { UiCheck, UiCodeView, UiText },
   setup () {
     const val = ref('')
-    return { example, val }
+    const disabled = ref(false)
+    return { example, val, disabled }
   },
 }
 </script>

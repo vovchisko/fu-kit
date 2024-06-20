@@ -1,6 +1,6 @@
 <template>
   <div
-      :class="{'_disabled': $attrs.disabled !== undefined || $attrs.readOnly  !== undefined }"
+      :class="{'_disabled': disabled || $attrs.readOnly  !== undefined }"
       class="ui-text"
       v-bind="{ class: $attrs.class }"
   >
@@ -8,7 +8,7 @@
         ref="textarea"
         :value="modelValue"
         class="ui-text_textarea"
-        v-bind="{...$attrs, class: undefined}"
+        v-bind="{...$attrs, disabled, class: undefined}"
         @input="handleInput"
     />
   </div>
@@ -20,6 +20,8 @@ import { defineComponent, onMounted, ref } from 'vue'
 export default defineComponent({
   name: 'ui-textarea',
   props: {
+    disabled: { type: Boolean, default: false },
+
     modelValue: {
       type: [ String, Number ],
       default: '',
