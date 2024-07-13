@@ -67,7 +67,7 @@ export default defineComponent({
   }
 
   &:disabled {
-    cursor: not-allowed;
+    cursor: default;
     color: var(--ui-pal-disabled);
   }
 }

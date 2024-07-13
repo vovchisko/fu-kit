@@ -20,6 +20,10 @@
       <ui-check v-model="val" class="warning" switch-like>Switch warning</ui-check>
       <ui-check v-model="val" disabled switch-like>Disabled</ui-check>
     </div>
+
+    <div class="doc-text_col">
+      <ui-check v-model="val2" switch-like @change="logInput">Separate with log</ui-check>
+    </div>
   </div>
   <ui-code-view label="Example">{{ example }}</ui-code-view>
 </template>
@@ -41,7 +45,11 @@ export default {
   components: { UiCodeView, UiCheck },
   setup () {
     const val = ref(false)
-    return { example, val }
+    const val2 = ref(false)
+    const logInput = (ev) => {
+      console.log('log input:', ev, val2.value)
+    }
+    return { example, val, val2, logInput }
   },
 }
 </script>

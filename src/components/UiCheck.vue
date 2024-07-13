@@ -10,7 +10,7 @@
         :checked="modelValue"
         class="ui-check_input"
         v-bind="{...$attrs, disabled: isDisabled, type: 'checkbox', class: undefined, style: undefined}"
-        @input="$emit('update:modelValue', $event.target.checked)"
+        @change="handleChange"
     >
     <span
         :class="{
@@ -40,20 +40,24 @@ export default defineComponent({
     isLoading: { type: Boolean, default: false },
     disabled: { type: Boolean, default: false },
   },
-  emits: [ 'update:modelValue' ],
-  setup (props) {
+  emits: [ 'update:modelValue', 'change', 'input' ],
+  setup (props, { emit }) {
     const inputRef = ref(null)
     const isDisabled = computed(() => props.disabled || props.disabled === '')
 
-
     const mouseUp = () => {
       // oof
-      setTimeout(() => {
-        inputRef.value.blur()
-      }, 0)
+      setTimeout(() => inputRef.value.blur(), 0)
     }
 
-    return { isDisabled, inputRef, mouseUp }
+    const handleChange = (event) => {
+      event.stopPropagation()
+      emit('update:modelValue', event.target.checked)
+      emit('change', event)
+      emit('input', event)
+    }
+
+    return { isDisabled, inputRef, mouseUp, handleChange }
   },
 })
 </script>

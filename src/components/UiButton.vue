@@ -100,6 +100,7 @@ export default defineComponent({
     }
 
     &:disabled {
+      cursor: default;
       color: var(--ui-pal-disabled-border);
       box-shadow: none;
     }
@@ -128,6 +129,7 @@ export default defineComponent({
     &:disabled {
       color: var(--ui-pal-disabled-border);
       box-shadow: none;
+      cursor: default;
     }
   }
 
@@ -158,7 +160,7 @@ export default defineComponent({
   }
 
   &:disabled {
-    cursor: not-allowed;
+    cursor: default;
     background: var(--ui-pal-disabled);
     border-color: var(--ui-pal-disabled-border);
     border-style: var(--ui-lt-disabled-border-style);
@@ -171,7 +173,7 @@ export default defineComponent({
   //
 
   &._loading {
-    color: transparent;
+    color: transparent !important;
   }
 
   &_loader {

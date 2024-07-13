@@ -32,23 +32,23 @@
       </ui-button>
     </div>
     <div class="doc-button_row">
-      <ui-button :is-loading="isLoading" @click="isLoading = !isLoading">
+      <ui-button :is-loading="isLoading" :disabled="disabled" @click="isLoading = !isLoading">
         <ui-icon name="cross" />
         <span>with loading</span>
       </ui-button>
-      <ui-button :is-loading="isLoading" class="negative" @click="isLoading = !isLoading">
+      <ui-button :is-loading="isLoading" :disabled="disabled" class="negative" @click="isLoading = !isLoading">
         <ui-icon name="cross" />
         <span>with loading</span>
       </ui-button>
-      <ui-button :is-loading="isLoading" hollow @click="isLoading = !isLoading">
+      <ui-button :is-loading="isLoading" :disabled="disabled" hollow @click="isLoading = !isLoading">
         <ui-icon name="cross" />
         <span>with loading</span>
       </ui-button>
-      <ui-button :is-loading="isLoading" class="negative" hollow @click="isLoading = !isLoading">
+      <ui-button :is-loading="isLoading" :disabled="disabled" class="negative" hollow @click="isLoading = !isLoading">
         <ui-icon name="cross" />
         <span>with loading</span>
       </ui-button>
-      <ui-button :is-loading="isLoading" naked @click="isLoading = !isLoading">
+      <ui-button :is-loading="isLoading" :disabled="disabled" naked @click="isLoading = !isLoading">
         <ui-icon name="cross" />
         <span>with loading</span>
       </ui-button>
@@ -95,6 +95,7 @@ const example = `
 export default {
   name: 'doc-button',
   components: { UiCheck, UiButtonRoute, UiCodeView, UiButton, UiIcon, UiButtonLink },
+  emits: [ 'click' ],
   setup () {
     const disabled = ref(false)
 
