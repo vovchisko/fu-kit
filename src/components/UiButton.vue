@@ -134,14 +134,6 @@ export default defineComponent({
   }
 
   //
-  // DON'T
-  //
-
-  & > * {
-    pointer-events: none;
-  }
-
-  //
   // STATES
   //
 

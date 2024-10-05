@@ -48,10 +48,6 @@ export default defineComponent({
   -webkit-tap-highlight-color: transparent;
   text-decoration: none;
 
-  & > * {
-    pointer-events: none;
-  }
-
   &:hover {
     text-decoration: underline;
   }
