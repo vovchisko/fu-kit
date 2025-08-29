@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 import pluginVue        from '@vitejs/plugin-vue'
 
 export default defineConfig({
-  build: { outDir: 'docs' },
+  build: { outDir: 'dist' },
   plugins: [ pluginVue() ],
   server: {
     port: 4000,
