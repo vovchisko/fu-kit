@@ -12,8 +12,6 @@ Use it with caution. This is my play yard.
 
 ## Standard Vue run sequence
 
-Demo [fu-kit.vovchisko.dev](https://fu-kit.vovchisko.dev)
-
 ```
 npm i          # install
 npm run serve  # serve locally
